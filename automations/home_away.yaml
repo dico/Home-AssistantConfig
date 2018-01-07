@@ -15,7 +15,7 @@
     entity_id: group.lights
   - service: lock.lock
     data:
-      code: '445566'
+      code: !secret VERISURE_CODE_DIGITS
       entity_id: lock.ytterdr
   - service: input_boolean.turn_off
     entity_id: input_boolean.home
@@ -121,7 +121,7 @@
         title: "God natt"
   - service: lock.lock
     data:
-      code: '445566'
+      code: !secret VERISURE_CODE_DIGITS
       entity_id: lock.ytterdr
   - delay: 00:01:00
   - service: homeassistant.turn_off
@@ -179,7 +179,7 @@
         title: "God morgen"
   - service: lock.unlock
     data:
-      code: '445566'
+      code: !secret VERISURE_CODE_DIGITS
       entity_id: lock.ytterdr
   - condition: and
     conditions:
@@ -210,7 +210,7 @@
     entity_id: group.lights
   - service: lock.lock
     data:
-      code: '445566'
+      code: !secret VERISURE_CODE_DIGITS
       entity_id: lock.ytterdr
   - service: input_boolean.turn_off
     entity_id: input_boolean.home
