@@ -1,11 +1,41 @@
-*
-!*.yaml
-!scenes
-!.gitignore
-!/automations
-!/custom_components
-!/panels
-!/www
+# Logs
+logs
+*.log
+npm-debug.log*
+OZW_Log.txt
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Python cache
+__pycache__
+*.pyc
+
+# Other
+*.uuid
+*.conf
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+*.log
+*.noload
+*.txt
+*.sqlite
+*.xml
+*.backup
+*.google.token
+.google.token
+.HA_VERSION
+home-assistant.env
+home-assistant.*
 secrets.yaml
 gitupdate.sh
 known_devices.yaml
+google_calendars.yaml
+components
+deps
+!/.gitignore
+!/.travis.yml
