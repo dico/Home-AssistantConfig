@@ -1,0 +1,53 @@
+#-------------------------------------------
+# Carwings: Charge reminder
+#-------------------------------------------
+
+# LEAF: Update Carwings data
+- alias: 'Carwings update'
+  trigger:
+  - platform: time
+    at: "21:00:00"
+  action:
+  - service: mqtt.publish
+    data:
+        topic: "leaf/control/update"
+        payload: "1" 
+
+# LEAF: Charge-reminder
+- alias: 'Carwings update'
+  trigger:
+  - platform: time
+    at: "21:30:00"
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sensor.leaf_battery_charg_status
+        state: 'NOT_CHARGING'
+      - condition: numeric_state
+        entity_id: 'sensor.leaf_battery'
+        below: '50'
+  action:
+  - service: notify.ios_robertiphone7
+    data:
+        message: "Det er under 50% batteri på LEAF-en. Kanskje du vil lade den til i morgen?"
+        title: "Nissan Leaf: Ladevarsling"
+  - service: notify.ios_veronicaiphone6s
+    data:
+        message: "Det er under 50% batteri på LEAF-en. Kanskje du vil lade den til i morgen?"
+        title: "Nissan Leaf: Ladevarsling"
+
+# LEAF: Manually fetch data
+- alias: 'Leaf Trigger Fetch'
+  trigger:
+    entity_id: input_boolean.leaf_fetch_data
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - service: mqtt.publish
+    data:
+        topic: "leaf/control/update"
+        payload: "1" 
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.leaf_fetch_data

@@ -1,0 +1,31 @@
+# automation start
+- alias: 'Washmachine Start'
+  trigger:
+  - platform: state
+    entity_id: sensor.washer_pwrdn
+    from: 'True'
+    to: 'False'
+  action:
+    service: input_boolean.turn_on
+    entity_id: input_boolean.washmachine_status
+
+# automation fertig
+- alias: 'Washmachine ferdig'
+  trigger:
+    platform: state
+    entity_id: sensor.washer_pwrdn
+    from: 'False'
+    to: 'True'
+    for:
+      minutes: 4
+  condition:
+    condition: state
+    entity_id: input_boolean.washmachine_status
+    state: 'on'
+  action:
+  - service: notify.notify
+    data:
+        message: "Ferdig"
+        title: "Vaskemaskin"
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.washmachine_status

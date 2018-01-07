@@ -1,0 +1,32 @@
+- alias: CO2 high
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.netatmo_stue_co2 
+    above: 1000
+  action:
+  - service: notify.ios_both
+    data:
+        message: "CO2 har passert 1000ppm. På tide å lufte?"
+        title: "Høy CO2"
+        
+- alias: CO2 very high
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.netatmo_stue_co2 
+    above: 2000
+  action:
+  - service: notify.ios_robertiphone7
+    data:
+        message: "CO2 har passert 2000ppm. På tide å lufte?"
+        title: "Veldig høy CO2"
+        
+- alias: CO2 normal
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.netatmo_stue_co2 
+    below: 1000
+  action:
+  - service: notify.ios_robertiphone7
+    data:
+        message: "Puh! CO2 er ok. Pust normalt..."
+        title: "CO2 normal"

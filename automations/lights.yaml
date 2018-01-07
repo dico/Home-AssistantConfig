@@ -1,0 +1,100 @@
+# Motion Lights Hallway
+# Turn on lamp when motion in hallway
+- alias: 'Bevegelse Lys Gang På'
+#  trigger:
+#    entity_id: binary_sensor.fibaro_motion_1_sensor
+#    from: 'off'
+#    platform: state
+#    to: 'on'
+#  action:
+#  - service: switch.turn_on
+#    entity_id: switch.gang_lyst_kommode_switch
+  trigger:
+    platform: state
+    entity_id: binary_sensor.fibaro_motion_1_sensor
+    to: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: switch.gang_lyst_kommode_switch
+    
+# Turn off lamp when motion stops in hallway
+- alias: 'Bevegelse Lys Gang Av'
+#  trigger:
+#    entity_id: binary_sensor.fibaro_motion_1_sensor
+#    from: 'on'
+#    platform: state
+#    to: 'off'
+#  action:
+#  - delay: 00:01:00
+#  - service: switch.turn_off
+#    entity_id: switch.gang_lyst_kommode_switch
+  trigger:
+    platform: state
+    entity_id: binary_sensor.fibaro_motion_1_sensor
+    to: 'off'
+    for:
+      minutes: 3
+  action:
+    service: switch.turn_off
+    entity_id: switch.gang_lyst_kommode_switch
+    
+    
+    
+    
+    
+# Motion Lights laundry-room
+# Turn on ceiling lights when motion in laundry-room
+- alias: 'Bevegelse Lys Vaskerom På'
+  trigger:
+    entity_id: switch.bevegelse_gang
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - service: switch.turn_on
+    entity_id: switch.vaskerom_bod_lys_switch
+  - service: switch.turn_on
+    entity_id: switch.vaskerom_bod_lys_switch_2
+
+# Turn off ceiling lights when motion in laundry-room stops
+- alias: 'Bevegelse Lys Vaskerom Av'
+  trigger:
+    entity_id: switch.bevegelse_gang
+    from: 'on'
+    platform: state
+    to: 'off'
+  action:
+  - service: switch.turn_off
+    entity_id: switch.vaskerom_bod_lys_switch
+  - service: switch.turn_off
+    entity_id: switch.vaskerom_bod_lys_switch_2
+    
+    
+    
+    
+# Magnet Lights Laundry-room
+# Turn on ceiling lights when motion in laundry-room
+- alias: 'Dør Vaskerom Lys Vaskerom På'
+  trigger:
+    entity_id: switch.magnet_dr_vaskerom
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - service: switch.turn_on
+    entity_id: switch.vaskerom_bod_lys_switch
+  - service: switch.turn_on
+    entity_id: switch.vaskerom_bod_lys_switch_2
+    
+    
+# Magnet Lights hallway
+# Turn on hallway lamp when front door opens
+- alias: 'Bevegelse Lys Gang På'
+  trigger:
+    entity_id: switch.magnet_ytterdr
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - service: switch.turn_off
+    entity_id: switch.gang_lyst_kommode_switch

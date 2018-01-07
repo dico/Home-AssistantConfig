@@ -2,5 +2,10 @@
 !*.yaml
 !scenes
 !.gitignore
+!/automations
+!/custom_components
+!/panels
+!/www
 secrets.yaml
+gitupdate.sh
 known_devices.yaml
