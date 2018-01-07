@@ -36,6 +36,7 @@ Some of the things I test is posted on my [blog](https://robert.stadsbygd.net/ca
 - [Vision Motion Detector (with Temperature Sensor)](https://products.z-wavealliance.org/products/1070)
 - [Vision Siren with LED strobe light](https://products.z-wavealliance.org/products/1009)
 - [Telldus Plug-in Switch (Schuko)](https://products.z-wavealliance.org/products/1536)
+- [IKEA Trådfri (Tradfri) bulbs](http://www.ikea.com/no/no/catalog/categories/departments/lighting/36812/)
 
 ### Other
 - [RX-Multi for garage doors](https://www.portspesialisten.com/fjernkontroll/mottaker-433mhz/)  [(Tutorial)](https://robert.stadsbygd.net/2015/05/10/open-garage-port-with-telldus/)
@@ -43,6 +44,7 @@ Some of the things I test is posted on my [blog](https://robert.stadsbygd.net/ca
 - [Div. china IP/WiFi cameras](https://robert.stadsbygd.net/2017/06/13/two-new-ipwifi-cameras/)
 - Different temperature/humidity sensors (433MHz) [Teknikmagasninet (NO)](https://www.teknikmagasinet.no/produkter/hjem-o-husholdning/termometre/remote-thermo-sensor), [Clas Ohlson (NO)](https://www.clasohlson.com/no/Temperaturgiver-hygrometer/36-1797)
 
+Devices like Apple TV, Sensibo, Verisure doorlock, Intesishome, etc. should be self explanatory based on the component-list above.
 
 
 ## Custom UI
@@ -67,3 +69,9 @@ Good morning lights if motion triggered between 06:00 and 10:00.
 
 ### Other notifications
 Alert if CO2 levels are over 1000ppm and 2000ppm.
+
+
+
+## Theme
+
+[Midnight theme](https://community.home-assistant.io/t/midnight-theme/28598) from HA Community
