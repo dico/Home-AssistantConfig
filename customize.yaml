@@ -1,0 +1,220 @@
+# Garage-port switch
+    switch.garasjeport_1:
+        friendly_name: Garasjeport Leaf
+        icon: mdi:garage
+    switch.garasjeport_2:
+        friendly_name: Garasjeport Volvo
+        icon: mdi:garage
+
+# YR.no sensors
+    sensor.yrno_humidity:
+        friendly_name: Yr.no Luftfuktighet
+    sensor.yrno_temperature:
+        friendly_name: Yr.no Temperatur
+    sensor.yrno_wind_average:
+        friendly_name: Yr.no Vind
+    sensor.yrno_wind_direction:
+        friendly_name: Yr.no Vindretning
+        
+# Lights
+    light.stue_lys_gulvlampe:
+        assumed_state: false
+        icon: mdi:lamp
+    light.stue_lys_sofa:
+        assumed_state: false
+        icon: mdi:ceiling-light
+    light.stue_lys_spisebord:
+        assumed_state: false
+        icon: mdi:ceiling-light
+    light.aeotec_dim_spisebord_level:
+        friendly_name: Stye Lys Spisebord
+        assumed_state: false
+        icon: mdi:ceiling-light
+    light.aeotec_dim_sofa_level:
+        friendly_name: Stye Lys Sofa
+        assumed_state: false
+        icon: mdi:ceiling-light
+    switch.jul_stuevindu:
+        assumed_state: false
+        icon: mdi:spotlight-beam
+    switch.gang_lyst_kommode_switch:
+        friendly_name: Gang Lys Kommode
+        assumed_state: false
+        icon: mdi:lamp
+    switch.kjkken_lys_vindu:
+        assumed_state: false
+        icon: mdi:ceiling-light
+    switch.juletre:
+        assumed_state: false
+        icon: mdi:pine-tree
+    switch.lys_pc_robert:
+        assumed_state: false
+        icon: mdi:lamp
+    switch.carport_lyskaster:
+        assumed_state: false
+        icon: mdi:flashlight
+    switch.soverom_veronica:
+        assumed_state: false
+        icon: mdi:power
+    switch.ailo_seng_switch:
+        friendly_name: Ailo soverom
+        assumed_state: false
+        icon: mdi:lightbulb
+    switch.vaskerom_bod_lys_switch:
+        friendly_name: Vaskerom lys
+        assumed_state: false
+        icon: mdi:ceiling-light
+    switch.vaskerom_bod_lys_switch_2:
+        friendly_name: Bod lys
+        assumed_state: false
+        icon: mdi:ceiling-light
+        
+# Motion
+    switch.bevegelse_gang:
+        assumed_state: false
+        icon: mdi:run
+    switch.bevegelse_stue:
+        assumed_state: false
+        icon: mdi:run
+    switch.bevegelse_vaskerom:
+        assumed_state: false
+        icon: mdi:run
+    switch.magnet_ytterdr:
+        assumed_state: false
+        icon: mdi:login
+    switch.magnet_dr_vaskerom:
+        assumed_state: false
+        icon: mdi:login
+
+# Template sensors
+    sensor.motion_livingroom:
+        icon: mdi:run
+    sensor.motion_entry:
+        icon: mdi:run
+    sensor.motion_vaskerom:
+        icon: mdi:run
+    sensor.magnet_ytterdr:
+        icon: mdi:login
+    sensor.magnet_dr_vaskerom:
+        icon: mdi:login
+
+# Sensors
+    sensor.ailo_seng_power:
+        friendly_name: Ailo Seng - Strømforbruk
+        icon: mdi:flash
+    sensor.aeotec_dim_sofa_power:
+        friendly_name: Lys Sofa - Strømforbruk
+        icon: mdi:flash
+    sensor.aeotec_dim_spisebord_power:
+        friendly_name: Lys Spisebord - Strømforbruk
+        icon: mdi:flash
+    sensor.vaskemaskin_power:
+        friendly_name: Vaskemaskin - Strømforbruk
+        icon: mdi:flash
+    sensor.vaskerom_bod_lys_power:
+        friendly_name: Lys Vaskerom - Strømforbruk
+        icon: mdi:flash
+    sensor.vaskerom_bod_lys_power_2:
+        friendly_name: Lys Vaskerom Bod - Strømforbruk
+        icon: mdi:flash
+    sensor.leaf_battery:
+        friendly_name: Batteri
+        icon: mdi:battery-charging-80
+    sensor.leaf_battery_charg_status:
+        friendly_name: Lader
+        icon: mdi:flash
+    sensor.leaf_status:
+        friendly_name: Sist oppdatert
+        icon: mdi:clock
+    sensor.leaf_battery_connected:
+        friendly_name: Lader tilkoblet
+        icon: mdi:power-plug
+        
+        
+# Netatmo
+    sensor.netatmo_stue_humidity:
+        friendly_name: Stue luftfuktighet
+        icon: mdi:water
+
+    sensor.netatmo_stue_temperature:
+        friendly_name: Stue temperatur
+        icon: mdi:thermometer
+        
+    sensor.netatmo_kroken_ute_temperature:
+        friendly_name: Ute temperatur
+        icon: mdi:thermometer
+        
+    sensor.netatmo_stue_co2:
+        friendly_name: CO2 Stue
+        icon: mdi:periodic-table-co2
+
+        
+# Battery sensors
+    sensor.batt_temp_bathroom:
+        icon: mdi:battery-charging-wireless-outline
+        
+    sensor.batt_temp_bedroom:
+        icon: mdi:battery-charging-wireless-outline
+        
+    sensor.batt_smoke_gl_bedroom:
+        icon: mdi:battery-charging-wireless-outline
+        
+    sensor.batt_smoke_livingroom:
+        icon: mdi:battery-charging-wireless-outline
+        
+    sensor.batt_motion_fibaro_hallway:
+        icon: mdi:battery-charging-wireless-outline
+        
+    sensor.batt_motion_livingroom:
+        icon: mdi:battery-charging-wireless-outline
+    
+    
+# Garagedoors
+    switch.x_dummy_garagedoor_1:
+        friendly_name: Garasjeport 1
+        assumed_state: false
+        icon: mdi:garage
+    switch.x_dummy_garagedoor_2:
+        friendly_name: Garasjeport 2
+        assumed_state: false
+        icon: mdi:garage
+        
+        
+# Climate
+    climate.bad_termostat_heating:
+        friendly_name: Bad termostat
+        icon: mdi:thermometer
+    climate.stue:
+        friendly_name: Stue varmepumpe
+        icon: mdi:fan
+    sensor.gang_temperature_2:
+        friendly_name: Gang
+        icon: mdi:thermometer
+    sensor.soverom__ailo_temperature:
+        friendly_name: Soverom Ailo
+        icon: mdi:thermometer
+        
+# Scripts
+    script.livingroom_full_lights:
+        friendly_name: Stue full belysning
+        icon: mdi:lightbulb-on
+        
+    script.livingroom_mood_lights:
+        friendly_name: Stue stemningslys
+        icon: mdi:theater
+
+    script.1513567109976:
+        friendly_name: Julelys på
+        icon: mdi:lightbulb-on
+        
+    script.1513567140805:
+        friendly_name: Julelys av
+        icon: mdi:lightbulb-on-outline
+        
+    script.script_garage_door_1:
+        friendly_name: Garasje Leaf
+        icon: mdi:garage
+        
+    script.script_garage_door_2:
+        friendly_name: Garasje Audi
+        icon: mdi:garage

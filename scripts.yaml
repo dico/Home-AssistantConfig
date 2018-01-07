@@ -1,0 +1,97 @@
+livingroom_mood_lights:
+  alias: Stue stemningslys
+  sequence:
+  - service: light.turn_on
+    data:
+      entity_id: light.aeotec_dim_spisebord_level
+      brightness: 120
+  - service: light.turn_on
+    data:
+      entity_id: light.aeotec_dim_sofa_level
+      brightness: 120
+  - service: light.turn_on
+    data:
+      entity_id: light.stue_lys_gulvlampe
+      brightness: 0
+      
+      
+livingroom_full_lights:
+  alias: Stue full belysning
+  sequence:
+  - service: light.turn_on
+    data:
+      entity_id: light.aeotec_dim_spisebord_level
+      brightness: 255
+  - service: light.turn_on
+    data:
+      entity_id: light.aeotec_dim_sofa_level
+      brightness: 255
+  - service: light.turn_on
+    data:
+      entity_id: light.stue_lys_gulvlampe
+      brightness: 255
+      
+      
+home_lights_off:
+  alias: Alle lys av
+  sequence:
+  - service: light.turn_off
+    data:
+      entity_id: light.aeotec_dim_spisebord_level
+  - service: light.turn_off
+    data:
+      entity_id: light.aeotec_dim_sofa_level
+  - service: light.turn_off
+    data:
+      entity_id: light.stue_lys_gulvlampe
+  - service: switch.turn_off
+    data:
+      entity_id: switch.kjkken_lys_vindu
+  - service: switch.turn_off
+    data:
+      entity_id: switch.julelys
+  - service: switch.turn_off
+    data:
+      entity_id: switch.juletre
+
+      
+'1513567109976':
+  alias: Julelys PÅ
+  sequence:
+  - data:
+      entity_id: switch.julelys
+    service: switch.turn_on
+  - data:
+      entity_id: switch.kjkken_lys_vindu
+    service: switch.turn_on
+  - data:
+      entity_id: switch.juletre
+    service: switch.turn_on
+    
+    
+'1513567140805':
+  alias: Julelys AV
+  sequence:
+  - data:
+      entity_id: switch.kjkken_lys_vindu
+    service: switch.turn_off
+  - data:
+      entity_id: switch.julelys
+    service: switch.turn_off
+  - data:
+      entity_id: switch.juletre
+    service: switch.turn_off
+    
+script_garage_door_1:
+  alias: Garasjeport 1
+  sequence:
+  - data:
+      entity_id: switch.x_dummy_garagedoor_1
+    service: switch.turn_on
+    
+script_garage_door_2:
+  alias: Garasjeport 2
+  sequence:
+  - data:
+      entity_id: switch.x_dummy_garagedoor_2
+    service: switch.turn_on

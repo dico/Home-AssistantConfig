@@ -1,0 +1,29 @@
+  home:
+    name: Hjemme
+    initial: off
+    icon: mdi:home
+    
+  go_to_sleep:
+    name: Natta
+    initial: off
+    icon: mdi:sleep
+    
+  vacation:
+    name: Ferie
+    initial: off
+    icon: mdi:airplane
+    
+  away:
+    name: Borte
+    initial: off
+    icon: mdi:logout
+    
+  washmachine_status:
+    name: Vaskemaskin status
+    initial: off
+    icon: mdi:washing-machine
+    
+  leaf_fetch_data:
+    name: Leaf oppdater
+    initial: off
+    icon: mdi:car

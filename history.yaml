@@ -1,0 +1,40 @@
+  exclude:
+    domains:
+      - automation
+      - weblink
+      - updater
+      - camera
+  include:
+    domains:
+      - lock
+    entities:
+     - sensor.gang_temperature
+     - sensor.garagedoor1_status
+     - sensor.mrkloft_temperature
+     - sensor.netatmo_kroken_ute_temperature
+     - sensor.netatmo_kroken_ute_humidity
+     - sensor.netatmo_stue_co2
+     - sensor.netatmo_stue_humidity
+     - sensor.netatmo_stue_noise
+     - sensor.netatmo_stue_pressure
+     - sensor.netatmo_stue_temperature
+     - sensor.soverom_ailo_temperature
+     - sensor.soverom_humidity
+     - sensor.soverom_temperature
+     - lock.ytterdr
+     - switch.magnet_dr_vaskerom
+     - switch.lys_pc_robert
+     - switch.soverom_veronica
+     - light.stue_lys_gulvlampe
+     - light.aeotec_dim_sofa_level
+     - light.aeotec_dim_spisebord_level
+     - sensor.motion_entry
+     - sensor.motion_livingroom
+     - sensor.strmmaler_watt_2
+     - sensor.strm_garasje_watt_2
+     - sensor.aeotec_dim_spisebord_power
+     - sensor.aeotec_dim_sofa_power
+     - sensor.ailo_seng_power
+     - sensor.vaskemaskin_power
+     - sensor.vaskerom_bod_lys_power
+     - sensor.vaskerom_bod_lys_power_2

@@ -1,0 +1,154 @@
+  - platform: yr
+
+  - platform: netatmo
+    station: Kroken
+    modules:
+      Stue:
+        - temperature
+        - co2
+        - pressure
+        - noise
+        - humidity
+        - min_temp
+        - max_temp
+      Kroken Ute:
+        - temperature
+        - humidity
+        - battery_vp
+  
+  - platform: steam_online
+    api_key: !secret STEAM_API_KEY
+    accounts:
+      - 76561198125421167
+      - 76561198142897485
+      
+#  - platform: template
+#    sensors:
+#      motion_livingroom:
+#        value_template: '{% if is_state("switch.bevegelse_stue", "off") %}Ingen{% else %}Bevegelse{% endif %}'
+#        friendly_name: 'Bevegelse stue'
+
+  - platform: template
+    sensors:
+      motion_livingroom:
+#        value_template: '{{ states(sensor.motion_livingroom_alarm_level) > 0 }}'
+        value_template: '{% if is_state("sensor.motion_livingroom_alarm_level", "0") %}Ingen{% else %}Bevegelse{% endif %}'
+        friendly_name: 'Bevegelse stue'
+
+  - platform: template
+    sensors:
+      motion_entry:
+        value_template: '{% if is_state("switch.bevegelse_gang", "off") %}Ingen{% else %}Bevegelse{% endif %}'
+        friendly_name: 'Bevegelse gang'
+
+  - platform: template
+    sensors:
+      motion_vaskerom:
+        value_template: '{% if is_state("switch.bevegelse_vaskerom", "off") %}Ingen{% else %}Bevegelse{% endif %}'
+        friendly_name: 'Bevegelse vaskerom'
+        
+#  - platform: template
+#    sensors:
+#      magnet_ytterdr:
+#        value_template: '{% if is_state("switch.magnet_ytterdr", "off") %}Lukket{% else %}Åpen{% endif %}'
+#        friendly_name: 'Ytterdør'
+        
+  - platform: template
+    sensors:
+      magnet_dr_vaskerom:
+        value_template: '{% if is_state("switch.magnet_dr_vaskerom", "off") %}Lukket{% else %}Åpen{% endif %}'
+        friendly_name: 'Dør vaskerom'
+        
+  - platform: template
+    sensors:
+      washmachine_status:
+        value_template: '{% if is_state("input_boolean.washmachine_status", "Av") %}Lukket{% else %}Vasker{% endif %}'
+        friendly_name: 'Vaskemaskin status'
+        
+  - platform: template
+    sensors:
+      washer_pwrdn:
+        value_template: "{{ states('sensor.vaskemaskin_power') | int < 3.4 }}"
+        
+  - platform: mqtt
+    state_topic: "leaf/status/battery_percent"
+    name: "Leaf Battery"
+    unit_of_measurement: "%"
+    value_template: "{{ value_json | round(2) }}"
+    
+  - platform: mqtt
+    state_topic: "leaf/status/last_updated"
+    name: "Leaf Status"
+    
+  - platform: mqtt
+    state_topic: "leaf/status/charging_status"
+    name: "Leaf Battery Charg Status"
+    
+  - platform: mqtt
+    state_topic: "leaf/status/connected"
+    name: "Leaf Battery Connected"
+    
+  - platform: template
+    sensors:
+      stue_humidity:
+        value_template: '{{ states.climate.stue.attributes.current_humidity }}'
+        friendly_name: Stue luftfuktighet
+        unit_of_measurement: '%'
+
+
+# Garage
+  - platform: template
+    sensors:
+      garagedoor1_status:
+        value_template: '{% if is_state("switch.garasjeport_1_status", "off") %}Lukket{% else %}Åpen{% endif %}'
+        friendly_name: 'Garasjeport 1'
+        icon_template: >-
+          {% if states('switch.garasjeport_1_status') == 'on' %}
+            mdi:garage-open
+          {% else %}
+            mdi:garage
+          {% endif %}
+        
+        
+# Battery
+  - platform: template
+    sensors:
+      batt_temp_bathroom:
+        friendly_name: 'Temperatursensor bad'
+        value_template: '{{ states.sensor.bad_humidity.attributes.battery_level }}'
+        unit_of_measurement: '%'
+        
+  - platform: template
+    sensors:
+      batt_temp_bedroom:
+        friendly_name: 'Temperatursensor soverom'
+        value_template: '{{ states.sensor.soverom_temperature.attributes.battery_level }}'
+        unit_of_measurement: '%'
+        
+  - platform: template
+    sensors:
+      batt_smoke_gl_bedroom:
+        friendly_name: 'Røykvarsler GL soverom'
+        value_template: '{{ states.sensor.zwave.fibaro_smoke_gl_sov.attributes.battery_level }}'
+        unit_of_measurement: '%'
+        
+  - platform: template
+    sensors:
+      batt_smoke_livingroom:
+        friendly_name: 'Røykvarsler stue'
+        value_template: '{{ states.sensor.zwave.fibaro_smoke_livingroom.attributes.battery_level }}'
+        unit_of_measurement: '%'
+        
+  - platform: template
+    sensors:
+      batt_motion_fibaro_hallway:
+        friendly_name: 'Bevegelsessensor gang'
+        value_template: '{{ states.zwave.fibaro_motion_1.attributes.battery_level }}'
+        unit_of_measurement: '%'
+        
+  - platform: template
+    sensors:
+      batt_motion_livingroom:
+        friendly_name: 'Bevegelsessensor stue'
+        value_template: '{{ states.zwave.motion_stue.attributes.battery_level }}'
+        unit_of_measurement: '%'

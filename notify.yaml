@@ -1,0 +1,44 @@
+#-------------------------------------------
+#  Default Notifier (all things use this)
+#-------------------------------------------
+- name: primary_contact
+  platform: group
+  services:
+    - service: ios
+
+#-------------------------------------------
+#  Emergency Notices via SMS
+#-------------------------------------------
+- name: emergency_contact
+  platform: group
+  services:
+    - service: sms
+      data:
+        target:
+          - !secret VERONICA_MOBIL_NUM
+          - !secret ROBERT_MOBIL_NUM
+
+#-------------------------------------------
+#  Clickatell SMS Notices
+#-------------------------------------------
+- platform: clickatell
+  name: sms_robert
+  api_key: dHnNXtUASwu5flUCwfOHXg==
+  recipient: 99327636
+
+#-------------------------------------------
+#  iOS Push (just Robert)
+#-------------------------------------------
+- name: ios
+  platform: group
+  services:
+    - service: ios_robertiphone7
+
+#-------------------------------------------
+#  iOS Push (both)
+#-------------------------------------------
+- name: ios_both
+  platform: group
+  services:
+    - service: ios_robertiphone7
+    - service: ios_veronicaiphone6s

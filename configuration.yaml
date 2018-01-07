@@ -1,0 +1,120 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Kroken
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret HOME_LAT
+  longitude: !secret HOME_LON
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 10
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Oslo
+  
+  customize: !include customize.yaml
+
+
+frontend:
+  themes: !include themes.yaml
+      
+config:
+
+http:
+  api_password: !secret HTTP_PASSWORD
+  base_url: !secret HTTP_BASE_URL
+  server_port: !secret HTTP_SERVER_PORT
+  ip_ban_enabled: True
+  login_attempts_threshold: 5
+
+updater:
+discovery:
+conversation:
+sun:
+ios:
+ffmpeg:
+    ffmpeg_bin: /usr/bin/ffmpeg
+
+logger:
+  default: warn
+#  logs:
+#    homeassistant.components.camera: debug
+#    custom_components.camera.onvif: debug
+
+# Enables support for tracking state changes over time.
+recorder: !include recorder.yaml
+logbook: !include logbook.yaml      
+history: !include history.yaml
+
+     
+     
+zwave:
+  usb_path: /dev/ttyACM0
+  new_entity_ids: true
+
+climate:
+  - platform: zwave
+  - platform: sensibo
+    api_key: !secret SENSIBO_API_KEY
+
+automation: !include_dir_merge_list automations
+automation old: !include automation.yaml
+sensor: !include sensor.yaml
+group: !include groups.yaml
+media_player: !include media_player.yaml
+input_boolean: !include input_boolean.yaml
+script: !include scripts.yaml
+camera: !include camera.yaml
+notify: !include notify.yaml
+alert: !include alerts.yaml
+#cover: !include cover.yaml
+
+
+panel_custom:
+  - name: floorplan
+    sidebar_title: Planløsning
+    sidebar_icon: mdi:home
+    url_path: floorplan
+    config: !include floorplan.yaml
+
+#tellduslive:
+#  public_key: !secret TELLDUS_PUBLIC_KEY
+#  private_key: !secret TELLDUS_PRIVATE_KEY
+#  token: !secret TELLDUS_TOKEN
+#  token_secret: !secret TELLDUS_TOKEN_SECRET
+
+verisure:
+  username: !secret VERISURE_USERNAME
+  password: !secret VERISURE_PASSWORD
+  alarm: 0
+  hygrometers: 0
+  smartplugs: 0
+  thermometers: 0
+  locks: 1
+  mouse: 1
+  code_digits: !secret VERISURE_CODE_DIGITS
+
+netatmo:
+  api_key: !secret NETATMO_API_KEY
+  secret_key: !secret NETATMO_SECRET_KEY
+  username: !secret NETATMO_USERNAME
+  password: !secret NETATMO_PASSWORD
+
+device_tracker:
+  - platform: unifi
+    host: !secret UNIFI_HOST
+    username: !secret UNIFI_USERNAME
+    password: !secret UNIFI_PASSWORD
+    verify_ssl: false
+    consider_home: 180
+  - platform: owntracks
+
+mqtt:
+    broker: m21.cloudmqtt.com
+    port: !secret CLOUD_MQTT_PORT
+    username: !secret CLOUD_MQTT_USERNAME
+    password: !secret CLOUD_MQTT_PASSWORD
+    
+    
+# Text to speech
+tts:
+  platform: google

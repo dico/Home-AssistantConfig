@@ -1,0 +1,20 @@
+- action:
+  - data:
+      entity_id: script.1513567109976
+    service: script.turn_on
+  alias: Julelys PÅ
+  condition: []
+  id: '1513559893429'
+  trigger:
+  - event: sunset
+    platform: sun
+- action:
+  - data:
+      entity_id: script.1513567140805
+    service: script.turn_on
+  alias: Julelys AV
+  condition: []
+  id: '1513560146430'
+  trigger:
+  - at: '23:00'
+    platform: time
