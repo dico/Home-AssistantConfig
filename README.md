@@ -2,6 +2,8 @@
 
 Some of the things I test is posted on my [blog](https://robert.stadsbygd.net/category/internetofthings/).
 
+![alt text](https://github.com/dico/Home-AssistantConfig/blob/master/screenshots/ha_home.jpg)
+
 ## Components and controllers (GW)
 - [Aeotec Z-stick Gen 5](https://home-assistant.io/components/zwave/)
 - [Telldus](https://home-assistant.io/components/tellduslive/)
@@ -47,6 +49,11 @@ Some of the things I test is posted on my [blog](https://robert.stadsbygd.net/ca
 ### Floorplan
 
 [Link](https://github.com/pkozul/ha-floorplan)
+
+![alt text](https://github.com/dico/Home-AssistantConfig/blob/master/screenshots/ha_floorplan.jpg)
+Floorplan inspiration taken from [oakbrad](https://github.com/oakbrad/brad-homeassistant-config)
+
+
 
 
 
