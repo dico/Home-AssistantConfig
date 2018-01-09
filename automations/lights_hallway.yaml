@@ -1,0 +1,53 @@
+# Motion Lights Hallway
+# Turn on lamp when motion in hallway
+- alias: 'Bevegelse Lys Gang På'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.fibaro_motion_1_sensor
+    to: 'on'
+  action:
+  - service: switch.turn_on
+    entity_id: switch.gang_lyst_kommode_switch
+        
+    
+# Turn off lamp when motion stops in hallway
+- alias: 'Bevegelse Lys Gang Av'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.fibaro_motion_1_sensor
+    to: 'off'
+    for:
+      minutes: 3
+  action:
+  - service: switch.turn_off
+    entity_id: switch.gang_lyst_kommode_switch
+
+    
+- alias: 'Bevegelse Takys Gang På'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.fibaro_motion_1_sensor
+    to: 'on'
+  condition:
+    condition: state
+    entity_id: input_boolean.hallway_lights_roof_automated
+    state: 'on'
+  action:
+  - service: light.turn_on
+    entity_id: light.gang
+    data:
+        brightness: 22
+        color_temp: 457
+        
+- alias: 'Bevegelse Takys Gang Av'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.fibaro_motion_1_sensor
+    to: 'off'
+  condition:
+    condition: state
+    entity_id: input_boolean.hallway_lights_roof_automated
+    state: 'on'
+  action:
+  - service: light.turn_off
+    entity_id: light.gang

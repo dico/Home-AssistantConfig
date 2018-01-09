@@ -43,7 +43,7 @@ home_lights_off:
       entity_id: light.aeotec_dim_sofa_level
   - service: light.turn_off
     data:
-      entity_id: light.stue_lys_gulvlampe
+      entity_id: group.stue_gulvlampe
   - service: switch.turn_off
     data:
       entity_id: switch.kjkken_lys_vindu
@@ -53,6 +53,10 @@ home_lights_off:
   - service: switch.turn_off
     data:
       entity_id: switch.juletre
+  - service: light.turn_off
+    data:
+      entity_id: group.gang_lights
+      
 
       
 '1513567109976':

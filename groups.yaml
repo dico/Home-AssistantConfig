@@ -16,7 +16,7 @@ lights:
   entities:
   - light.aeotec_dim_sofa_level
   - light.aeotec_dim_spisebord_level
-  - light.stue_lys_gulvlampe
+  - group.stue_gulvlampe
   - switch.gang_lyst_kommode_switch
   - switch.jul_stuevindu
   - switch.juletre
@@ -26,6 +26,7 @@ lights:
   - switch.vaskerom_bod_lys_switch
   - switch.vaskerom_bod_lys_switch_2
   - group.gang_lights
+  - light.utelys
   view: false
   
 climate:
@@ -68,10 +69,8 @@ other:
   - group.device_statuses
   - group.sensor_battery
   - group.leaf
+  - group.automation_switches
   view: true
-  
-  
-
   
 livingroom:
   name: Stue
@@ -337,7 +336,7 @@ leaf:
   view: false
   
 automation_stuff:
-  name: Automasjon
+  name: Hus
   entities:
   - input_boolean.home
   - input_boolean.go_to_sleep
@@ -363,3 +362,17 @@ gang_lights:
   - light.gang_bulp_2
   - light.gang_bulp_3
   - light.gang_bulp_4
+  view: false
+  
+stue_gulvlampe:
+  name: Stue gulvlampe
+  entities:
+  - light.tradfri_bulb_e27_ws_opal_980lm
+  - light.tradfri_bulb_e27_ws_opal_980lm_2
+  view: false
+  
+automation_switches:
+  name: Automasjon
+  entities:
+  - input_boolean.hallway_lights_roof_automated
+  view: false
