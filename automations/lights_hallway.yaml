@@ -36,7 +36,7 @@
   - service: light.turn_on
     entity_id: light.gang
     data:
-        brightness: 22
+        brightness: 60
         color_temp: 457
         
 - alias: 'Bevegelse Takys Gang Av'

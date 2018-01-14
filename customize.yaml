@@ -98,7 +98,8 @@
     sensor.magnet_dr_vaskerom:
         icon: mdi:login
 
-# Sensors
+
+# Sensors: Power and battery
     sensor.ailo_seng_power:
         friendly_name: Ailo Seng - Strømforbruk
         icon: mdi:flash
@@ -129,6 +130,21 @@
     sensor.leaf_battery_connected:
         friendly_name: Lader tilkoblet
         icon: mdi:power-plug
+        
+        
+# Sensors: Temperature
+    sensor.garage_temperature:
+        friendly_name: Garasje
+    sensor.netatmo_kroken_ute_temperature:
+        friendly_name: Ute
+    sensor.netatmo_stue_temperature:
+        friendly_name: Stue
+    sensor.bad_temperature:
+        friendly_name: Bad
+    sensor.soverom_temperature:
+        friendly_name: Soverom
+    sensor.gang_temperature:
+        friendly_name: Gang
         
         
 # Netatmo

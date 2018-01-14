@@ -19,7 +19,6 @@ lights:
   - group.stue_gulvlampe
   - switch.gang_lyst_kommode_switch
   - switch.jul_stuevindu
-  - switch.juletre
   - switch.kjkken_lys_vindu
   - switch.lys_pc_robert
   - switch.ailo_seng_switch
@@ -252,6 +251,7 @@ home_climate_temperature:
   - sensor.soverom__ailo_temperature
   - sensor.kjeller_bod_temperature
   - sensor.mrkloft_temperature
+  - sensor.garage_temperature
   view: false
   
 home_climate_humidity:
@@ -270,10 +270,11 @@ home_main_climate_sensors:
   - sensor.netatmo_kroken_ute_temperature
   - sensor.netatmo_stue_temperature
   - sensor.netatmo_stue_co2
-  - sensor.gang_temperature_2
+  - sensor.gang_temperature
   - sensor.bad_temperature
   - sensor.soverom_temperature
   - sensor.soverom__ailo_temperature
+  - sensor.garage_temperature
   view: false
   
   
@@ -323,6 +324,8 @@ steam:
   entities:
   - sensor.steam_76561198125421167
   - sensor.steam_76561198142897485
+  - sensor.steam_76561198453950322
+  - sensor.steam_76561198105070411
   view: false
   
 leaf:
