@@ -19,12 +19,17 @@
           - !secret ROBERT_MOBIL_NUM
 
 #-------------------------------------------
-#  Clickatell SMS Notices
+#  Clickatell SMS Notices Robert
 #-------------------------------------------
 - platform: clickatell
   name: sms_robert
-  api_key: dHnNXtUASwu5flUCwfOHXg==
-  recipient: 99327636
+  api_key: !secret CLICKATELL_API_KEY
+  recipient: !secret ROBERT_MOBIL_NUM
+  
+- platform: clickatell
+  name: sms_veronica
+  api_key: !secret CLICKATELL_API_KEY
+  recipient: !secret VERONICA_MOBIL_NUM
 
 #-------------------------------------------
 #  iOS Push (just Robert)

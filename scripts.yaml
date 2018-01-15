@@ -99,3 +99,11 @@ script_garage_door_2:
   - data:
       entity_id: switch.x_dummy_garagedoor_2
     service: switch.turn_on
+    
+    
+script_test_sms:
+  alias: Test SMS
+  sequence:
+  - service: notify.sms_robert
+    data:
+        message: "SMS test"

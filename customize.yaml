@@ -135,10 +135,6 @@
 # Sensors: Temperature
     sensor.garage_temperature:
         friendly_name: Garasje
-    sensor.netatmo_kroken_ute_temperature:
-        friendly_name: Ute
-    sensor.netatmo_stue_temperature:
-        friendly_name: Stue
     sensor.bad_temperature:
         friendly_name: Bad
     sensor.soverom_temperature:
@@ -149,15 +145,15 @@
         
 # Netatmo
     sensor.netatmo_stue_humidity:
-        friendly_name: Stue luftfuktighet
+        friendly_name: Stue
         icon: mdi:water
 
     sensor.netatmo_stue_temperature:
-        friendly_name: Stue temperatur
+        friendly_name: Stue
         icon: mdi:thermometer
         
     sensor.netatmo_kroken_ute_temperature:
-        friendly_name: Ute temperatur
+        friendly_name: Ute
         icon: mdi:thermometer
         
     sensor.netatmo_stue_co2:
@@ -234,3 +230,17 @@
     script.script_garage_door_2:
         friendly_name: Garasje Audi
         icon: mdi:garage
+        
+# Group order
+    group.lights:
+        order: 1
+    group.garage:
+        order: 2
+    group.automation_scripts:
+        order: 3
+    group.home_climate_control:
+        order: 4
+    group.automation_stuff:
+        order: 5
+    group.main_cameras:
+        order: 6

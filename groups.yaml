@@ -8,8 +8,7 @@ default_view:
   - group.automation_stuff
   - group.automation_scripts
   - group.garage
-  - camera.gardsplass
-  - camera.garasje
+  - group.main_cameras
   
 lights:
   name: Lys
@@ -48,6 +47,13 @@ security:
   - group.door_windows
   - group.motion
   view: true
+  
+main_cameras:
+  name: Kamera
+  entities:
+  - camera.garasje
+  - camera.gardsplass
+  view: false
   
 media:
   name: Media
@@ -275,6 +281,7 @@ home_main_climate_sensors:
   - sensor.soverom_temperature
   - sensor.soverom__ailo_temperature
   - sensor.garage_temperature
+  - sensor.netatmo_stue_co2
   view: false
   
   
@@ -322,6 +329,7 @@ sensor_battery:
 steam:
   name: Steam
   entities:
+  - sensor.steam_76561197961355518
   - sensor.steam_76561198125421167
   - sensor.steam_76561198142897485
   - sensor.steam_76561198453950322
@@ -355,6 +363,7 @@ automation_scripts:
   - script.livingroom_full_lights
   - script.1513567109976
   - script.1513567140805
+  - script.script_test_sms
   control : hidden
   view: false
   

@@ -1,0 +1,29 @@
+# Steam online notification
+- alias: 'Steam Hilde Online'
+  trigger:
+  - platform: state
+    entity_id: sensor.steam_76561198105070411
+    from: 'Away'
+    to: 'Online'
+  action:
+  - service: notify.notify
+    data:
+        message: "Hilde er online på steam"
+        title: "Steam"
+        
+- alias: 'Steam Robert Online'
+  trigger:
+  - platform: state
+    entity_id: sensor.steam_76561197961355518
+    to: 'Online'
+  action:
+  - service: notify.notify
+    data:
+        message: "Robert er online på steam"
+        title: "Steam"
+  - service: notify.sms_robert
+    data:
+        message: "Robert er online på steam"
+  - service: notify.sms_veronica
+    data:
+        message: "Robert er online på steam"

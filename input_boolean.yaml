@@ -32,3 +32,8 @@
     name: Automatisk taklys gang
     initial: off
     icon: mdi:settings
+    
+  automation_test_switch:
+    name: Automasjonstest
+    initial: off
+    icon: mdi:settings
