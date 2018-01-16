@@ -17,7 +17,7 @@
     sensors:
       batt_smoke_gl_bedroom:
         friendly_name: 'Røykvarsler GL soverom'
-        value_template: '{{ states.zwave.fibaro_smoke_gl_sov.attributes.battery_level }}'
+        value_template: '{{ states.zwave.smokealarm_gl_bedroom.attributes.battery_level }}'
         unit_of_measurement: '%'
         
   - platform: template
@@ -25,6 +25,13 @@
       batt_smoke_livingroom:
         friendly_name: 'Røykvarsler stue'
         value_template: '{{ states.zwave.fibaro_smoke_livingroom.attributes.battery_level }}'
+        unit_of_measurement: '%'
+
+  - platform: template
+    sensors:
+      batt_smoke_hallway:
+        friendly_name: 'Røykvarsler gang'
+        value_template: '{{ states.zwave.fibaro_smoke_hallway.attributes.battery_level }}'
         unit_of_measurement: '%'
         
   - platform: template

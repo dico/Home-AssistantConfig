@@ -34,6 +34,7 @@ sensor_battery:
   - sensor.batt_temp_bedroom
   - sensor.batt_smoke_gl_bedroom
   - sensor.batt_smoke_livingroom
+  - sensor.batt_smoke_hallway
   - sensor.batt_motion_fibaro_hallway
   - sensor.batt_motion_livingroom
   view: false

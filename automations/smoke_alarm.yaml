@@ -2,7 +2,7 @@
 - alias: 'SmokeAlert GL SOV'
   trigger:
   - platform: state
-    entity_id: sensor.fibaro_smoke_gl_sov_alarm_level
+    entity_id: sensor.fibaro_smoke_gl_bedroom_alarm_level
     to: '255'
   action:
   - service: notify.notify
@@ -28,3 +28,17 @@
   - service: notify.emergency_contact
     data:
         message: "Brann detektert i Stue"
+        
+        
+        
+# Smoke alert
+- alias: 'Smokealarm Tamper Hallway'
+  trigger:
+  - platform: state
+    entity_id: sensor.fibaro_smoke_hallway_burglar
+    to: '3'
+  action:
+  - service: notify.ios_robertiphone7
+    data:
+        message: "Røykvarsler i gang tatt ned"
+        title: "Røykvarsler"

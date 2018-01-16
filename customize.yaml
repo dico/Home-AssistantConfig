@@ -103,6 +103,8 @@
         icon: mdi:fire
     sensor.smokealarm_livingroom:
         icon: mdi:fire
+    sensor.smokealarm_hallway:
+        icon: mdi:fire
 
 
 # Sensors: Power and battery
@@ -180,12 +182,15 @@
     sensor.batt_smoke_livingroom:
         icon: mdi:battery-charging-wireless-outline
         
+    sensor.batt_smoke_hallway:
+        icon: mdi:battery-charging-wireless-outline
+        
     sensor.batt_motion_fibaro_hallway:
         icon: mdi:battery-charging-wireless-outline
         
     sensor.batt_motion_livingroom:
         icon: mdi:battery-charging-wireless-outline
-    
+        
     
 # Garagedoors
     switch.x_dummy_garagedoor_1:

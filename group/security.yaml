@@ -3,6 +3,7 @@ security_smoke_alarm_status:
   entities:
   - sensor.smokealarm_gl_bedroom
   - sensor.smokealarm_livingroom
+  - sensor.smokealarm_hallway
   view: false
   
 awsome_people:
