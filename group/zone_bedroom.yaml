@@ -1,0 +1,8 @@
+bedroom:
+  name: Soverom
+  entities:
+  - sensor.soverom_temperature
+  - sensor.soverom__ailo_temperature
+  - switch.soverom_veronica
+  - switch.ailo_seng_switch
+  view: false

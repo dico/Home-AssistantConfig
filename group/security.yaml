@@ -1,0 +1,25 @@
+security_smoke_alarm_status:
+  name: Røykvarslere
+  entities:
+  - sensor.smokealarm_gl_bedroom
+  - sensor.smokealarm_livingroom
+  view: false
+  
+awsome_people:
+  name: Personer
+  entities:
+  - device_tracker.robert
+  - device_tracker.robertiphone7
+  - device_tracker.veronica
+  view: false
+  
+motion:
+  name: Bevegelse
+  entities:
+  - sensor.magnet_dr_vaskerom
+  - sensor.magnet_ytterdr
+  - sensor.motion_entry
+  - sensor.motion_livingroom
+#  - sensor.motion_vaskerom
+  control : hidden
+  view: false

@@ -1,0 +1,43 @@
+  - platform: steam_online
+    api_key: !secret STEAM_API_KEY
+    accounts:
+      - 76561198125421167
+      - 76561198142897485
+      - 76561198453950322
+      - 76561198105070411
+      - 76561197961355518
+      - 76561197967336072
+          
+  - platform: template
+    sensors:
+      steam_robert:
+        friendly_name: "Robert Andresen"
+        value_template: >-
+          {% if ('states.sensor.steam_76561197961355518.attributes.game', "Counter Strike Global Offensive") %}
+            CS:GO
+          {% elif ('states.sensor.steam_76561197961355518.attributes.game', "PLAYERUNKNOWN'S BATTLEGROUNDS") %}
+            PUBG
+          {% elif is_state('sensor.steam_76561197961355518', 'online') %}
+            Online
+          {% elif is_state('sensor.steam_76561197961355518', 'offline') %}
+            Offline
+          {% else %}
+            Ukjent
+          {% endif %}
+          
+  - platform: template
+    sensors:
+      steam_veronica:
+        friendly_name: "Veronica Karlsen"
+        value_template: >-
+          {% if ('states.sensor.steam_76561198125421167.attributes.game', "Counter Strike Global Offensive") %}
+            CS:GO
+          {% elif ('states.sensor.steam_76561198125421167.attributes.game', "PLAYERUNKNOWN'S BATTLEGROUNDS") %}
+            PUBG
+          {% elif is_state('sensor.steam_76561198125421167', 'online') %}
+            Online
+          {% elif is_state('sensor.steam_76561198125421167', 'offline') %}
+            Offline
+          {% else %}
+            Ukjent
+          {% endif %}

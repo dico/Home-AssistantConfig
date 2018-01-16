@@ -97,6 +97,12 @@
         icon: mdi:login
     sensor.magnet_dr_vaskerom:
         icon: mdi:login
+        
+# Template sensors: Smokealarm
+    sensor.smokealarm_gl_bedroom:
+        icon: mdi:fire
+    sensor.smokealarm_livingroom:
+        icon: mdi:fire
 
 
 # Sensors: Power and battery
@@ -214,6 +220,14 @@
     script.livingroom_mood_lights:
         friendly_name: Stue stemningslys
         icon: mdi:theater
+
+    script.home_lights_off:
+        friendly_name: Hus - Slukk alle lys
+        icon: mdi:lightbulb-outline
+        
+    script.home_full_lights:
+        friendly_name: Hus - Full belysning
+        icon: mdi:lightbulb-on
 
     script.1513567109976:
         friendly_name: Julelys på

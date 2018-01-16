@@ -1,0 +1,42 @@
+# Battery
+  - platform: template
+    sensors:
+      batt_temp_bathroom:
+        friendly_name: 'Temperatursensor bad'
+        value_template: '{{ states.sensor.bad_humidity.attributes.battery_level }}'
+        unit_of_measurement: '%'
+        
+  - platform: template
+    sensors:
+      batt_temp_bedroom:
+        friendly_name: 'Temperatursensor soverom'
+        value_template: '{{ states.sensor.soverom_temperature.attributes.battery_level }}'
+        unit_of_measurement: '%'
+        
+  - platform: template
+    sensors:
+      batt_smoke_gl_bedroom:
+        friendly_name: 'Røykvarsler GL soverom'
+        value_template: '{{ states.zwave.fibaro_smoke_gl_sov.attributes.battery_level }}'
+        unit_of_measurement: '%'
+        
+  - platform: template
+    sensors:
+      batt_smoke_livingroom:
+        friendly_name: 'Røykvarsler stue'
+        value_template: '{{ states.zwave.fibaro_smoke_livingroom.attributes.battery_level }}'
+        unit_of_measurement: '%'
+        
+  - platform: template
+    sensors:
+      batt_motion_fibaro_hallway:
+        friendly_name: 'Bevegelsessensor gang'
+        value_template: '{{ states.zwave.fibaro_motion_1.attributes.battery_level }}'
+        unit_of_measurement: '%'
+        
+  - platform: template
+    sensors:
+      batt_motion_livingroom:
+        friendly_name: 'Bevegelsessensor stue'
+        value_template: '{{ states.zwave.motion_livingroom.attributes.battery_level }}'
+        unit_of_measurement: '%'

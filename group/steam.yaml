@@ -1,0 +1,10 @@
+steam:
+  name: Steam
+  entities:
+  - sensor.steam_76561197961355518
+  - sensor.steam_76561198125421167
+  - sensor.steam_76561198142897485
+  - sensor.steam_76561198453950322
+  - sensor.steam_76561198105070411
+  - sensor.steam_76561197967336072
+  view: false

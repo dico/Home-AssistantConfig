@@ -1,0 +1,10 @@
+other_rooms:
+  name: Andre rom
+  entities:
+  - group.bathroom_sensors
+  - group.bedroom
+  - group.entry
+  - group.basement
+  - group.device_statuses
+  - climate.bad_termostat_heating
+  view: false

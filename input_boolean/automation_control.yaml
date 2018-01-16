@@ -1,0 +1,4 @@
+  hallway_lights_roof_automated:
+    name: Automatisk taklys gang
+    initial: off
+    icon: mdi:settings

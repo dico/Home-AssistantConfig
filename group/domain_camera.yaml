@@ -1,0 +1,16 @@
+main_cameras:
+  name: Kamera
+  entities:
+  - camera.garasje
+  - camera.gardsplass
+  view: false
+  
+camera:
+  name: Kamera
+  entities:
+  - camera.garasje
+  - camera.haakaastu
+  - camera.trondheimsfjorden
+  - camera.wifi_cam_1
+  - camera.wifi_cam_2
+  view: false

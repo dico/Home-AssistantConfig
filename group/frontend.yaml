@@ -1,0 +1,55 @@
+default_view:
+  name: Hjem
+  view: true
+  entities:
+  - group.lights
+  - group.home_main_climate_sensors
+  - group.home_climate_control
+  - group.automation_stuff
+  - group.automation_scripts
+  - group.garage
+  - group.main_cameras
+  
+climate:
+  name: Klima
+  entities:
+  - group.home_climate_control
+  - group.home_climate_temperature
+  - group.home_climate_humidity
+  - group.yr_no
+  view: true
+  
+security:
+  name: Sikkerhet
+  entities:
+  - camera.garasje
+  - camera.haakaastu
+  - camera.trondheimsfjorden
+  - camera.gardsplass
+  - camera.wifi_cam_2
+  - group.door_windows
+  - group.motion
+  - group.security_smoke_alarm_status
+  view: true
+  
+media:
+  name: Media
+  entities:
+  - media_player.apple_tv
+  - media_player.tv_stue
+  - media_player.alpha
+  view: true
+  
+other:
+  name: Annet
+  entities:
+  - group.steam
+  - group.awsome_people
+  - group.device_sensors
+  - group.outside_switches
+  - group.power_reader
+  - group.device_statuses
+  - group.sensor_battery
+  - group.leaf
+  - group.automation_switches
+  view: true

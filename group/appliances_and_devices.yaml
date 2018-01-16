@@ -1,0 +1,49 @@
+device_statuses:
+  name: Status enheter
+  entities:
+  - input_boolean.washmachine_status
+  view: false
+  
+power_reader:
+  name: "Str\xF8m"
+  entities:
+  - sensor.strmmaler_watt_2
+  - sensor.strm_garasje_watt_2
+  - sensor.aeotec_dim_spisebord_power
+  - sensor.aeotec_dim_sofa_power
+  - sensor.ailo_seng_power
+  - sensor.vaskemaskin_power
+  - sensor.vaskerom_bod_lys_power
+  - sensor.vaskerom_bod_lys_power_2
+  view: false
+  
+device_sensors:
+  name: Mobil og nettbrett
+  entities:
+  - sensor.veronica_sin_iphone_battery_level
+  - sensor.veronica_sin_iphone_battery_state
+  - sensor.dico2_battery_level
+  - sensor.dico2_battery_state
+  view: false
+  
+sensor_battery:
+  name: Batteri
+  entities:
+  - sensor.netatmo_kroken_ute_battery
+  - sensor.batt_temp_bathroom
+  - sensor.batt_temp_bedroom
+  - sensor.batt_smoke_gl_bedroom
+  - sensor.batt_smoke_livingroom
+  - sensor.batt_motion_fibaro_hallway
+  - sensor.batt_motion_livingroom
+  view: false
+  
+leaf:
+  name: Nissan Leaf
+  entities:
+  - sensor.leaf_battery
+  - sensor.leaf_battery_connected
+  - sensor.leaf_battery_charg_status
+  - sensor.leaf_status
+  - input_boolean.leaf_fetch_data
+  view: false

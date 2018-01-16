@@ -50,6 +50,7 @@ history: !include history.yaml
 zwave:
   usb_path: /dev/ttyACM0
   new_entity_ids: true
+  network_key: !secret ZWAVE_NETWORK_KEY
 
 climate:
   - platform: zwave
@@ -57,11 +58,11 @@ climate:
     api_key: !secret SENSIBO_API_KEY
 
 automation: !include_dir_merge_list automations
-automation old: !include automation.yaml
-sensor: !include sensor.yaml
-group: !include groups.yaml
+sensor: !include_dir_merge_list sensor
+group: !include_dir_merge_named group
 media_player: !include media_player.yaml
-input_boolean: !include input_boolean.yaml
+input_boolean: !include_dir_merge_list input_boolean
+#input_boolean: !include input_boolean.yaml
 script: !include scripts.yaml
 camera: !include camera.yaml
 notify: !include notify.yaml

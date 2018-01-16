@@ -1,0 +1,10 @@
+  - platform: template
+    sensors:
+      washmachine_status:
+        value_template: '{% if is_state("input_boolean.washmachine_status", "Av") %}Lukket{% else %}Vasker{% endif %}'
+        friendly_name: 'Vaskemaskin status'
+        
+  - platform: template
+    sensors:
+      washer_pwrdn:
+        value_template: "{{ states('sensor.vaskemaskin_power') | int < 3.4 }}"

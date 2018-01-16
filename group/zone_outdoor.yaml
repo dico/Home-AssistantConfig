@@ -1,0 +1,26 @@
+outside:
+  name: "Utend\xF8rs"
+  view: false
+  entities:
+  - group.yr_no
+  - group.outside_switches
+  - camera.trondheimsfjorden
+  - camera.garasje
+  - camera.haakaastu
+  
+outside_switches:
+  name: Ute
+  entities:
+  - switch.carport_lyskaster
+  - switch.x_dummy_garagedoor_1
+  - switch.x_dummy_garagedoor_2
+  control : hidden
+  
+garage:
+  name: Garasje
+  entities:
+  - script.script_garage_door_1
+  - script.script_garage_door_2
+  - sensor.garagedoor1_status
+  view: false
+  control : hidden

@@ -1,0 +1,4 @@
+  washmachine_status:
+    name: Vaskemaskin status
+    initial: off
+    icon: mdi:washing-machine

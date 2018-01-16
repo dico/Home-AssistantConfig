@@ -1,0 +1,24 @@
+  - platform: yr
+
+  - platform: netatmo
+    station: Kroken
+    modules:
+      Stue:
+        - temperature
+        - co2
+        - pressure
+        - noise
+        - humidity
+        - min_temp
+        - max_temp
+      Kroken Ute:
+        - temperature
+        - humidity
+        - battery_vp
+
+  - platform: template
+    sensors:
+      stue_humidity:
+        value_template: '{{ states.climate.stue.attributes.current_humidity }}'
+        friendly_name: Stue luftfuktighet
+        unit_of_measurement: '%'

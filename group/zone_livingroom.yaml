@@ -1,0 +1,23 @@
+livingroom:
+  name: Stue
+  entities:
+  - group.livingroom_lights
+  - group.livingroom_sensors
+  - media_player.apple_tv
+  - media_player.tv_stue
+  - media_player.alpha
+  view: false
+  
+livingroom_lights:
+  name: Stuelys
+  entities:
+  - light.aeotec_dim_sofa_level
+  - light.aeotec_dim_spisebord_level
+  - light.stue_lys_gulvlampe
+  - switch.jul_stuevindu
+  view: false
+  
+livingroom_sensors:
+  name: Stue sensorer
+  entities:
+  - sensor.stue_temperature

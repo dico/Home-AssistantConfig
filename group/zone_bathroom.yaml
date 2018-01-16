@@ -1,0 +1,12 @@
+bathroom:
+  name: Bad
+  entities:
+  - group.bathroom_sensors
+  view: false
+  
+bathroom_sensors:
+  name: Bad sensorer
+  entities:
+  - sensor.bad_temperature
+  - sensor.bad_humidity
+  view: false

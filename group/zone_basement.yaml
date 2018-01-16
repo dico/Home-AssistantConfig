@@ -1,0 +1,8 @@
+basement:
+  name: Kjeller
+  entities:
+  - sensor.kjeller_bod_temperature
+  - sensor.kjeller_bod_humidity
+  - switch.vaskerom_bod_lys_switch
+  - switch.vaskerom_bod_lys_switch_2
+  view: false

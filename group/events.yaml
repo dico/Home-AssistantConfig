@@ -1,0 +1,25 @@
+automation_stuff:
+  name: Hus
+  entities:
+  - input_boolean.home
+  - input_boolean.go_to_sleep
+  - input_boolean.away
+  - input_boolean.vacation
+  control : hidden
+  view: false
+
+automation_scripts:
+  name: Scener
+  entities:
+  - script.livingroom_mood_lights
+  - script.livingroom_full_lights
+  - script.home_full_lights
+  - script.home_lights_off
+  control : hidden
+  view: false
+  
+automation_switches:
+  name: Automasjon
+  entities:
+  - input_boolean.hallway_lights_roof_automated
+  view: false

@@ -1,0 +1,65 @@
+home_main_climate_sensors:
+  name: Klima og sensorer
+  entities:
+  - sensor.netatmo_kroken_ute_temperature
+  - sensor.netatmo_stue_temperature
+  - sensor.netatmo_stue_co2
+  - sensor.gang_temperature
+  - sensor.bad_temperature
+  - sensor.soverom_temperature
+  - sensor.soverom__ailo_temperature
+  - sensor.garage_temperature
+  - sensor.netatmo_stue_co2
+  view: false
+  
+home_climate_control:
+  name: Klimastyring
+  entities:
+  - climate.stue
+  - climate.bad_termostat_heating
+  view: false
+  
+yr_no:
+  name: Yr.no
+  entities:
+  - sensor.yrno_temperature
+  - sensor.yrno_wind_average
+  - sensor.yrno_wind_direction
+  
+sensors:
+  name: Sensorer
+  entities:
+  - sensor.mrkloft_temperature
+  - sensor.gang_temperature_2
+  - sensor.kjeller_bod_temperature
+  - sensor.kjeller_bod_humidity
+  - sensor.ute_temperature
+  - sensor.yrno_wind_average
+  - sensor.yrno_wind_direction
+  - device_tracker.robert
+  - device_tracker.veronica
+  view: false
+  
+home_climate_temperature:
+  name: Temperatur
+  entities:
+  - sensor.ute_temperature
+  - sensor.stue_temperature
+  - sensor.gang_temperature_2
+  - sensor.bad_temperature
+  - sensor.soverom_temperature
+  - sensor.soverom__ailo_temperature
+  - sensor.kjeller_bod_temperature
+  - sensor.mrkloft_temperature
+  - sensor.garage_temperature
+  view: false
+  
+home_climate_humidity:
+  name: Luftfuktighet
+  entities:
+  - sensor.stue_humidity
+  - sensor.bad_humidity
+  - sensor.kjeller_bod_humidity
+  - sensor.soverom_humidity
+  - sensor.yrno_humidity
+  view: false

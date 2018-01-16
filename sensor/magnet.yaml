@@ -1,0 +1,19 @@
+  - platform: template
+    sensors:
+      magnet_dr_vaskerom:
+        value_template: '{% if is_state("switch.magnet_dr_vaskerom", "off") %}Lukket{% else %}Åpen{% endif %}'
+        friendly_name: 'Dør vaskerom'
+        
+        
+# Garage
+  - platform: template
+    sensors:
+      garagedoor1_status:
+        value_template: '{% if is_state("switch.garasjeport_1_status", "off") %}Lukket{% else %}Åpen{% endif %}'
+        friendly_name: 'Garasjeport 1'
+        icon_template: >-
+          {% if states('switch.garasjeport_1_status') == 'on' %}
+            mdi:garage-open
+          {% else %}
+            mdi:garage
+          {% endif %}

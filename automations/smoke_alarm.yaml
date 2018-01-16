@@ -1,0 +1,30 @@
+# Smoke alert
+- alias: 'SmokeAlert GL SOV'
+  trigger:
+  - platform: state
+    entity_id: sensor.fibaro_smoke_gl_sov_alarm_level
+    to: '255'
+  action:
+  - service: notify.notify
+    data:
+        message: "Brann detektert i Garasjeleilighet Soverom"
+        title: "Brann!"
+  - service: notify.emergency_contact
+    data:
+        message: "Brann detektert i Garasjeleilighet Soverom"
+        
+        
+# Smoke alert
+- alias: 'SmokeAlert Stue'
+  trigger:
+  - platform: state
+    entity_id: sensor.fibaro_smoke_livingroom_alarm_type
+    to: '255'
+  action:
+  - service: notify.notify
+    data:
+        message: "Brann detektert i Stue"
+        title: "Brann!"
+  - service: notify.emergency_contact
+    data:
+        message: "Brann detektert i Stue"

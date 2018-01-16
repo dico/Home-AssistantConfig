@@ -1,0 +1,17 @@
+  - platform: mqtt
+    state_topic: "leaf/status/battery_percent"
+    name: "Leaf Battery"
+    unit_of_measurement: "%"
+    value_template: "{{ value_json | round(2) }}"
+    
+  - platform: mqtt
+    state_topic: "leaf/status/last_updated"
+    name: "Leaf Status"
+    
+  - platform: mqtt
+    state_topic: "leaf/status/charging_status"
+    name: "Leaf Battery Charg Status"
+    
+  - platform: mqtt
+    state_topic: "leaf/status/connected"
+    name: "Leaf Battery Connected"

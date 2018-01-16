@@ -1,0 +1,11 @@
+  - platform: template
+    sensors:
+      smokealarm_gl_bedroom:
+        value_template: '{% if is_state("sensor.fibaro_smoke_gl_sov_alarm_level", "255") %}Triggered{% else %}Standby{% endif %}'
+        friendly_name: 'GL Soverom'
+        
+  - platform: template
+    sensors:
+      smokealarm_livingroom:
+        value_template: '{% if is_state("sensor.fibaro_smoke_livingroom_alarm_type", "255") %}Triggered{% else %}Standby{% endif %}'
+        friendly_name: 'Stue'

@@ -9,6 +9,3 @@
     data:
         message: "Hilde er online på steam"
         title: "Steam"
-  - service: notify.sms_veronica
-    data:
-        message: "Hilde er online på steam"

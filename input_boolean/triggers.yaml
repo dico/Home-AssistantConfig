@@ -1,0 +1,9 @@
+  leaf_fetch_data:
+    name: Leaf oppdater
+    initial: off
+    icon: mdi:car
+    
+  automation_test_switch:
+    name: Automasjonstest
+    initial: off
+    icon: mdi:settings
