@@ -56,10 +56,6 @@
     switch.soverom_veronica:
         assumed_state: false
         icon: mdi:power
-    switch.ailo_seng_switch:
-        friendly_name: Ailo soverom
-        assumed_state: false
-        icon: mdi:lightbulb
     switch.vaskerom_bod_lys_switch:
         friendly_name: Vaskerom lys
         assumed_state: false
@@ -68,6 +64,20 @@
         friendly_name: Bod lys
         assumed_state: false
         icon: mdi:ceiling-light
+        
+# Switches
+    switch.ailo_seng_switch:
+        friendly_name: Ailo soverom
+        assumed_state: false
+        icon: mdi:power
+    switch.telldus_soverom_veronica_switch:
+        friendly_name: Soverom Veronica
+        assumed_state: false
+        icon: mdi:power
+    switch.vaskemaskin_switch:
+        friendly_name: Vaskemaskin
+        assumed_state: false
+        icon: mdi:power
         
 # Motion
     switch.bevegelse_gang:
@@ -93,21 +103,31 @@
         icon: mdi:run
     sensor.motion_vaskerom:
         icon: mdi:run
-    sensor.magnet_ytterdr:
+    sensor.magnet_dor_ytterdor:
         icon: mdi:login
     sensor.magnet_dr_vaskerom:
         icon: mdi:login
         
 # Template sensors: Smokealarm
-    sensor.smokealarm_gl_bedroom:
-        icon: mdi:fire
     sensor.smokealarm_livingroom:
-        icon: mdi:fire
+        #icon: mdi:fire
+        entity_picture: /local/icons/smoke_alarm_fibaro.png
     sensor.smokealarm_hallway:
-        icon: mdi:fire
+        #icon: mdi:fire
+        entity_picture: /local/icons/smoke_alarm_fibaro.png
+    sensor.smokealarm_gl_bedroom:
+        entity_picture: /local/icons/smoke_alarm_fibaro.png
+    sensor.smokealarm_gl_livingroom:
+        entity_picture: /local/icons/smoke_alarm_fibaro.png
 
 
 # Sensors: Power and battery
+    sensor.north_power_main_energy:
+        friendly_name: Strøm Hovedmåler
+        icon: mdi:flash
+    sensor.nortq_power_gl_energy:
+        friendly_name: Strøm Garasjeleilighet
+        icon: mdi:flash
     sensor.ailo_seng_power:
         friendly_name: Ailo Seng - Strømforbruk
         icon: mdi:flash
@@ -138,6 +158,12 @@
     sensor.leaf_battery_connected:
         friendly_name: Lader tilkoblet
         icon: mdi:power-plug
+    sensor.stue:
+        friendly_name: IKEA fjernkontroll Stue
+        icon: mdi:battery-charging-wireless-outline
+    sensor.gangen_tak:
+        friendly_name: IKEA fjernkontroll Gang
+        icon: mdi:battery-charging-wireless-outline
         
         
 # Sensors: Temperature

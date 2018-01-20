@@ -44,8 +44,6 @@ logger:
 recorder: !include recorder.yaml
 logbook: !include logbook.yaml      
 history: !include history.yaml
-
-     
      
 zwave:
   usb_path: /dev/ttyACM0
@@ -61,14 +59,13 @@ automation: !include_dir_merge_list automations
 sensor: !include_dir_merge_list sensor
 group: !include_dir_merge_named group
 media_player: !include media_player.yaml
-input_boolean: !include_dir_merge_list input_boolean
-#input_boolean: !include input_boolean.yaml
+#input_boolean: !include_dir_merge_list input_boolean
+input_boolean: !include input_boolean.yaml
 script: !include scripts.yaml
 camera: !include camera.yaml
 notify: !include notify.yaml
 alert: !include alerts.yaml
 #cover: !include cover.yaml
-
 
 panel_custom:
   - name: floorplan
@@ -76,12 +73,6 @@ panel_custom:
     sidebar_icon: mdi:home
     url_path: floorplan
     config: !include floorplan.yaml
-
-#tellduslive:
-#  public_key: !secret TELLDUS_PUBLIC_KEY
-#  private_key: !secret TELLDUS_PRIVATE_KEY
-#  token: !secret TELLDUS_TOKEN
-#  token_secret: !secret TELLDUS_TOKEN_SECRET
 
 verisure:
   username: !secret VERISURE_USERNAME
@@ -114,7 +105,6 @@ mqtt:
     port: !secret CLOUD_MQTT_PORT
     username: !secret CLOUD_MQTT_USERNAME
     password: !secret CLOUD_MQTT_PASSWORD
-    
     
 # Text to speech
 tts:

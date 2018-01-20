@@ -1,9 +1,10 @@
 security_smoke_alarm_status:
   name: Røykvarslere
   entities:
-  - sensor.smokealarm_gl_bedroom
   - sensor.smokealarm_livingroom
   - sensor.smokealarm_hallway
+  - sensor.smokealarm_gl_bedroom
+  - sensor.smokealarm_gl_livingroom
   view: false
   
 awsome_people:
@@ -18,7 +19,7 @@ motion:
   name: Bevegelse
   entities:
   - sensor.magnet_dr_vaskerom
-  - sensor.magnet_ytterdr
+  - sensor.magnet_dor_ytterdor
   - sensor.motion_entry
   - sensor.motion_livingroom
 #  - sensor.motion_vaskerom

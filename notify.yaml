@@ -38,6 +38,11 @@
   platform: group
   services:
     - service: ios_robertiphone7
+    
+- name: ios_veronica
+  platform: group
+  services:
+    - service: ios_veronicaiphone6s
 
 #-------------------------------------------
 #  iOS Push (both)

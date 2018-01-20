@@ -1,0 +1,8 @@
+on_off_plugs:
+  name: "Av / på"
+  entities:
+  - switch.ailo_seng_switch
+  - switch.telldus_soverom_veronica_switch
+  - switch.vaskemaskin_switch
+  view: false
+  control : hidden

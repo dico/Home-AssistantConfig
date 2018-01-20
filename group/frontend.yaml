@@ -3,6 +3,7 @@ default_view:
   view: true
   entities:
   - group.lights
+  - group.on_off_plugs
   - group.home_main_climate_sensors
   - group.home_climate_control
   - group.automation_stuff
@@ -38,14 +39,13 @@ media:
   - media_player.apple_tv
   - media_player.tv_stue
   - media_player.alpha
-  view: true
+  view: false
   
 other:
   name: Annet
   entities:
   - group.steam
   - group.awsome_people
-  - group.device_sensors
   - group.outside_switches
   - group.power_reader
   - group.device_statuses

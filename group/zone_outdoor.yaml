@@ -11,9 +11,8 @@ outside:
 outside_switches:
   name: Ute
   entities:
+  - light.utelys
   - switch.carport_lyskaster
-  - switch.x_dummy_garagedoor_1
-  - switch.x_dummy_garagedoor_2
   control : hidden
   
 garage:

@@ -7,8 +7,8 @@ device_statuses:
 power_reader:
   name: "Str\xF8m"
   entities:
-  - sensor.strmmaler_watt_2
-  - sensor.strm_garasje_watt_2
+  - sensor.north_power_main_energy
+  - sensor.nortq_power_gl_energy
   - sensor.aeotec_dim_spisebord_power
   - sensor.aeotec_dim_sofa_power
   - sensor.ailo_seng_power
@@ -37,6 +37,8 @@ sensor_battery:
   - sensor.batt_smoke_hallway
   - sensor.batt_motion_fibaro_hallway
   - sensor.batt_motion_livingroom
+  - sensor.soverom
+  - sensor.gangen_tak
   view: false
   
 leaf:

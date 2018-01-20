@@ -21,6 +21,8 @@
      - sensor.soverom_ailo_temperature
      - sensor.soverom_humidity
      - sensor.soverom_temperature
+     - sensor.kjeller_bod_temperature
+     - sensor.kjeller_bod_humidity
      - lock.ytterdr
      - switch.magnet_dr_vaskerom
      - switch.lys_pc_robert
@@ -28,7 +30,9 @@
      - light.stue_lys_gulvlampe
      - light.aeotec_dim_sofa_level
      - light.aeotec_dim_spisebord_level
+     - binary_sensor.fibaro_motion_1_sensor
      - sensor.motion_entry
+     - sensor.fibaro_motion_1_temperature
      - sensor.motion_livingroom
      - sensor.strmmaler_watt_2
      - sensor.strm_garasje_watt_2
@@ -38,3 +42,10 @@
      - sensor.vaskemaskin_power
      - sensor.vaskerom_bod_lys_power
      - sensor.vaskerom_bod_lys_power_2
+     - sensor.batt_temp_bathroom
+     - sensor.batt_temp_bedroom
+     - sensor.batt_smoke_gl_bedroom
+     - sensor.batt_smoke_livingroom
+     - sensor.batt_smoke_hallway
+     - sensor.batt_motion_fibaro_hallway
+     - sensor.batt_motion_livingroom

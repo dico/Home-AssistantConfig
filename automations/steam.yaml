@@ -3,9 +3,13 @@
   trigger:
   - platform: state
     entity_id: sensor.steam_76561198105070411
-    to: 'Online'
+    to: 'online'
+  condition:
+    condition: state
+    entity_id: input_boolean.automation_steam_notifications
+    state: 'on'
   action:
-  - service: notify.notify
+  - service: notify.ios_veronica
     data:
         message: "Hilde er online på steam"
         title: "Steam"

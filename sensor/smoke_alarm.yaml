@@ -1,24 +1,11 @@
   - platform: template
     sensors:
-      smokealarm_gl_bedroom:
-        friendly_name: 'GL Soverom'
-        value_template: >-
-          {% if is_state("sensor.fibaro_smoke_gl_bedroom_alarm_level", "255") %}
-            Alarm
-          {% elif is_state("sensor.sensor.fibaro_smoke_gl_bedroom_burglar", "3") %}
-            Ikke montert
-          {% else %}
-            Standby
-          {% endif %}
-        
-  - platform: template
-    sensors:
       smokealarm_livingroom:
         friendly_name: 'Stue'
         value_template: >-
           {% if is_state("sensor.fibaro_smoke_livingroom_alarm_level", "255") %}
             Alarm
-          {% elif is_state("sensor.sensor.fibaro_smoke_livingroom_burglar", "3") %}
+          {% elif is_state("sensor.fibaro_smoke_livingroom_burglar", "3") %}
             Ikke montert
           {% else %}
             Standby
@@ -32,6 +19,34 @@
           {% if is_state("sensor.fibaro_smoke_hallway_alarm_level", "255") %}
             Alarm
           {% elif is_state("sensor.fibaro_smoke_hallway_burglar", "3") %}
+            Ikke montert
+          {% else %}
+            Standby
+          {% endif %}
+          
+          
+  - platform: template
+    sensors:
+      smokealarm_gl_bedroom:
+        friendly_name: 'GL Soverom'
+        value_template: >-
+          {% if is_state("sensor.fibaro_smoke_gl_bedroom_alarm_level", "255") %}
+            Alarm
+          {% elif is_state("sensor.fibaro_smoke_gl_bedroom_burglar", "3") %}
+            Ikke montert
+          {% else %}
+            Standby
+          {% endif %}
+          
+          
+  - platform: template
+    sensors:
+      smokealarm_gl_livingroom:
+        friendly_name: 'GL Stue'
+        value_template: >-
+          {% if is_state("sensor.fibaro_smoke_gl_livingroom_alarm_level", "255") %}
+            Alarm
+          {% elif is_state("sensor.fibaro_smoke_gl_livingroom_burglar", "3") %}
             Ikke montert
           {% else %}
             Standby

@@ -1,4 +1,66 @@
-# Smoke alert
+# Smoke alert: Livingroom
+- alias: 'SmokeAlert Stue'
+  trigger:
+  - platform: state
+    entity_id: sensor.fibaro_smoke_livingroom_alarm_level
+    to: '255'
+  action:
+  - service: notify.notify
+    data:
+        message: "Brann detektert i Stue"
+        title: "Brann!"
+  - service: notify.emergency_contact
+    data:
+        message: "Brann detektert i Stue"
+
+        
+# TamperAlert Livingroom
+- alias: 'Smokealarm Tamper Livingroom'
+  trigger:
+  - platform: state
+    entity_id: sensor.fibaro_smoke_livingroom_burglar
+    to: '3'
+  action:
+  - service: notify.ios_robertiphone7
+    data:
+        message: "Røykvarsler i stue tatt ned"
+        title: "Røykvarsler"
+        
+
+        
+        
+        
+# Smoke alert: Hallway
+- alias: 'SmokeAlert Gang'
+  trigger:
+  - platform: state
+    entity_id: sensor.fibaro_smoke_hallway_alarm_level
+    to: '255'
+  action:
+  - service: notify.notify
+    data:
+        message: "Brann detektert i Gang"
+        title: "Brann!"
+  - service: notify.emergency_contact
+    data:
+        message: "Brann detektert i Gang"
+        
+# TamperAlert Hallway
+- alias: 'Smokealarm Tamper Hallway'
+  trigger:
+  - platform: state
+    entity_id: sensor.fibaro_smoke_hallway_burglar
+    to: '3'
+  action:
+  - service: notify.ios_robertiphone7
+    data:
+        message: "Røykvarsler i gang tatt ned"
+        title: "Røykvarsler"
+        
+        
+        
+        
+# Smoke alert: GL Soverom
 - alias: 'SmokeAlert GL SOV'
   trigger:
   - platform: state
@@ -12,33 +74,44 @@
   - service: notify.emergency_contact
     data:
         message: "Brann detektert i Garasjeleilighet Soverom"
-        
-        
-# Smoke alert
-- alias: 'SmokeAlert Stue'
+
+# TamperAlert GL Soverom
+- alias: 'Smokealarm Tamper GL Soverom'
   trigger:
   - platform: state
-    entity_id: sensor.fibaro_smoke_livingroom_alarm_type
-    to: '255'
-  action:
-  - service: notify.notify
-    data:
-        message: "Brann detektert i Stue"
-        title: "Brann!"
-  - service: notify.emergency_contact
-    data:
-        message: "Brann detektert i Stue"
-        
-        
-        
-# Smoke alert
-- alias: 'Smokealarm Tamper Hallway'
-  trigger:
-  - platform: state
-    entity_id: sensor.fibaro_smoke_hallway_burglar
+    entity_id: sensor.fibaro_smoke_gl_bedroom_burglar
     to: '3'
   action:
   - service: notify.ios_robertiphone7
     data:
-        message: "Røykvarsler i gang tatt ned"
+        message: "Røykvarsler i GL soverom tatt ned"
+        title: "Røykvarsler"
+        
+        
+        
+# Smoke alert: GL Stue
+- alias: 'SmokeAlert GL Stue'
+  trigger:
+  - platform: state
+    entity_id: sensor.fibaro_smoke_gl_livingroom_alarm_level
+    to: '255'
+  action:
+  - service: notify.notify
+    data:
+        message: "Brann detektert i Garasjeleilighet Stue"
+        title: "Brann!"
+  - service: notify.emergency_contact
+    data:
+        message: "Brann detektert i Garasjeleilighet Stue"
+
+# TamperAlert GL Soverom
+- alias: 'Smokealarm Tamper GL Stue'
+  trigger:
+  - platform: state
+    entity_id: sensor.fibaro_smoke_gl_livingroom_burglar
+    to: '3'
+  action:
+  - service: notify.ios_robertiphone7
+    data:
+        message: "Røykvarsler i Garasjeleilighet Stue tatt ned"
         title: "Røykvarsler"

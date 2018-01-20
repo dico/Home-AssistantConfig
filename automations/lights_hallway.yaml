@@ -34,9 +34,23 @@
     state: 'on'
   action:
   - service: light.turn_on
-    entity_id: light.gang
+    entity_id: light.gang_bulp_1
     data:
-        entity_id: light.gang
+        brightness: 60
+        color_temp: 457
+  - service: light.turn_on
+    entity_id: light.gang_bulp_2
+    data:
+        brightness: 60
+        color_temp: 457
+  - service: light.turn_on
+    entity_id: light.gang_bulp_3
+    data:
+        brightness: 60
+        color_temp: 457
+  - service: light.turn_on
+    entity_id: light.gang_bulp_4
+    data:
         brightness: 60
         color_temp: 457
         
@@ -44,6 +58,55 @@
   trigger:
     platform: state
     entity_id: binary_sensor.fibaro_motion_1_sensor
+    to: 'off'
+  condition:
+    condition: state
+    entity_id: input_boolean.hallway_lights_roof_automated
+    state: 'on'
+  action:
+  - service: light.turn_off
+    entity_id: light.gang
+    
+
+    
+    
+    
+    
+- alias: 'Bevegelse Takys Gang På (TEST)'
+  trigger:
+    platform: state
+    entity_id: input_boolean.automation_test_switch
+    to: 'on'
+  condition:
+    condition: state
+    entity_id: input_boolean.hallway_lights_roof_automated
+    state: 'on'
+  action:
+  - service: light.turn_on
+    entity_id: light.gang_bulp_1
+    data:
+        brightness: 60
+        color_temp: 457
+  - service: light.turn_on
+    entity_id: light.gang_bulp_2
+    data:
+        brightness: 60
+        color_temp: 457
+  - service: light.turn_on
+    entity_id: light.gang_bulp_3
+    data:
+        brightness: 60
+        color_temp: 457
+  - service: light.turn_on
+    entity_id: light.gang_bulp_4
+    data:
+        brightness: 60
+        color_temp: 457
+        
+- alias: 'Bevegelse Takys Gang Av (TEST)'
+  trigger:
+    platform: state
+    entity_id: input_boolean.automation_test_switch
     to: 'off'
   condition:
     condition: state

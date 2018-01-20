@@ -33,6 +33,11 @@
     initial: off
     icon: mdi:settings
     
+  automation_steam_notifications:
+    name: Varsle steam pålogging
+    initial: off
+    icon: mdi:settings
+    
   automation_test_switch:
     name: Automasjonstest
     initial: off

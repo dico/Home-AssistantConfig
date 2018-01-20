@@ -8,11 +8,13 @@ lights:
   - switch.jul_stuevindu
   - switch.kjkken_lys_vindu
   - switch.lys_pc_robert
-  - switch.ailo_seng_switch
   - switch.vaskerom_bod_lys_switch
   - switch.vaskerom_bod_lys_switch_2
   - group.gang_lights
-  - light.utelys
+  - light.soverom_taklys
+  - light.nattlampe_robert
+  - light.nattlampe_veronica
+  - light.vaskerom_trapp
   view: false
   
 gang_lights:
@@ -27,6 +29,6 @@ gang_lights:
 stue_gulvlampe:
   name: Stue gulvlampe
   entities:
-  - light.tradfri_bulb_e27_ws_opal_980lm
-  - light.tradfri_bulb_e27_ws_opal_980lm_2
+  - light.gulvlampe_verst
+  - light.gulvlampe_nederst
   view: false

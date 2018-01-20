@@ -22,4 +22,7 @@ automation_switches:
   name: Automasjon
   entities:
   - input_boolean.hallway_lights_roof_automated
+  - input_boolean.automation_steam_notifications
+  - input_boolean.automation_test_switch
+  control : hidden
   view: false
