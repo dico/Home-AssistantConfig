@@ -1,0 +1,8 @@
+zone_garage:
+  name: Garasje
+  entities:
+  - script.script_garage_door_1
+  - script.script_garage_door_2
+  - sensor.garagedoor1_status
+  view: false
+  control : hidden

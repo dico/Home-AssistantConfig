@@ -1,0 +1,8 @@
+- alias: Floorheat Bathroom ON
+  trigger:
+    platform: event
+    event_type: zwave.node_event
+    event_data:
+      entity_id: zwave.bad_termostat
+      basic_level: 255
+  action:

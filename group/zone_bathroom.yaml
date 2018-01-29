@@ -1,10 +1,10 @@
-bathroom:
+zone_bathroom:
   name: Bad
   entities:
-  - group.bathroom_sensors
+  - group.zone_bathroom_sensors
   view: false
   
-bathroom_sensors:
+zone_bathroom_sensors:
   name: Bad sensorer
   entities:
   - sensor.bad_temperature

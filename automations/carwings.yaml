@@ -11,7 +11,19 @@
   - service: mqtt.publish
     data:
         topic: "leaf/control/update"
-        payload: "1" 
+        payload: "1"
+        
+        
+- alias: 'Carwings update schedule'
+  trigger:
+  - platform: time
+    minutes: '/180'
+    seconds: 00
+  action:
+  - service: mqtt.publish
+    data:
+        topic: "leaf/control/update"
+        payload: "1"
 
 # LEAF: Charge-reminder
 - alias: 'Carwings update'
@@ -28,11 +40,7 @@
         entity_id: 'sensor.leaf_battery'
         below: '50'
   action:
-  - service: notify.ios_robertiphone7
-    data:
-        message: "Det er under 50% batteri på LEAF-en. Kanskje du vil lade den til i morgen?"
-        title: "Nissan Leaf: Ladevarsling"
-  - service: notify.ios_veronicaiphone6s
+  - service: notify.notify
     data:
         message: "Det er under 50% batteri på LEAF-en. Kanskje du vil lade den til i morgen?"
         title: "Nissan Leaf: Ladevarsling"

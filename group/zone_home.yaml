@@ -1,0 +1,6 @@
+ Residence Radio:
+  name: Residentie Radio
+  entities:
+  - input_select.radio_station
+  - input_select.chromecast_radio
+  - script.radio538

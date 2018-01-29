@@ -146,18 +146,6 @@
     sensor.vaskerom_bod_lys_power_2:
         friendly_name: Lys Vaskerom Bod - Strømforbruk
         icon: mdi:flash
-    sensor.leaf_battery:
-        friendly_name: Batteri
-        icon: mdi:battery-charging-80
-    sensor.leaf_battery_charg_status:
-        friendly_name: Lader
-        icon: mdi:flash
-    sensor.leaf_status:
-        friendly_name: Sist oppdatert
-        icon: mdi:clock
-    sensor.leaf_battery_connected:
-        friendly_name: Lader tilkoblet
-        icon: mdi:power-plug
     sensor.stue:
         friendly_name: IKEA fjernkontroll Stue
         icon: mdi:battery-charging-wireless-outline
@@ -242,6 +230,7 @@
     sensor.soverom__ailo_temperature:
         friendly_name: Soverom Ailo
         icon: mdi:thermometer
+
         
 # Scripts
     script.livingroom_full_lights:
@@ -275,6 +264,48 @@
     script.script_garage_door_2:
         friendly_name: Garasje Audi
         icon: mdi:garage
+        
+        
+# Carwings LEAF
+    sensor.leaf_battery:
+        friendly_name: Batteri
+        icon: mdi:battery-charging-80
+        
+    sensor.leaf_battery_charg_status:
+        friendly_name: Lader
+        icon: mdi:flash
+        
+    sensor.leaf_status:
+        friendly_name: Sist oppdatert
+        icon: mdi:clock
+        
+    sensor.leaf_battery_connected:
+        friendly_name: Lader tilkoblet
+        icon: mdi:power-plug
+        
+    sensor.leaf_range_ac_off:
+        icon: mdi:car
+        
+    sensor.leaf_range_ac_on:
+        icon: mdi:car
+        
+    script.script_carwings_fetch:
+        friendly_name: Oppdater LEAF status
+        icon: mdi:car-connected
+        
+    script.script_carwings_climate_on:
+        friendly_name: Skru på klimaanlegg
+        icon: mdi:fan
+        
+    script.script_carwings_climate_off:
+        friendly_name: Skru av klimaanlegg
+        icon: mdi:fan-off
+
+        
+# Radio / Music 
+    script.radio538:
+        friendly_name: Start Playing
+        icon: mdi:play
         
 # Group order
     group.lights:

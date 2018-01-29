@@ -1,8 +1,28 @@
-basement:
+zone_basement:
   name: Kjeller
+  entities:
+  - group.zone_basement_lights
+  - group.zone_basement_switches
+  - group.zone_basement_sensors
+  view: false  
+  
+zone_basement_lights:
+  name: Lys Kjeller
+  entities:
+  - switch.vaskerom_bod_lys_switch
+  - switch.vaskerom_bod_lys_switch_2
+  - light.vaskerom_trapp
+  view: false
+  
+zone_basement_switches:
+  name: Kjeller AV/PÅ
+  entities:
+    - switch.vaskemaskin_switch
+  view: false  
+  
+zone_basement_sensors:
+  name: Kjeller sensorer
   entities:
   - sensor.kjeller_bod_temperature
   - sensor.kjeller_bod_humidity
-  - switch.vaskerom_bod_lys_switch
-  - switch.vaskerom_bod_lys_switch_2
   view: false

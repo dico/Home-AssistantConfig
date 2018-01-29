@@ -15,3 +15,15 @@
   - platform: mqtt
     state_topic: "leaf/status/connected"
     name: "Leaf Battery Connected"
+    
+  - platform: mqtt
+    state_topic: "leaf/status/raw"
+    name: "Leaf Range AC Off"
+    unit_of_measurement: "km"
+    value_template: "{{ (value_json.BatteryStatusRecords.CruisingRangeAcOff | float / 1000) | round(2) }}"
+    
+  - platform: mqtt
+    state_topic: "leaf/status/raw"
+    name: "Leaf Range AC On"
+    unit_of_measurement: "km"
+    value_template: "{{ (value_json.BatteryStatusRecords.CruisingRangeAcOn | float / 1000) | round(2) }}"

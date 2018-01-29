@@ -22,3 +22,15 @@
         value_template: '{{ states.climate.stue.attributes.current_humidity }}'
         friendly_name: Stue luftfuktighet
         unit_of_measurement: '%'
+
+        
+# Climate floorheating
+  - platform: history_stats
+    name: Heat ON Bathroom Today
+    entity_id: automation.floorheat_bathroom
+    state: 'on'
+    type: time
+    start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
+    end: '{{ now() }}'
+    
+

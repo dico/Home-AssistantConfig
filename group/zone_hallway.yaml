@@ -1,5 +1,11 @@
-entry:
-  name: Gang
+zone_hallway_lights:
+  name: Lys gang
   entities:
-  - sensor.gang_temperature_2
+  - group.gang_lights
+  - switch.gang_lyst_kommode_switch
   view: false
+  
+zone_hallway_sensors:
+  name: Gang sensorer
+  entities:
+  - sensor.gang_temperature

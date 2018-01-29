@@ -1,25 +1,27 @@
-outside:
-  name: "Utend\xF8rs"
-  view: false
+zone_outdoor:
+  name: Utendørs
   entities:
-  - group.yr_no
-  - group.outside_switches
-  - camera.trondheimsfjorden
-  - camera.garasje
-  - camera.haakaastu
+  - group.zone_livingroom_lights
+  - group.zone_livingroom_sensors
+  view: false
   
-outside_switches:
-  name: Ute
+zone_outdoor_lights:
+  name: Lys Utendørs
   entities:
   - light.utelys
   - switch.carport_lyskaster
-  control : hidden
-  
-garage:
-  name: Garasje
-  entities:
-  - script.script_garage_door_1
-  - script.script_garage_door_2
-  - sensor.garagedoor1_status
   view: false
-  control : hidden
+  
+zone_outdoor_sensors:
+  name: Utendørs sensorer
+  entities:
+  - group.yr_no
+  view: false
+  
+zone_outdoor_camera:
+  name: Utendørs sensorer
+  entities:
+  - camera.trondheimsfjorden
+  - camera.garasje
+  - camera.haakaastu
+  view: false

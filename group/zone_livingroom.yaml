@@ -1,23 +1,24 @@
-livingroom:
+zone_livingroom:
   name: Stue
   entities:
-  - group.livingroom_lights
-  - group.livingroom_sensors
-  - media_player.apple_tv
-  - media_player.tv_stue
-  - media_player.alpha
+  - group.zone_livingroom_lights
+  - group.zone_livingroom_sensors
   view: false
   
-livingroom_lights:
-  name: Stuelys
+zone_livingroom_lights:
+  name: Lys stue
   entities:
   - light.aeotec_dim_sofa_level
   - light.aeotec_dim_spisebord_level
-  - light.stue_lys_gulvlampe
+  - group.stue_gulvlampe
+  - switch.lys_pc_robert
   - switch.jul_stuevindu
+  - switch.kjkken_lys_vindu
   view: false
   
-livingroom_sensors:
+zone_livingroom_sensors:
   name: Stue sensorer
   entities:
   - sensor.stue_temperature
+  - sensor.netatmo_stue_co2
+  view: false

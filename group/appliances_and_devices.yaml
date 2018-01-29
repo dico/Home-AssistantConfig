@@ -48,5 +48,10 @@ leaf:
   - sensor.leaf_battery_connected
   - sensor.leaf_battery_charg_status
   - sensor.leaf_status
-  - input_boolean.leaf_fetch_data
+  - sensor.leaf_range_ac_off
+  - sensor.leaf_range_ac_on
+  - script.script_carwings_fetch
+  - script.script_carwings_climate_on
+  - script.script_carwings_climate_off
   view: false
+  control: hidden

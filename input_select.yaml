@@ -1,0 +1,44 @@
+log_level:
+  name: Log Level
+  options:
+    - critical
+    - fatal
+    - error
+    - warning
+    - warn
+    - info
+    - debug
+    - notset
+  initial: warn
+  
+  
+radio_station:
+  name: 'Select Radio Station:'
+  options:
+    - NRK P3
+    - Q-Music
+    - 3FM
+    - 100% NL
+    - Veronica
+    - Sky Radio
+    - Arrow Classic Rock
+    - Classic FM
+    - BNR Nieuwsradio
+    - SLAM! Hardstyle
+    - Sleep Radio
+    - Ambient Sleeping Pill
+    - Radio Art - Sleep
+    - Ambi Nature Radio
+    - Calm Radio - Sleep
+    - Dinamo.FM Sleep
+      
+      
+      
+chromecast_radio:
+  name: 'Select Speakers:'
+  options:
+    - Livingroom
+    - Bedroom
+    - Everywhere
+  initial: Everywhere
+  icon: mdi:speaker-wireless

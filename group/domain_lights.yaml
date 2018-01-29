@@ -3,7 +3,8 @@ lights:
   entities:
   - light.aeotec_dim_sofa_level
   - light.aeotec_dim_spisebord_level
-  - group.stue_gulvlampe
+  - light.gulvlampe_verst
+  - light.gulvlampe_nederst
   - switch.gang_lyst_kommode_switch
   - switch.jul_stuevindu
   - switch.kjkken_lys_vindu
@@ -11,7 +12,7 @@ lights:
   - switch.vaskerom_bod_lys_switch
   - switch.vaskerom_bod_lys_switch_2
   - group.gang_lights
-  - light.soverom_taklys
+  - light.soverom_tak
   - light.nattlampe_robert
   - light.nattlampe_veronica
   - light.vaskerom_trapp

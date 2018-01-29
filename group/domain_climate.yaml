@@ -63,3 +63,15 @@ home_climate_humidity:
   - sensor.soverom_humidity
   - sensor.yrno_humidity
   view: false
+  
+  
+climate_bathroom_heat_logging:
+  name: Bad varmekabler status
+  entities:
+  - sensor.heat_on_bathroom_today
+  - automation.floorheat_bathroom_off
+  - automation.floorheat_bathroom_on
+  view: false
+  control : hidden
+  
+  

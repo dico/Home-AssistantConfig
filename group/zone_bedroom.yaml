@@ -1,8 +1,13 @@
-bedroom:
-  name: Soverom
+zone_bedroom_lights:
+  name: Lys soverom
   entities:
-  - sensor.soverom_temperature
-  - sensor.soverom__ailo_temperature
-  - switch.soverom_veronica
-  - switch.ailo_seng_switch
+  - light.soverom_taklys
+  - light.nattlampe_robert
+  - light.nattlampe_veronica
+  view: false
+  
+zone_bedroom_sensors:
+  name: Soverom sensorer
+  entities:
+  - sensor.bad_temperature
   view: false
