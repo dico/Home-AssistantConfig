@@ -12,7 +12,7 @@
     name: Gårdsplass
   - platform: ffmpeg
     input: rtsp://192.168.1.53:554/11
-    name: WiFi Cam 2
+    name: Carport
   - platform: ffmpeg
     input: rtsp://192.168.1.58:554/11
     name: Garasje

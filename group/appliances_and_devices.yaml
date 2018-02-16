@@ -4,19 +4,6 @@ device_statuses:
   - input_boolean.washmachine_status
   view: false
   
-power_reader:
-  name: "Str\xF8m"
-  entities:
-  - sensor.north_power_main_energy
-  - sensor.nortq_power_gl_energy
-  - sensor.aeotec_dim_spisebord_power
-  - sensor.aeotec_dim_sofa_power
-  - sensor.ailo_seng_power
-  - sensor.vaskemaskin_power
-  - sensor.vaskerom_bod_lys_power
-  - sensor.vaskerom_bod_lys_power_2
-  view: false
-  
 device_sensors:
   name: Mobil og nettbrett
   entities:
@@ -33,6 +20,7 @@ sensor_battery:
   - sensor.batt_temp_bathroom
   - sensor.batt_temp_bedroom
   - sensor.batt_smoke_gl_bedroom
+  - sensor.batt_smoke_gl_livingroom
   - sensor.batt_smoke_livingroom
   - sensor.batt_smoke_hallway
   - sensor.batt_motion_fibaro_hallway

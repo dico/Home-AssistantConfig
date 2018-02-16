@@ -1,0 +1,132 @@
+- alias: 'Wallmote1_spisebord_on'
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.aeotec_wallmote_01
+      scene_id: 1
+      scene_data: 0
+  action:
+  - service: light.turn_on
+    entity_id: light.stue_spisebord
+    
+- alias: 'Wallmote1_spisebord_on_full'
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.aeotec_wallmote_01
+      scene_id: 1
+      scene_data: 2
+  action:
+  - service: light.turn_on
+    entity_id: light.stue_spisebord
+    data:
+        brightness: 255
+        
+- alias: 'Wallmote1_spisebord_dim'
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.aeotec_wallmote_01
+      scene_id: 3
+      scene_data: 2
+  action:
+  - service: light.turn_on
+    entity_id: light.stue_spisebord
+    data:
+        brightness: 120
+    
+- alias: 'Wallmote1_spisebord_off'
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.aeotec_wallmote_01
+      scene_id: 3
+      scene_data: 0
+  action:
+  - service: light.turn_off
+    entity_id: light.stue_spisebord
+    
+    
+    
+- alias: 'Wallmote1_sofa_on'
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.aeotec_wallmote_01
+      scene_id: 2
+      scene_data: 0
+  action:
+  - service: light.turn_on
+    entity_id: light.stue_sofa
+    
+- alias: 'Wallmote1_sofa_on_full'
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.aeotec_wallmote_01
+      scene_id: 2
+      scene_data: 2
+  action:
+  - service: light.turn_on
+    entity_id: light.stue_sofa
+    data:
+        brightness: 255
+        
+- alias: 'Wallmote1_sofa_on_dim'
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.aeotec_wallmote_01
+      scene_id: 4
+      scene_data: 2
+  action:
+  - service: light.turn_on
+    entity_id: light.stue_sofa
+    data:
+        brightness: 120
+    
+- alias: 'Wallmote1_sofa_off'
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.aeotec_wallmote_01
+      scene_id: 4
+      scene_data: 0
+  action:
+  - service: light.turn_off
+    entity_id: light.stue_sofa
+    
+    
+    
+    
+- alias: 'FibBtnTest'
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.fibaro_red_btn_01
+      scene_id: 1
+      scene_data: 0
+  action:
+  - service: switch.turn_on
+    entity_id: switch.lys_pc_robert
+    
+- alias: 'FibBtnTest off'
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.fibaro_red_btn_01
+      scene_id: 1
+      scene_data: 3
+  action:
+  - service: switch.turn_off
+    entity_id: switch.lys_pc_robert

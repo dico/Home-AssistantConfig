@@ -4,11 +4,3 @@ home:
   - group.door_windows
   - group.power_reader
   view: false
-
-door_windows:
-  name: Dør og vinduer
-  entities:
-  - lock.ytterdr
-  - sensor.magnet_dr_vaskerom
-#  - sensor.magnet_ytterdr
-  view: false

@@ -22,6 +22,13 @@
         
   - platform: template
     sensors:
+      batt_smoke_gl_livingroom:
+        friendly_name: 'Røykvarsler GL Livingroom'
+        value_template: '{{ states.zwave.fibaro_smoke_gl_livingroom.attributes.battery_level }}'
+        unit_of_measurement: '%'
+        
+  - platform: template
+    sensors:
       batt_smoke_livingroom:
         friendly_name: 'Røykvarsler stue'
         value_template: '{{ states.zwave.fibaro_smoke_livingroom.attributes.battery_level }}'

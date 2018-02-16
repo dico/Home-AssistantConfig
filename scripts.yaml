@@ -3,20 +3,21 @@ livingroom_mood_lights:
   sequence:
   - service: light.turn_on
     data:
-      entity_id: light.aeotec_dim_spisebord_level
+      entity_id: light.stue_spisebord
       brightness: 120
   - service: light.turn_on
     data:
-      entity_id: light.aeotec_dim_sofa_level
+      entity_id: light.stue_sofa
       brightness: 120
-  - service: light.turn_on
+  - service: light.turn_off
     data:
-      entity_id: light.tradfri_bulb_e27_ws_opal_980lm
-      brightness: 50
-  - service: light.turn_on
+      entity_id: light.gulvlampe_verst
+  - service: light.turn_off
     data:
-      entity_id: light.tradfri_bulb_e27_ws_opal_980lm_2
-      brightness: 50
+      entity_id: light.gulvlampe_nederst
+  - service: switch.turn_off
+    data:
+      entity_id: switch.lys_pc_robert
       
       
 livingroom_full_lights:
@@ -24,39 +25,42 @@ livingroom_full_lights:
   sequence:
   - service: light.turn_on
     data:
-      entity_id: light.aeotec_dim_spisebord_level
+      entity_id: light.stue_sofa
       brightness: 255
   - service: light.turn_on
     data:
-      entity_id: light.aeotec_dim_sofa_level
+      entity_id: light.stue_spisebord
       brightness: 255
   - service: light.turn_on
     data:
-      entity_id: light.tradfri_bulb_e27_ws_opal_980lm
+      entity_id: light.gulvlampe_nederst
       brightness: 255
   - service: light.turn_on
     data:
-      entity_id: light.tradfri_bulb_e27_ws_opal_980lm_2
+      entity_id: light.gulvlampe_verst
       brightness: 255
+  - service: switch.turn_on
+    data:
+      entity_id: switch.lys_pc_robert
       
 home_full_lights:
   alias: Stue full belysning
   sequence:
   - service: light.turn_on
     data:
-      entity_id: light.aeotec_dim_spisebord_level
+      entity_id: light.stue_sofa
       brightness: 255
   - service: light.turn_on
     data:
-      entity_id: light.aeotec_dim_sofa_level
+      entity_id: light.stue_spisebord
       brightness: 255
   - service: light.turn_on
     data:
-      entity_id: light.tradfri_bulb_e27_ws_opal_980lm
+      entity_id: light.gulvlampe_nederst
       brightness: 255
   - service: light.turn_on
     data:
-      entity_id: light.tradfri_bulb_e27_ws_opal_980lm_2
+      entity_id: light.gulvlampe_verst
       brightness: 255
   - service: light.turn_on
     data:
@@ -77,6 +81,10 @@ home_full_lights:
   - service: switch.turn_on
     data:
       entity_id: switch.kjkken_lys_vindu
+  - service: switch.turn_on
+    data:
+      entity_id: switch.lys_pc_robert
+      
       
       
 home_lights_off:
@@ -84,25 +92,22 @@ home_lights_off:
   sequence:
   - service: light.turn_off
     data:
-      entity_id: light.aeotec_dim_spisebord_level
+      entity_id: light.stue_spisebord
   - service: light.turn_off
     data:
-      entity_id: light.aeotec_dim_sofa_level
+      entity_id: light.stue_sofa
   - service: light.turn_off
     data:
-      entity_id: light.tradfri_bulb_e27_ws_opal_980lm
+      entity_id: light.gulvlampe_verst
   - service: light.turn_off
     data:
-      entity_id: light.tradfri_bulb_e27_ws_opal_980lm_2
-  - service: switch.turn_off
+      entity_id: light.gulvlampe_nederst
+  - service: light.turn_off
     data:
       entity_id: switch.kjkken_lys_vindu
   - service: switch.turn_off
     data:
       entity_id: switch.julelys
-  - service: switch.turn_off
-    data:
-      entity_id: switch.juletre
   - service: light.turn_off
     data:
       entity_id: group.gang_lights

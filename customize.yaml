@@ -20,36 +20,37 @@
     light.stue_lys_gulvlampe:
         assumed_state: false
         icon: mdi:lamp
-    light.stue_lys_sofa:
+        homebridge_visible: true
+    light.stue_sofa:
+        friendly_name: Stue Lys Sofa
         assumed_state: false
         icon: mdi:ceiling-light
-    light.stue_lys_spisebord:
+        homebridge_visible: true
+    light.stue_spisebord:
+        friendly_name: Stue Lys Spisebord
         assumed_state: false
         icon: mdi:ceiling-light
-    light.aeotec_dim_spisebord_level:
-        friendly_name: Stye Lys Spisebord
-        assumed_state: false
-        icon: mdi:ceiling-light
-    light.aeotec_dim_sofa_level:
-        friendly_name: Stye Lys Sofa
-        assumed_state: false
-        icon: mdi:ceiling-light
+        homebridge_visible: true
     switch.jul_stuevindu:
         assumed_state: false
         icon: mdi:spotlight-beam
+        homebridge_visible: true
     switch.gang_lyst_kommode_switch:
         friendly_name: Gang Lys Kommode
         assumed_state: false
         icon: mdi:lamp
+        homebridge_visible: true
     switch.kjkken_lys_vindu:
         assumed_state: false
         icon: mdi:ceiling-light
+        homebridge_visible: true
     switch.juletre:
         assumed_state: false
         icon: mdi:pine-tree
     switch.lys_pc_robert:
         assumed_state: false
         icon: mdi:lamp
+        homebridge_visible: true
     switch.carport_lyskaster:
         assumed_state: false
         icon: mdi:flashlight
@@ -60,15 +61,16 @@
         friendly_name: Vaskerom lys
         assumed_state: false
         icon: mdi:ceiling-light
+        homebridge_visible: true
     switch.vaskerom_bod_lys_switch_2:
         friendly_name: Bod lys
         assumed_state: false
         icon: mdi:ceiling-light
+        homebridge_visible: true
         
 # Switches
-    switch.ailo_seng_switch:
-        friendly_name: Ailo soverom
-        assumed_state: false
+    switch.hotwatertank_switch:
+        friendly_name: Varmtvannstank
         icon: mdi:power
     switch.telldus_soverom_veronica_switch:
         friendly_name: Soverom Veronica
@@ -79,7 +81,7 @@
         assumed_state: false
         icon: mdi:power
         
-# Motion
+# Motion and magnet
     switch.bevegelse_gang:
         assumed_state: false
         icon: mdi:run
@@ -92,9 +94,9 @@
     switch.magnet_ytterdr:
         assumed_state: false
         icon: mdi:login
-    switch.magnet_dr_vaskerom:
-        assumed_state: false
+    binary_sensor.nexa_magnet_01_sensor:
         icon: mdi:login
+    
 
 # Template sensors
     sensor.motion_livingroom:
@@ -105,7 +107,7 @@
         icon: mdi:run
     sensor.magnet_dor_ytterdor:
         icon: mdi:login
-    sensor.magnet_dr_vaskerom:
+    sensor.magnet_vaskeromdor:
         icon: mdi:login
         
 # Template sensors: Smokealarm
@@ -120,32 +122,61 @@
     sensor.smokealarm_gl_livingroom:
         entity_picture: /local/icons/smoke_alarm_fibaro.png
 
-
-# Sensors: Power and battery
+        
+# Sensors: Energy
     sensor.north_power_main_energy:
         friendly_name: Strøm Hovedmåler
         icon: mdi:flash
     sensor.nortq_power_gl_energy:
         friendly_name: Strøm Garasjeleilighet
         icon: mdi:flash
-    sensor.ailo_seng_power:
-        friendly_name: Ailo Seng - Strømforbruk
+    sensor.hotwatertank_energy:
+        friendly_name: Varmtvannstank
         icon: mdi:flash
-    sensor.aeotec_dim_sofa_power:
-        friendly_name: Lys Sofa - Strømforbruk
+    sensor.vaskemaskin_energy:
+        friendly_name: Vaskemaskin
         icon: mdi:flash
-    sensor.aeotec_dim_spisebord_power:
-        friendly_name: Lys Spisebord - Strømforbruk
+    sensor.fibaro_plug_gl_heatpump_energy:
+        friendly_name: GL Varmepumpe
         icon: mdi:flash
+    sensor.vaskerom_bod_lys_energy:
+        friendly_name: Vaskerom
+        icon: mdi:flash
+    sensor.vaskerom_bod_lys_energy_2:
+        friendly_name: Vaskerom Bod
+        icon: mdi:flash
+    sensor.fibaro_plug_hallway_heat_energy:
+        friendly_name: Gang Panelovn
+        icon: mdi:flash
+        
+        
+# Sensors: Power
+    sensor.hotwatertank_power:
+        friendly_name: Varmtvannstank
+        icon: mdi:flash
+#    sensor.aeotec_dim_sofa_power:
+#        friendly_name: Lys Sofa - Strømforbruk
+#        icon: mdi:flash
+#    sensor.aeotec_dim_spisebord_power:
+#        friendly_name: Lys Spisebord - Strømforbruk
+#        icon: mdi:flash
     sensor.vaskemaskin_power:
-        friendly_name: Vaskemaskin - Strømforbruk
+        friendly_name: Vaskemaskin
         icon: mdi:flash
     sensor.vaskerom_bod_lys_power:
-        friendly_name: Lys Vaskerom - Strømforbruk
+        friendly_name: Lys Vaskerom
         icon: mdi:flash
     sensor.vaskerom_bod_lys_power_2:
-        friendly_name: Lys Vaskerom Bod - Strømforbruk
+        friendly_name: Lys Vaskerom Bod
         icon: mdi:flash
+    sensor.fibaro_plug_gl_heatpump_power:
+        friendly_name: GL Varmepumpe
+        icon: mdi:flash
+    sensor.fibaro_plug_hallway_heat_power:
+        friendly_name: Gang Panelovn
+        icon: mdi:flash
+
+# Sensors: Battery
     sensor.stue:
         friendly_name: IKEA fjernkontroll Stue
         icon: mdi:battery-charging-wireless-outline
@@ -154,33 +185,54 @@
         icon: mdi:battery-charging-wireless-outline
         
         
+# Climate
+    climate.bad_termostat_heating:
+        friendly_name: Bad termostat
+        icon: mdi:thermometer
+        homebridge_visible: true
+    climate.stue:
+        friendly_name: Stue varmepumpe
+        icon: mdi:fan
+        homebridge_visible: true
+        
 # Sensors: Temperature
     sensor.garage_temperature:
         friendly_name: Garasje
+        homebridge_visible: true
     sensor.bad_temperature:
         friendly_name: Bad
+        homebridge_visible: true
     sensor.soverom_temperature:
         friendly_name: Soverom
+        homebridge_visible: true
     sensor.gang_temperature:
         friendly_name: Gang
+        homebridge_visible: true
+    sensor.soverom__ailo_temperature:
+        friendly_name: Soverom Ailo
+        icon: mdi:thermometer
+        homebridge_visible: true
         
         
 # Netatmo
-    sensor.netatmo_stue_humidity:
+    sensor.netatmo_stue_humidity_3:
         friendly_name: Stue
         icon: mdi:water
 
-    sensor.netatmo_stue_temperature:
+    sensor.netatmo_stue_temperature_3:
         friendly_name: Stue
         icon: mdi:thermometer
+        homebridge_visible: true
         
-    sensor.netatmo_kroken_ute_temperature:
+    sensor.netatmo_kroken_ute_temperature_3:
         friendly_name: Ute
         icon: mdi:thermometer
+        homebridge_visible: true
         
-    sensor.netatmo_stue_co2:
+    sensor.netatmo_stue_co2_3:
         friendly_name: CO2 Stue
         icon: mdi:periodic-table-co2
+        homebridge_visible: true
 
         
 # Battery sensors
@@ -191,6 +243,9 @@
         icon: mdi:battery-charging-wireless-outline
         
     sensor.batt_smoke_gl_bedroom:
+        icon: mdi:battery-charging-wireless-outline
+        
+    sensor.batt_smoke_gl_livingroom:
         icon: mdi:battery-charging-wireless-outline
         
     sensor.batt_smoke_livingroom:
@@ -215,21 +270,12 @@
         friendly_name: Garasjeport 2
         assumed_state: false
         icon: mdi:garage
+
         
-        
-# Climate
-    climate.bad_termostat_heating:
-        friendly_name: Bad termostat
-        icon: mdi:thermometer
-    climate.stue:
-        friendly_name: Stue varmepumpe
-        icon: mdi:fan
-    sensor.gang_temperature_2:
-        friendly_name: Gang
-        icon: mdi:thermometer
-    sensor.soverom__ailo_temperature:
-        friendly_name: Soverom Ailo
-        icon: mdi:thermometer
+# Locks
+    lock.ytterdr:
+        friendly_name: Ytterdør
+        homebridge_visible: true
 
         
 # Scripts
@@ -260,10 +306,12 @@
     script.script_garage_door_1:
         friendly_name: Garasje Leaf
         icon: mdi:garage
+        homebridge_visible: true
         
     script.script_garage_door_2:
         friendly_name: Garasje Audi
         icon: mdi:garage
+        homebridge_visible: true
         
         
 # Carwings LEAF

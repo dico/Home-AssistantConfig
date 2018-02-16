@@ -3,4 +3,4 @@
     host: 192.168.1.81
     port: 8001
     mac: cc:b1:1a:24:59:36
-  - platform: cast
+#  - platform: cast

@@ -8,12 +8,12 @@ default_view:
   - group.home_climate_control
   - group.automation_stuff
   - group.automation_scripts
-  - group.garage
+  - group.zone_garage
   - group.main_cameras
   
 default_test_view:
   name: Hjem (test)
-  view: true
+  view: false
   entities:
   - group.residence_radio
   - group.zone_livingroom_lights
@@ -41,11 +41,7 @@ climate:
 security:
   name: Sikkerhet
   entities:
-  - camera.garasje
-  - camera.haakaastu
-  - camera.trondheimsfjorden
-  - camera.gardsplass
-  - camera.wifi_cam_2
+  - group.camera
   - group.door_windows
   - group.motion
   - group.security_smoke_alarm_status
@@ -62,10 +58,12 @@ media:
 other:
   name: Annet
   entities:
+  - group.on_off_appliances
   - group.steam
   - group.awsome_people
   - group.outside_switches
-  - group.power_reader
+  - group.energy_curent_usage
+  - group.energy_used_energy
   - group.device_statuses
   - group.sensor_battery
   - group.leaf

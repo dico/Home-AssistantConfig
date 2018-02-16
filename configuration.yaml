@@ -74,12 +74,6 @@ panel_custom:
     sidebar_icon: mdi:home
     url_path: floorplan
     config: !include floorplan.yaml
-  - name: dashboard
-    sidebar_title: Dashboard
-    sidebar_icon: mdi:work
-    url_path: todomvc
-    config:
-      title: hello
 
 verisure:
   username: !secret VERISURE_USERNAME
@@ -97,6 +91,9 @@ netatmo:
   secret_key: !secret NETATMO_SECRET_KEY
   username: !secret NETATMO_USERNAME
   password: !secret NETATMO_PASSWORD
+  
+tellduslive:
+  host: "192.168.1.31"
 
 device_tracker:
   - platform: unifi

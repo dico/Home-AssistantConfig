@@ -1,8 +1,8 @@
 lights:
   name: Lys
   entities:
-  - light.aeotec_dim_sofa_level
-  - light.aeotec_dim_spisebord_level
+  - light.stue_sofa
+  - light.stue_spisebord
   - light.gulvlampe_verst
   - light.gulvlampe_nederst
   - switch.gang_lyst_kommode_switch
@@ -16,6 +16,7 @@ lights:
   - light.nattlampe_robert
   - light.nattlampe_veronica
   - light.vaskerom_trapp
+  - light.utelys
   view: false
   
 gang_lights:

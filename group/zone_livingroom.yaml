@@ -8,8 +8,8 @@ zone_livingroom:
 zone_livingroom_lights:
   name: Lys stue
   entities:
-  - light.aeotec_dim_sofa_level
-  - light.aeotec_dim_spisebord_level
+  - light.stue_sofa
+  - light.nexa_dim_stue_spisebord_level
   - group.stue_gulvlampe
   - switch.lys_pc_robert
   - switch.jul_stuevindu
@@ -19,6 +19,6 @@ zone_livingroom_lights:
 zone_livingroom_sensors:
   name: Stue sensorer
   entities:
-  - sensor.stue_temperature
-  - sensor.netatmo_stue_co2
+  - sensor.netatmo_stue_temperature_3
+  - sensor.netatmo_stue_co2_3
   view: false

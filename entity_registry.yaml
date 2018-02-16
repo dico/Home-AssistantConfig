@@ -1,0 +1,579 @@
+sensor.netatmo_stue_noise:
+  platform: netatmo
+  unique_id: 0-noise
+sensor.netatmo_kroken_ute_battery:
+  platform: netatmo
+  unique_id: 2-battery_vp
+sensor.netatmo_stue_humidity:
+  platform: netatmo
+  unique_id: 0-humidity
+sensor.netatmo_stue_min_temp:
+  platform: netatmo
+  unique_id: 0-min_temp
+sensor.netatmo_stue_temperature:
+  platform: netatmo
+  unique_id: 0-temperature
+sensor.netatmo_stue_max_temp:
+  platform: netatmo
+  unique_id: 0-max_temp
+sensor.netatmo_stue_co2:
+  platform: netatmo
+  unique_id: 0-co2
+sensor.netatmo_kroken_ute_temperature:
+  platform: netatmo
+  unique_id: 2-temperature
+sensor.netatmo_stue_pressure:
+  platform: netatmo
+  unique_id: 0-pressure
+sensor.netatmo_kroken_ute_humidity:
+  platform: netatmo
+  unique_id: 2-humidity
+sensor.netatmo_kroken_ute_radio:
+  platform: netatmo
+  unique_id: 2-rf_status
+sensor.netatmo_stue_wifi:
+  platform: netatmo
+  unique_id: 0-wifi_status
+sensor.robert_sin_ipad_battery_level:
+  platform: ios
+  unique_id: level_robert_sin_ipad
+sensor.veronica_sin_iphone_battery_level:
+  platform: ios
+  unique_id: level_veronica_sin_iphone
+sensor.dico2_battery_state:
+  platform: ios
+  unique_id: state_robert.iphone7
+sensor.dico2_battery_level:
+  platform: ios
+  unique_id: level_robert_iphone7
+sensor.veronica_sin_iphone_battery_state:
+  platform: ios
+  unique_id: state_veronica_sin_iphone
+sensor.ipad_battery_level:
+  platform: ios
+  unique_id: level_vegg
+sensor.dico2_battery_state_2:
+  platform: ios
+  unique_id: state_robertiphone7
+sensor.dico2_battery_state_3:
+  platform: ios
+  unique_id: state_robert_iphone7
+sensor.ipad_battery_level_2:
+  platform: ios
+  unique_id: level_ipad
+sensor.veronica_sin_iphone_battery_level_2:
+  platform: ios
+  unique_id: level_veronica.iphone6s
+sensor.dico2_battery_level_2:
+  platform: ios
+  unique_id: level_robert.iphone7
+sensor.veronica_sin_iphone_battery_state_2:
+  platform: ios
+  unique_id: state_veronicaiphone6s
+sensor.veronica_sin_iphone_battery_level_3:
+  platform: ios
+  unique_id: level_veronicaiphone6s
+sensor.ipad_battery_state:
+  platform: ios
+  unique_id: state_vegg
+sensor.dico2_battery_level_3:
+  platform: ios
+  unique_id: level_robertiphone7
+sensor.veronica_sin_iphone_battery_state_3:
+  platform: ios
+  unique_id: state_veronica.iphone6s
+sensor.ipad_battery_state_2:
+  platform: ios
+  unique_id: state_ipad
+sensor.robert_sin_ipad_battery_state:
+  platform: ios
+  unique_id: state_robert_sin_ipad
+switch.gang_lyst_kommode_switch:
+  platform: zwave
+  unique_id: 4-72057594109837312
+switch.hotwatertank_switch:
+  platform: zwave
+  unique_id: 5-72057594126614528
+sensor.hotwatertank_power:
+  platform: zwave
+  unique_id: 5-72057594126811202
+sensor.hotwatertank_energy:
+  platform: zwave
+  unique_id: 5-72057594126827522
+sensor.hotwatertank_power_2:
+  platform: zwave
+  unique_id: 5-72057594126827650
+sensor.hotwatertank_exporting:
+  platform: zwave
+  unique_id: 5-72057594126828032
+sensor.hotwatertank_alarm_type:
+  platform: zwave
+  unique_id: 5-72057594127859713
+sensor.hotwatertank_alarm_level:
+  platform: zwave
+  unique_id: 5-72057594127859729
+sensor.hotwatertank_sourcenodeid:
+  platform: zwave
+  unique_id: 5-72057594127859745
+sensor.hotwatertank_power_management:
+  platform: zwave
+  unique_id: 5-72057594127859889
+switch.vaskemaskin_switch:
+  platform: zwave
+  unique_id: 6-72057594143391744
+sensor.vaskemaskin_power:
+  platform: zwave
+  unique_id: 6-72057594143588418
+sensor.vaskemaskin_energy:
+  platform: zwave
+  unique_id: 6-72057594143604738
+sensor.vaskemaskin_power_2:
+  platform: zwave
+  unique_id: 6-72057594143604866
+sensor.vaskemaskin_exporting:
+  platform: zwave
+  unique_id: 6-72057594143605248
+sensor.vaskemaskin_alarm_type:
+  platform: zwave
+  unique_id: 6-72057594144636929
+sensor.vaskemaskin_alarm_level:
+  platform: zwave
+  unique_id: 6-72057594144636945
+sensor.vaskemaskin_sourcenodeid:
+  platform: zwave
+  unique_id: 6-72057594144636961
+sensor.vaskemaskin_power_management:
+  platform: zwave
+  unique_id: 6-72057594144637105
+switch.vaskerom_bod_lys_switch:
+  platform: zwave
+  unique_id: 7-72057594160168960
+switch.vaskerom_bod_lys_switch_2:
+  platform: zwave
+  unique_id: 7-144115188198096896
+sensor.vaskerom_bod_lys_energy:
+  platform: zwave
+  unique_id: 7-72057594160381954
+sensor.vaskerom_bod_lys_energy_2:
+  platform: zwave
+  unique_id: 7-144115188198309890
+sensor.vaskerom_bod_lys_power:
+  platform: zwave
+  unique_id: 7-72057594160382082
+sensor.vaskerom_bod_lys_exporting:
+  platform: zwave
+  unique_id: 7-72057594160382464
+sensor.vaskerom_bod_lys_power_2:
+  platform: zwave
+  unique_id: 7-144115188198310018
+sensor.vaskerom_bod_lys_exporting_2:
+  platform: zwave
+  unique_id: 7-144115188198310400
+sensor.vaskerom_bod_lys_alarm_type:
+  platform: zwave
+  unique_id: 7-72057594161414145
+sensor.vaskerom_bod_lys_alarm_level:
+  platform: zwave
+  unique_id: 7-72057594161414161
+sensor.vaskerom_bod_lys_sourcenodeid:
+  platform: zwave
+  unique_id: 7-72057594161414177
+sensor.vaskerom_bod_lys_heat:
+  platform: zwave
+  unique_id: 7-72057594161414257
+sensor.vaskerom_bod_lys_power_management:
+  platform: zwave
+  unique_id: 7-72057594161414321
+sensor.bad_termostat_temperature:
+  platform: zwave
+  unique_id: 8-72057594177142802
+sensor.bad_termostat_energy:
+  platform: zwave
+  unique_id: 8-72057594177159170
+sensor.bad_termostat_exporting:
+  platform: zwave
+  unique_id: 8-72057594177159680
+climate.bad_termostat_heating:
+  platform: zwave
+  unique_id: 8-72057594177437714
+climate.bad_termostat_energy_heat:
+  platform: zwave
+  unique_id: 8-72057594177437874
+binary_sensor.fibaro_motion_1_sensor:
+  platform: zwave
+  unique_id: 9-72057594193903616
+sensor.fibaro_motion_1_temperature:
+  platform: zwave
+  unique_id: 9-72057594193920018
+sensor.fibaro_motion_1_luminance:
+  platform: zwave
+  unique_id: 9-72057594193920050
+sensor.fibaro_motion_1_seismic_intensity:
+  platform: zwave
+  unique_id: 9-72057594193920402
+sensor.fibaro_motion_1_alarm_type:
+  platform: zwave
+  unique_id: 9-72057594194968577
+sensor.fibaro_motion_1_alarm_level:
+  platform: zwave
+  unique_id: 9-72057594194968593
+sensor.fibaro_motion_1_sourcenodeid:
+  platform: zwave
+  unique_id: 9-72057594194968609
+sensor.fibaro_motion_1_burglar:
+  platform: zwave
+  unique_id: 9-72057594194968737
+sensor.fibaro_motion_1_general:
+  platform: zwave
+  unique_id: 9-72057594195673089
+sensor.fibaro_red_btn_01_alarm_type:
+  platform: zwave
+  unique_id: 10-72057594211745793
+sensor.fibaro_red_btn_01_alarm_level:
+  platform: zwave
+  unique_id: 10-72057594211745809
+sensor.fibaro_red_btn_01_sourcenodeid:
+  platform: zwave
+  unique_id: 10-72057594211745825
+sensor.fibaro_red_btn_01_burglar:
+  platform: zwave
+  unique_id: 10-72057594211745953
+binary_sensor.motion_livingroom_sensor:
+  platform: zwave
+  unique_id: 12-72057594244235264
+sensor.motion_livingroom_temperature:
+  platform: zwave
+  unique_id: 12-72057594244251666
+sensor.motion_livingroom_alarm_type:
+  platform: zwave
+  unique_id: 12-72057594245300225
+sensor.motion_livingroom_alarm_level:
+  platform: zwave
+  unique_id: 12-72057594245300241
+sensor.motion_livingroom_sourcenodeid:
+  platform: zwave
+  unique_id: 12-72057594245300257
+sensor.motion_livingroom_burglar:
+  platform: zwave
+  unique_id: 12-72057594245300385
+binary_sensor.fibaro_smoke_hallway_sensor:
+  platform: zwave
+  unique_id: 16-72057594311344128
+sensor.fibaro_smoke_hallway_temperature:
+  platform: zwave
+  unique_id: 16-72057594311360530
+sensor.fibaro_smoke_hallway_alarm_type:
+  platform: zwave
+  unique_id: 16-72057594312409089
+sensor.fibaro_smoke_hallway_alarm_level:
+  platform: zwave
+  unique_id: 16-72057594312409105
+sensor.fibaro_smoke_hallway_sourcenodeid:
+  platform: zwave
+  unique_id: 16-72057594312409121
+sensor.fibaro_smoke_hallway_smoke:
+  platform: zwave
+  unique_id: 16-72057594312409153
+sensor.fibaro_smoke_hallway_heat:
+  platform: zwave
+  unique_id: 16-72057594312409201
+sensor.fibaro_smoke_hallway_burglar:
+  platform: zwave
+  unique_id: 16-72057594312409249
+sensor.fibaro_smoke_hallway_power_management:
+  platform: zwave
+  unique_id: 16-72057594312409265
+sensor.fibaro_smoke_hallway_system:
+  platform: zwave
+  unique_id: 16-72057594312409281
+sensor.fibaro_smoke_hallway_general:
+  platform: zwave
+  unique_id: 16-72057594313113601
+sensor.fibaro_smoke_hallway_smoke_2:
+  platform: zwave
+  unique_id: 16-72057594313113617
+sensor.fibaro_smoke_hallway_heat_2:
+  platform: zwave
+  unique_id: 16-72057594313113665
+binary_sensor.fibaro_smoke_gl_bedroom_sensor:
+  platform: zwave
+  unique_id: 17-72057594328121344
+sensor.fibaro_smoke_gl_bedroom_temperature:
+  platform: zwave
+  unique_id: 17-72057594328137746
+sensor.fibaro_smoke_gl_bedroom_alarm_type:
+  platform: zwave
+  unique_id: 17-72057594329186305
+sensor.fibaro_smoke_gl_bedroom_alarm_level:
+  platform: zwave
+  unique_id: 17-72057594329186321
+sensor.fibaro_smoke_gl_bedroom_sourcenodeid:
+  platform: zwave
+  unique_id: 17-72057594329186337
+sensor.fibaro_smoke_gl_bedroom_smoke:
+  platform: zwave
+  unique_id: 17-72057594329186369
+sensor.fibaro_smoke_gl_bedroom_heat:
+  platform: zwave
+  unique_id: 17-72057594329186417
+sensor.fibaro_smoke_gl_bedroom_burglar:
+  platform: zwave
+  unique_id: 17-72057594329186465
+sensor.fibaro_smoke_gl_bedroom_power_management:
+  platform: zwave
+  unique_id: 17-72057594329186481
+sensor.fibaro_smoke_gl_bedroom_system:
+  platform: zwave
+  unique_id: 17-72057594329186497
+sensor.fibaro_smoke_gl_bedroom_general:
+  platform: zwave
+  unique_id: 17-72057594329890817
+sensor.fibaro_smoke_gl_bedroom_smoke_2:
+  platform: zwave
+  unique_id: 17-72057594329890833
+sensor.fibaro_smoke_gl_bedroom_heat_2:
+  platform: zwave
+  unique_id: 17-72057594329890881
+binary_sensor.fibaro_smoke_livingroom_sensor:
+  platform: zwave
+  unique_id: 18-72057594344898560
+sensor.fibaro_smoke_livingroom_temperature:
+  platform: zwave
+  unique_id: 18-72057594344914962
+sensor.fibaro_smoke_livingroom_alarm_type:
+  platform: zwave
+  unique_id: 18-72057594345963521
+sensor.fibaro_smoke_livingroom_alarm_level:
+  platform: zwave
+  unique_id: 18-72057594345963537
+sensor.fibaro_smoke_livingroom_sourcenodeid:
+  platform: zwave
+  unique_id: 18-72057594345963553
+sensor.fibaro_smoke_livingroom_smoke:
+  platform: zwave
+  unique_id: 18-72057594345963585
+sensor.fibaro_smoke_livingroom_heat:
+  platform: zwave
+  unique_id: 18-72057594345963633
+sensor.fibaro_smoke_livingroom_burglar:
+  platform: zwave
+  unique_id: 18-72057594345963681
+sensor.fibaro_smoke_livingroom_power_management:
+  platform: zwave
+  unique_id: 18-72057594345963697
+sensor.fibaro_smoke_livingroom_system:
+  platform: zwave
+  unique_id: 18-72057594345963713
+sensor.fibaro_smoke_livingroom_general:
+  platform: zwave
+  unique_id: 18-72057594346668033
+sensor.fibaro_smoke_livingroom_smoke_2:
+  platform: zwave
+  unique_id: 18-72057594346668049
+sensor.fibaro_smoke_livingroom_heat_2:
+  platform: zwave
+  unique_id: 18-72057594346668097
+binary_sensor.fibaro_smoke_gl_livingroom_sensor:
+  platform: zwave
+  unique_id: 19-72057594361675776
+sensor.fibaro_smoke_gl_livingroom_temperature:
+  platform: zwave
+  unique_id: 19-72057594361692178
+sensor.fibaro_smoke_gl_livingroom_alarm_type:
+  platform: zwave
+  unique_id: 19-72057594362740737
+sensor.fibaro_smoke_gl_livingroom_alarm_level:
+  platform: zwave
+  unique_id: 19-72057594362740753
+sensor.fibaro_smoke_gl_livingroom_sourcenodeid:
+  platform: zwave
+  unique_id: 19-72057594362740769
+sensor.fibaro_smoke_gl_livingroom_smoke:
+  platform: zwave
+  unique_id: 19-72057594362740801
+sensor.fibaro_smoke_gl_livingroom_heat:
+  platform: zwave
+  unique_id: 19-72057594362740849
+sensor.fibaro_smoke_gl_livingroom_burglar:
+  platform: zwave
+  unique_id: 19-72057594362740897
+sensor.fibaro_smoke_gl_livingroom_power_management:
+  platform: zwave
+  unique_id: 19-72057594362740913
+sensor.fibaro_smoke_gl_livingroom_system:
+  platform: zwave
+  unique_id: 19-72057594362740929
+sensor.fibaro_smoke_gl_livingroom_general:
+  platform: zwave
+  unique_id: 19-72057594363445249
+sensor.fibaro_smoke_gl_livingroom_smoke_2:
+  platform: zwave
+  unique_id: 19-72057594363445265
+sensor.fibaro_smoke_gl_livingroom_heat_2:
+  platform: zwave
+  unique_id: 19-72057594363445313
+switch.telldus_gl_repeater_switch:
+  platform: zwave
+  unique_id: 20-72057594378272768
+switch.telldus_soverom_veronica_switch:
+  platform: zwave
+  unique_id: 21-72057594395049984
+sensor.nortq_power_gl_energy:
+  platform: zwave
+  unique_id: 22-72057594412040194
+sensor.north_power_main_energy:
+  platform: zwave
+  unique_id: 23-72057594428817410
+media_player.alpha:
+  platform: plex
+  unique_id: E72FB27F-CA12-4BB8-A611-CE404D987222
+light.stue_spisebord:
+  platform: zwave
+  unique_id: 27-72057594495729665
+sensor.nexa_dim_stue_spisebord_alarm_type:
+  platform: zwave
+  unique_id: 27-72057594496958465
+sensor.nexa_dim_stue_spisebord_alarm_level:
+  platform: zwave
+  unique_id: 27-72057594496958481
+sensor.everspring_ad146_in_wall_dimmer_module_sourcenodeid:
+  platform: zwave
+  unique_id: 27-72057594496958497
+sensor.everspring_ad146_in_wall_dimmer_module_power_management:
+  platform: zwave
+  unique_id: 27-72057594496958641
+binary_sensor.nexa_magnet_01_sensor:
+  platform: zwave
+  unique_id: 28-72057594512670720
+sensor.nexa_magnet_01_alarm_type:
+  platform: zwave
+  unique_id: 28-72057594513735681
+sensor.nexa_magnet_01_alarm_level:
+  platform: zwave
+  unique_id: 28-72057594513735697
+switch.fibaro_plug_gl_heatpump_switch:
+  platform: zwave
+  unique_id: 29-72057594529267712
+sensor.fibaro_plug_gl_heatpump_energy:
+  platform: zwave
+  unique_id: 29-72057594529480706
+sensor.fibaro_plug_gl_heatpump_alarm_type:
+  platform: zwave
+  unique_id: 29-72057594530512897
+sensor.fibaro_plug_gl_heatpump_alarm_level:
+  platform: zwave
+  unique_id: 29-72057594530512913
+sensor.fibaro_plug_gl_heatpump_power:
+  platform: zwave
+  unique_id: 29-72057594529464386
+sensor.fibaro_plug_gl_heatpump_power_2:
+  platform: zwave
+  unique_id: 29-72057594529480834
+sensor.fibaro_plug_gl_heatpump_exporting:
+  platform: zwave
+  unique_id: 29-72057594529481216
+sensor.fibaro_plug_gl_heatpump_sourcenodeid:
+  platform: zwave
+  unique_id: 29-72057594530512929
+sensor.fibaro_plug_gl_heatpump_power_management:
+  platform: zwave
+  unique_id: 29-72057594530513073
+sensor.aeotec_wallmote_01_alarm_type:
+  platform: zwave
+  unique_id: 30-72057594547290113
+sensor.aeotec_wallmote_01_alarm_level:
+  platform: zwave
+  unique_id: 30-72057594547290129
+switch.aeotec_wallmote_01_switch:
+  platform: zwave
+  unique_id: 30-72057594546044928
+sensor.aeotec_zw130_wallmote_quad_sourcenodeid:
+  platform: zwave
+  unique_id: 30-72057594547290145
+sensor.aeotec_zw130_wallmote_quad_power_management:
+  platform: zwave
+  unique_id: 30-72057594547290289
+media_player.robert_sin_ipad:
+  platform: plex
+  unique_id: 74EE344C-5277-4A41-9FC5-4AC18076A143
+switch.fibaro_plug_hallway_heat_switch:
+  platform: zwave
+  unique_id: 31-72057594562822144
+sensor.fibaro_plug_hallway_heat_energy:
+  platform: zwave
+  unique_id: 31-72057594563035138
+sensor.fibaro_plug_hallway_heat_alarm_type:
+  platform: zwave
+  unique_id: 31-72057594564067329
+sensor.fibaro_plug_hallway_heat_alarm_level:
+  platform: zwave
+  unique_id: 31-72057594564067345
+sensor.fibaro_plug_hallway_heat_power:
+  platform: zwave
+  unique_id: 31-72057594563018818
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2:
+  platform: zwave
+  unique_id: 31-72057594563035266
+sensor.fibaro_system_fgwpef_wall_plug_gen5_exporting:
+  platform: zwave
+  unique_id: 31-72057594563035648
+sensor.fibaro_system_fgwpef_wall_plug_gen5_sourcenodeid:
+  platform: zwave
+  unique_id: 31-72057594564067361
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power_management:
+  platform: zwave
+  unique_id: 31-72057594564067505
+switch.fibaro_plug_04_switch:
+  platform: zwave
+  unique_id: 32-72057594579599360
+sensor.fibaro_plug_04_energy:
+  platform: zwave
+  unique_id: 32-72057594579812354
+sensor.fibaro_plug_04_alarm_type:
+  platform: zwave
+  unique_id: 32-72057594580844545
+sensor.fibaro_plug_04_alarm_level:
+  platform: zwave
+  unique_id: 32-72057594580844561
+sensor.fibaro_plug_04_power:
+  platform: zwave
+  unique_id: 32-72057594579796034
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power_4:
+  platform: zwave
+  unique_id: 32-72057594579812482
+sensor.fibaro_system_fgwpef_wall_plug_gen5_exporting_2:
+  platform: zwave
+  unique_id: 32-72057594579812864
+sensor.fibaro_system_fgwpef_wall_plug_gen5_sourcenodeid_2:
+  platform: zwave
+  unique_id: 32-72057594580844577
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power_management_2:
+  platform: zwave
+  unique_id: 32-72057594580844721
+sensor.alarm_type_3:
+  platform: zwave
+  unique_id: 33-72057594597621761
+sensor.alarm_level_3:
+  platform: zwave
+  unique_id: 33-72057594597621777
+binary_sensor.sensor:
+  platform: zwave
+  unique_id: 33-72057594596556800
+sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:
+  platform: zwave
+  unique_id: 33-72057594596573202
+sensor.fibaro_system_fgms001zw5_motion_sensor_luminance:
+  platform: zwave
+  unique_id: 33-72057594596573234
+sensor.fibaro_system_fgms001zw5_motion_sensor_seismic_intensity:
+  platform: zwave
+  unique_id: 33-72057594596573586
+sensor.fibaro_system_fgms001zw5_motion_sensor_sourcenodeid:
+  platform: zwave
+  unique_id: 33-72057594597621793
+sensor.fibaro_system_fgms001zw5_motion_sensor_burglar:
+  platform: zwave
+  unique_id: 33-72057594597621921
+sensor.fibaro_system_fgms001zw5_motion_sensor_general:
+  platform: zwave
+  unique_id: 33-72057594598326273

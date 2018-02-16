@@ -1,9 +1,9 @@
 home_main_climate_sensors:
   name: Klima og sensorer
   entities:
-  - sensor.netatmo_kroken_ute_temperature
-  - sensor.netatmo_stue_temperature
-  - sensor.netatmo_stue_co2
+  - sensor.netatmo_kroken_ute_temperature_3
+  - sensor.netatmo_stue_temperature_3
+  - sensor.netatmo_stue_co2_3
   - sensor.gang_temperature
   - sensor.bad_temperature
   - sensor.soverom_temperature

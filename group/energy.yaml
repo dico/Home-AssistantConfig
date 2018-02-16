@@ -1,0 +1,25 @@
+energy_used_energy:
+  name: "Energi forbruk"
+  entities:
+  - sensor.north_power_main_energy
+  - sensor.nortq_power_gl_energy
+  - sensor.fibaro_plug_gl_heatpump_energy
+  - sensor.hotwatertank_energy
+  - sensor.vaskemaskin_energy
+  - sensor.vaskerom_bod_lys_energy
+  - sensor.vaskerom_bod_lys_energy_2
+  - sensor.fibaro_plug_hallway_heat_energy
+  view: false
+  control : hidden
+  
+  
+energy_curent_usage:
+  name: "Strømforbruk nå"
+  entities:
+  - sensor.hotwatertank_power
+  - sensor.vaskemaskin_power
+  - sensor.vaskerom_bod_lys_power
+  - sensor.vaskerom_bod_lys_power_2
+  - sensor.fibaro_plug_gl_heatpump_power
+  - sensor.fibaro_plug_hallway_heat_power
+  view: false

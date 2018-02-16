@@ -1,8 +1,8 @@
 # Magnet switches
   - platform: template
     sensors:
-      magnet_dr_vaskerom:
-        value_template: '{% if is_state("switch.magnet_dr_vaskerom", "off") %}Lukket{% else %}Åpen{% endif %}'
+      magnet_vaskeromdor:
+        value_template: '{% if is_state("binary_sensor.nexa_magnet_01_sensor", "off") %}Lukket{% else %}Åpen{% endif %}'
         friendly_name: 'Dør vaskerom'
         
   - platform: template
