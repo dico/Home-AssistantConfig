@@ -7,8 +7,14 @@
         
   - platform: template
     sensors:
+      magnet_sov_verandador:
+        value_template: '{% if is_state("binary_sensor.nexa_magnet_sov_verandador_sensor", "off") %}Lukket{% else %}Åpen{% endif %}'
+        friendly_name: 'Dør soverom veranda'
+        
+  - platform: template
+    sensors:
       magnet_dor_ytterdor:
-        value_template: '{% if is_state("switch.magnet_ytterdr", "off") %}Lukket{% else %}Åpen{% endif %}'
+        value_template: '{% if is_state("switch.ytterdr", "off") %}Lukket{% else %}Åpen{% endif %}'
         friendly_name: 'Ytterdør'
         
         

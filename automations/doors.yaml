@@ -1,0 +1,86 @@
+# Notify if door opened
+- alias: 'Door har been opened'
+  trigger:
+    platform: state
+    entity_id:
+         - binary_sensor.nexa_magnet_sov_verandador_sensor
+         - binary_sensor.nexa_magnet_01_sensor
+         - switch.ytterdr
+    from: 'off'
+    to: 'on'
+  action:
+  - service: notify.ios_robert
+    data_template:
+        title: "Dør åpnet"
+        message: >
+         {{ trigger.to_state.attributes.friendly_name }} ble åpnet
+        
+
+
+# Notify if door has been left open
+- alias: 'Notify if any doors left open for 10 minutes'
+  trigger:
+    platform: state
+    entity_id:
+         - binary_sensor.nexa_magnet_sov_verandador_sensor
+         - binary_sensor.nexa_magnet_01_sensor
+         - switch.ytterdr
+    to: 'on'
+    for:
+         minutes: 10
+  action:
+  - service: notify.ios_both
+    data_template:
+        title: "Dør holdt åpen"
+        message: >
+         {{ trigger.to_state.attributes.friendly_name }} har ikke blitt lukket
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.automation_door_left_open
+
+
+# Set boolean to closed, if door is closed
+- alias: 'Door har been closed'
+  trigger:
+    platform: state
+    entity_id:
+         - binary_sensor.nexa_magnet_sov_verandador_sensor
+         - binary_sensor.nexa_magnet_01_sensor
+         - switch.ytterdr
+    from: 'on'
+    to: 'off'
+  action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.automation_door_left_open
+
+    
+    
+#Turn off heat if door is held open
+- alias: 'Turn off heat on door held open'
+  trigger:
+    entity_id: input_boolean.automation_door_left_open
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - service: switch.turn_off
+    entity_id: switch.fibaro_plug_hallway_heat_switch
+  - service: climate.set_temperature
+    data:
+        entity_id: climate.stue
+        temperature: 18
+    
+    
+#Turn on heat if door is closed
+- alias: 'Turn on heat on door closed'
+  trigger:
+    entity_id: input_boolean.automation_door_left_open
+    from: 'on'
+    platform: state
+    to: 'off'
+  action:
+  - service: switch.turn_on
+    entity_id: switch.fibaro_plug_hallway_heat_switch
+  - service: climate.set_temperature
+    data:
+        entity_id: climate.stue
+        temperature: 22

@@ -12,11 +12,29 @@ homeassistant:
   time_zone: Europe/Oslo
   
   customize: !include customize.yaml
+  
+  auth_providers:
+   - type: homeassistant
+   # Uncomment next line if you want to enable legacy API password support
+   #- type: legacy_api_password
+
+# Enable the auth component
+auth:
 
 
 frontend:
   themes: !include themes.yaml
-      
+
+cloud:
+  alexa:
+    filter:
+      include_domains:
+        - light
+        - switch
+        - lock
+        - script
+        - group
+
 config:
 
 http:
@@ -24,7 +42,11 @@ http:
   base_url: !secret HTTP_BASE_URL
   server_port: !secret HTTP_SERVER_PORT
   ip_ban_enabled: True
-  login_attempts_threshold: 5
+  login_attempts_threshold: 10
+  trusted_networks:
+    - 127.0.0.1
+    - ::1
+    - 192.168.1.0/24
 
 updater:
 discovery:
@@ -44,10 +66,11 @@ logger:
 recorder: !include recorder.yaml
 logbook: !include logbook.yaml      
 history: !include history.yaml
+
+#influxdb:
      
 zwave:
   usb_path: /dev/ttyACM0
-  new_entity_ids: true
   network_key: !secret ZWAVE_NETWORK_KEY
 
 climate:
@@ -66,14 +89,32 @@ script: !include scripts.yaml
 camera: !include camera.yaml
 notify: !include notify.yaml
 alert: !include alerts.yaml
+zone: !include zone.yaml
 #cover: !include cover.yaml
 
-panel_custom:
-  - name: floorplan
-    sidebar_title: Planløsning
-    sidebar_icon: mdi:home
-    url_path: floorplan
-    config: !include floorplan.yaml
+alarm_control_panel:
+  - platform: manual
+    name: Home Alarm
+    pending_time: 30
+    delay_time: 20
+    trigger_time: 4
+    disarmed:
+      trigger_time: 0
+    armed_home:
+      pending_time: 0
+      delay_time: 0
+
+#panel_custom:
+#  - name: floorplan
+#    sidebar_title: Planløsning
+#    sidebar_icon: mdi:home
+#    url_path: floorplan
+#    config: !include floorplan.yaml
+
+vacuum:
+  - platform: xiaomi_miio
+    host: 192.168.1.177
+    token: !secret XIAOMI_TOKEN
 
 verisure:
   username: !secret VERISURE_USERNAME
@@ -83,7 +124,7 @@ verisure:
   smartplugs: 0
   thermometers: 0
   locks: 1
-  mouse: 1
+  mouse: 0
   code_digits: !secret VERISURE_CODE_DIGITS
 
 netatmo:
@@ -91,9 +132,10 @@ netatmo:
   secret_key: !secret NETATMO_SECRET_KEY
   username: !secret NETATMO_USERNAME
   password: !secret NETATMO_PASSWORD
-  
+
 tellduslive:
-  host: "192.168.1.31"
+  host: "192.168.1.32"
+  update_interval: 5
 
 device_tracker:
   - platform: unifi
@@ -103,6 +145,9 @@ device_tracker:
     verify_ssl: false
     consider_home: 180
   - platform: owntracks
+    max_gps_accuracy: 200
+    waypoints: True
+    mqtt_topic: "owntracks/#"
   - platform: bluetooth_tracker
 
 mqtt:
@@ -110,6 +155,12 @@ mqtt:
     port: !secret CLOUD_MQTT_PORT
     username: !secret CLOUD_MQTT_USERNAME
     password: !secret CLOUD_MQTT_PASSWORD
+    
+weather:
+  - platform: yweather
+    
+#homekit:
+#  pincode: !secret HOMEKIT_PIN
     
 # Text to speech
 tts:

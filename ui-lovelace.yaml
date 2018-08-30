@@ -1,0 +1,444 @@
+resources:
+  - url: /local/custom_ui/weather-card.js
+    type: js
+  - url: /local/custom_ui/gauge-card.js
+    type: js
+  - url: /local/custom_ui/alarm_control_panel-card.js?v=2
+    type: js
+
+title: Kroken
+# Optional background for all views. Check https://developer.mozilla.org/en-US/docs/Web/CSS/background for more examples.
+background: center / cover no-repeat url("/background.png") fixed
+# Exclude entities from "Unused entities" view
+excluded_entities:
+  - weblink.router
+views:
+
+    # Specify a tab icon if you want the view tab to be an icon.
+  - icon: mdi:home-assistant
+    # Title of the view. Will be used as the tooltip for tab icon
+    title: First view
+    cards:
+    - type: vertical-stack
+      cards:
+        - type: entities
+          title: Lys
+          background: radial-gradient(crimson, skyblue)
+          theme: dark-mode
+          entities:
+           - light.stue_sofa
+           - light.stue_spisebord
+           - light.gulvlampe_verst
+           - light.gulvlampe_nederst
+           - switch.gang_lyst_kommode_switch
+           - switch.kjkken_vindu
+           - switch.robert_pc
+           - switch.veronica_pc
+           - switch.vaskerom_bod_lys_switch
+           - switch.vaskerom_bod_lys_switch_2
+           - group.gang_lights
+           - light.soverom_tak
+           - light.nattlampe_robert
+           - light.nattlampe_veronica
+           - light.vaskerom_trapp
+           - light.utelys
+
+    - type: vertical-stack
+      cards:
+        - type: "custom:weather-card"
+          entity_weather: weather.yweather
+          entity_sun: sun.sun
+          
+        - type: "custom:alarm_control_panel-card"
+          entity: alarm_control_panel.home_alarm
+          hide_keypad: true
+          title: Alarm
+          style: '--alarm-color-disarmed: var(--label-badge-blue);'
+          states:
+            - arm_away
+            - arm_night
+          
+        - type: entities
+          title: Klima
+          show_header_toggle: false
+          entities:
+           - climate.stue
+           - climate.bad_termostat_heating
+           
+        - type: glance
+          title: Klima inne
+          entities:
+           - sensor.netatmo_stue_temperature_2
+           - sensor.netatmo_stue_co2_2
+           - sensor.gang_temperature
+           - sensor.bad_temperature
+           - sensor.soverom_temperature
+           - sensor.soverom__ailo_temperature
+           - sensor.netatmo_kroken_ute_temperature_2
+           - sensor.garage_temperature
+        
+
+    - type: vertical-stack
+      cards:
+        - type: map
+          aspect_ratio: 100%
+          entities:
+            - device_tracker.enrlpqkj_a79742eeb61c491e944d60140077490d
+            - device_tracker.enrlpqkj_3f275dfc115a4b4aade1fc48bff378ad
+            - device_tracker.enrlpqkj_8012db7abc664e7ba9b761d4f3c2c19b
+            - zone.home
+            - zone.work
+            - zone.school
+
+        - type: entities
+          title: Garasje
+          show_header_toggle: false
+          entities:
+           - script.script_garage_door_1
+           - script.script_garage_door_2
+           - sensor.garagedoor1_status
+           
+        - type: entities
+          title: Scener
+          entities:
+           - script.livingroom_mood_lights
+           - script.livingroom_full_lights
+           - script.home_full_lights
+
+        - type: entities
+          title: Status
+          show_header_toggle: false
+          entities:
+           - input_boolean.washmachine_status
+             
+
+
+             
+             
+  ## PAGE: Lights
+  ## ------------------------------------------
+  - icon: mdi:lightbulb-outline
+    title: Lys
+    cards:
+      - type: entities
+        title: Stue
+        entities:
+          - light.stue_sofa
+          - light.stue_spisebord
+          - light.gulvlampe_verst
+          - light.gulvlampe_nederst
+          - switch.robert_pc
+          - switch.veronica_pc
+      - type: entities
+        title: Kjøkken
+        entities:
+          - switch.kjkken_vindu
+      - type: entities
+        title: Gang / Kjeller
+        entities:
+          - switch.vaskerom_bod_lys_switch
+          - switch.vaskerom_bod_lys_switch_2
+          - group.gang_lights
+          - light.vaskerom_trapp
+      - type: entities
+        title: Soverom
+        entities:
+          - light.soverom_tak
+          - light.nattlampe_robert
+          - light.nattlampe_veronica
+      - type: entities
+        title: Ute
+        entities:
+          - light.utelys
+
+          
+          
+  ## PAGE: Climate
+  ## ------------------------------------------
+  - icon: mdi:radiator
+    title: Klima
+    cards:
+      - type: entities
+        title: Klima
+        show_header_toggle: false
+        entities:
+         - climate.stue
+         - climate.bad_termostat_heating
+         
+      - type: entities
+        title: Klima inne
+        entities:
+         - sensor.netatmo_stue_temperature_2
+         - sensor.netatmo_stue_co2_2
+         - sensor.gang_temperature
+         - sensor.bad_temperature
+         - sensor.soverom_temperature
+         - sensor.ailo_temperature
+         - sensor.garasje_temperature
+         - sensor.kjellerbod_temperature
+         - sensor.mrkeloft_temperature
+         
+      - type: entities
+        title: Luftfuktighet
+        entities:
+         - sensor.soverom_humidity
+         - sensor.bad_humidity
+         - sensor.kjellerbod_humidity
+         - sensor.netatmo_kroken_ute_humidity_2
+         - sensor.netatmo_stue_humidity_2
+         
+      - type: history-graph
+        title: 'Ute temperatur'
+        entities:
+         - sensor.netatmo_kroken_ute_temperature_2
+         
+      - type: history-graph
+        title: 'CO2 Stue'
+        entities:
+         - sensor.netatmo_stue_co2_2
+         
+
+
+  ## PAGE: Home appliances
+  ## ------------------------------------------
+  - icon: mdi:washing-machine
+    title: Hus
+    cards:
+      - type: entities
+        title: Støvsuger
+        show_header_toggle: false
+        entities:
+         - vacuum.xiaomi_vacuum_cleaner
+         
+      - type: entities
+        title: Hvitevarer
+        show_header_toggle: false
+        entities:
+         - switch.hotwatertank_switch
+         - switch.vaskemaskin_switch
+         - switch.fibaro_plug_04_switch
+         - switch.fibaro_plug_gl_heatpump_switch
+         - switch.fibaro_plug_hallway_heat_switch
+         
+      - type: entities
+        title: Soverom
+        show_header_toggle: false
+        entities:
+         - switch.telldus_soverom_veronica_switch
+
+      - type: entities
+        title: Status
+        show_header_toggle: false
+        entities:
+         - input_boolean.washmachine_status
+         
+         
+    
+    
+  ## PAGE: Camera
+  ## ------------------------------------------
+  - icon: mdi:cctv
+    title: Kamera
+    cards:
+      - type: picture-entity
+        entity: camera.garasje
+      - type: picture-entity
+        entity: camera.gardsplass
+      - type: picture-entity
+        entity: camera.carport
+      - type: picture-entity
+        entity: camera.stall
+      - type: picture-entity
+        entity: camera.beite
+      - type: picture-entity
+        entity: camera.trondheimsfjorden_2
+
+        
+  ## PAGE: Security
+  ## ------------------------------------------
+  - icon: mdi:security-home
+    title: Sikkerhet
+    cards:
+      - type: "custom:alarm_control_panel-card"
+        entity: alarm_control_panel.home_alarm
+        hide_keypad: true
+        title: Alarm
+        style: '--alarm-color-disarmed: var(--label-badge-blue);'
+        states:
+          - arm_home
+          - arm_away
+          - arm_night
+    
+      - type: entities
+        title: Dørlås
+        entities:
+          - lock.ytterdr
+          - script.script_lock_entry_door
+          - script.script_unlock_entry_door
+          
+      - type: entities
+        title: Bevegelse
+        entities:
+          - sensor.motion_entry
+          - sensor.motion_livingroom
+          - sensor.motion_vaskerom
+          - sensor.motion_bedroom
+          
+      - type: entities
+        title: Røykvarslere
+        background: radial-gradient(crimson, skyblue)
+        theme: dark-mode
+        entities:
+          - sensor.smokealarm_livingroom
+          - sensor.smokealarm_hallway
+          - sensor.smokealarm_gl_bedroom
+          - sensor.smokealarm_gl_livingroom
+          
+      - type: entities
+        title: Dør / Vindu
+        entities:
+          - sensor.magnet_dor_ytterdor
+          - sensor.magnet_vaskeromdor
+          - sensor.magnet_sov_verandador
+
+      - type: entities
+        title: Garasje
+        entities:
+          - script.script_garage_door_1
+          - script.script_garage_door_2
+          - sensor.garagedoor1_status
+          
+          
+          
+  ## PAGE: Power usage
+  ## ------------------------------------------
+  - icon: mdi:flash
+    title: Strøm
+    cards:
+      - type: custom:gauge-card
+        title: Data
+        entity: sensor.fibaro_plug_data_power
+        min: 0
+        max: 1000
+        severity:
+          red: 500
+          green: 0
+          amber: 250
+      - type: custom:gauge-card
+        title: GL Varmepumpe
+        entity: sensor.fibaro_plug_gl_heatpump_power
+        min: 0
+        max: 1000
+        severity:
+          red: 500
+          green: 0
+          amber: 250
+      - type: custom:gauge-card
+        title: TV / Media
+        entity: sensor.fibaro_plug_04_power
+        min: 0
+        max: 500
+        severity:
+          red: 250
+          green: 0
+          amber: 100
+      - type: custom:gauge-card
+        title: Gang Panelovn
+        entity: sensor.fibaro_plug_hallway_heat_power
+        min: 0
+        max: 1000
+        severity:
+          red: 500
+          green: 0
+          amber: 250
+      - type: custom:gauge-card
+        title: Varmtvannstank
+        entity: sensor.hotwatertank_power
+        min: 0
+        max: 2000
+        severity:
+          red: 1800
+          green: 0
+          amber: 1000
+      - type: custom:gauge-card
+        title: Vaskemaskin
+        entity: sensor.vaskemaskin_power
+        min: 0
+        max: 1000
+        severity:
+          red: 500
+          green: 0
+          amber: 250
+          
+      - type: entities
+        title: Energi forbrukt
+        entities:
+          - sensor.north_power_main_energy
+          - sensor.nortq_power_gl_energy
+          - sensor.fibaro_plug_gl_heatpump_energy
+          - sensor.hotwatertank_energy
+          - sensor.vaskemaskin_energy
+          - sensor.vaskerom_bod_lys_energy
+          - sensor.vaskerom_bod_lys_energy_2
+          - sensor.fibaro_plug_hallway_heat_energy
+          - sensor.fibaro_plug_04_energy
+          - sensor.fibaro_plug_data_energy
+      - type: entities
+        title: Strømforbruk nå
+        entities:
+          - sensor.hotwatertank_power
+          - sensor.vaskemaskin_power
+          - sensor.vaskerom_bod_lys_power
+          - sensor.fibaro_plug_gl_heatpump_power
+          - sensor.fibaro_plug_hallway_heat_power
+          - sensor.fibaro_plug_04_power
+          - sensor.fibaro_plug_data_power
+          
+          
+  ## PAGE: Settings
+  ## ------------------------------------------
+  - icon: mdi:star
+    title: Diverse
+    cards:
+      - type: entities
+        title: Steam
+        show_header_toggle: false
+        entities:      
+          - sensor.steam_76561197961355518
+          - sensor.steam_76561198125421167
+          - sensor.steam_76561198142897485
+          - sensor.steam_76561198453950322
+          - sensor.steam_76561198105070411
+          - sensor.steam_76561197967336072
+      - type: entities
+        title: Nissan Leaf
+        show_header_toggle: false
+        entities:      
+          - sensor.leaf_battery
+          - sensor.leaf_battery_connected
+          - sensor.leaf_battery_charg_status
+          - sensor.leaf_status
+          - sensor.leaf_range_ac_off
+          - sensor.leaf_range_ac_on
+          - script.script_carwings_fetch
+          - script.script_carwings_climate_on
+          - script.script_carwings_climate_off
+          
+          
+      
+  ## PAGE: Settings
+  ## ------------------------------------------
+  - icon: mdi:settings
+    title: Automasjon
+    cards:
+      - type: entities
+        title: Automasjon
+        show_header_toggle: false
+        entities:
+          - input_boolean.hallway_lights_roof_automated
+          - input_boolean.automation_steam_notifications
+          - input_boolean.automation_bedroom_light
+          - input_boolean.automation_test_switch
+          - input_boolean.automation_good_morning_auto
+          - input_boolean.automation_away_auto
+          - input_boolean.automation_intruder_alert

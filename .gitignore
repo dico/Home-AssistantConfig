@@ -29,12 +29,17 @@ __pycache__
 *.google.token
 .google.token
 .HA_VERSION
+.cloud
+.storage
+..homekit.state
 home-assistant.env
 home-assistant.*
 secrets.yaml
 gitupdate.sh
 known_devices.yaml
+zone.yaml
 google_calendars.yaml
+camera.yaml
 components
 deps
 !/.gitignore

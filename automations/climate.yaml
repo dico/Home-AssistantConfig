@@ -6,3 +6,39 @@
       entity_id: zwave.bad_termostat
       basic_level: 255
   action:
+  - service: notify.ios_robertiphone7
+    data:
+        message: "Basic level 255"
+        title: "Varmekabler ON"
+  - service: automation.trigger
+    entity_id: automation.varme_bad
+        
+- alias: Floorheat Bathroom OFF
+  trigger:
+    platform: event
+    event_type: zwave.node_event
+    event_data:
+      entity_id: zwave.bad_termostat
+      basic_level: 0
+  action:
+  - service: notify.ios_robertiphone7
+    data:
+        message: "Basic level 0"
+        title: "Varmekabler OFF"
+  - service: automation.trigger
+    entity_id: automation.varme_bad
+        
+- alias: Floorheat Bathrooom Dummy
+  trigger:
+    platform: event
+    event_type: zwave.node_event
+    event_data:
+      entity_id: zwave.bad_termostat
+      basic_level: 25
+  action:
+  - service: notify.ios_robertiphone7
+    data:
+        message: "Triggered"
+        title: "Varmekabler dummy"
+  - service: switch.turn_on
+    entity_id: switch.lys_pc_robert

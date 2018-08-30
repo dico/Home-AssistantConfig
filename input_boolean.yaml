@@ -38,7 +38,32 @@
     initial: off
     icon: mdi:settings
     
+# Boolean to check if light was turned on by motion
+  automation_bedroom_light:
+    name: Automatisk belysning soverom
+    initial: off
+    icon: mdi:settings
+    
+  automation_door_left_open:
+    name: Dor holdt åpen
+    initial: off
+    
   automation_test_switch:
     name: Automasjonstest
+    initial: off
+    icon: mdi:settings
+    
+  automation_good_morning_auto:
+    name: Automatisk God morgen
+    initial: off
+    icon: mdi:settings
+    
+  automation_away_auto:
+    name: Automatisk Borte
+    initial: off
+    icon: mdi:settings
+    
+  automation_intruder_alert:
+    name: Innbruddsvarsling
     initial: off
     icon: mdi:settings

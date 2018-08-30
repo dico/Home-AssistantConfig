@@ -9,6 +9,8 @@ energy_used_energy:
   - sensor.vaskerom_bod_lys_energy
   - sensor.vaskerom_bod_lys_energy_2
   - sensor.fibaro_plug_hallway_heat_energy
+  - sensor.fibaro_plug_04_energy
+  - sensor.fibaro_plug_data_energy
   view: false
   control : hidden
   
@@ -19,7 +21,8 @@ energy_curent_usage:
   - sensor.hotwatertank_power
   - sensor.vaskemaskin_power
   - sensor.vaskerom_bod_lys_power
-  - sensor.vaskerom_bod_lys_power_2
   - sensor.fibaro_plug_gl_heatpump_power
   - sensor.fibaro_plug_hallway_heat_power
+  - sensor.fibaro_plug_04_power
+  - sensor.fibaro_plug_data_power
   view: false

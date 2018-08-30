@@ -34,14 +34,16 @@
 #-------------------------------------------
 #  iOS Push (just Robert)
 #-------------------------------------------
-- name: ios
+- name: ios_robert
   platform: group
   services:
-    - service: ios_robertiphone7
+    - service: ios_robert_iphone7
+#    - service: ios_robertiphone7
     
 - name: ios_veronica
   platform: group
   services:
+#    - service: ios_veronica
     - service: ios_veronicaiphone6s
 
 #-------------------------------------------
@@ -50,5 +52,7 @@
 - name: ios_both
   platform: group
   services:
-    - service: ios_robertiphone7
+    - service: ios_robert_iphone7
+#    - service: ios_robertiphone7
+#    - service: ios_veronica
     - service: ios_veronicaiphone6s

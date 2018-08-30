@@ -25,8 +25,16 @@
         friendly_name: Stue Lys Sofa
         assumed_state: false
         icon: mdi:ceiling-light
+    light.nexa_stue_sofa_dim_level:
+        friendly_name: Stue Lys Sofa
+        assumed_state: false
+        icon: mdi:ceiling-light
         homebridge_visible: true
     light.stue_spisebord:
+        friendly_name: Stue Lys Spisebord
+        assumed_state: false
+        icon: mdi:ceiling-light
+    light.nexa_dim_stue_spisebord_level:
         friendly_name: Stue Lys Spisebord
         assumed_state: false
         icon: mdi:ceiling-light
@@ -40,14 +48,17 @@
         assumed_state: false
         icon: mdi:lamp
         homebridge_visible: true
-    switch.kjkken_lys_vindu:
+    switch.kjkken_vindu:
         assumed_state: false
         icon: mdi:ceiling-light
         homebridge_visible: true
     switch.juletre:
         assumed_state: false
         icon: mdi:pine-tree
-    switch.lys_pc_robert:
+    switch.robert_pc:
+        assumed_state: false
+        icon: mdi:lamp
+    switch.veronica_pc:
         assumed_state: false
         icon: mdi:lamp
         homebridge_visible: true
@@ -71,15 +82,27 @@
 # Switches
     switch.hotwatertank_switch:
         friendly_name: Varmtvannstank
-        icon: mdi:power
+        icon: mdi:water
     switch.telldus_soverom_veronica_switch:
         friendly_name: Soverom Veronica
         assumed_state: false
         icon: mdi:power
+        homebridge_visible: true
     switch.vaskemaskin_switch:
         friendly_name: Vaskemaskin
         assumed_state: false
-        icon: mdi:power
+        icon: mdi:washing-machine
+    switch.fibaro_plug_04_switch:
+        friendly_name: TV / Media
+        icon: mdi:television
+        homebridge_visible: true
+    switch.fibaro_plug_hallway_heat_switch:
+        friendly_name: Gang Panelovn
+        icon: mdi:gradient
+        homebridge_visible: true
+    switch.fibaro_plug_gl_heatpump_switch:
+        friendly_name: Garasjeleilighet varmepumpe
+        icon: mdi:fan
         
 # Motion and magnet
     switch.bevegelse_gang:
@@ -91,10 +114,15 @@
     switch.bevegelse_vaskerom:
         assumed_state: false
         icon: mdi:run
-    switch.magnet_ytterdr:
+    switch.ytterdr:
+        friendly_name: Ytterdør
         assumed_state: false
         icon: mdi:login
     binary_sensor.nexa_magnet_01_sensor:
+        friendly_name: Vaskerom ytterdør
+        icon: mdi:login
+    binary_sensor.nexa_magnet_sov_verandador_sensor:
+        friendly_name: Soverom værandadør
         icon: mdi:login
     
 
@@ -103,11 +131,15 @@
         icon: mdi:run
     sensor.motion_entry:
         icon: mdi:run
-    sensor.motion_vaskerom:
+    binary_sensor.motion_laundry:
+        icon: mdi:run
+    sensor.motion_soverom:
         icon: mdi:run
     sensor.magnet_dor_ytterdor:
         icon: mdi:login
     sensor.magnet_vaskeromdor:
+        icon: mdi:login
+    sensor.magnet_sov_verandador:
         icon: mdi:login
         
 # Template sensors: Smokealarm
@@ -133,27 +165,41 @@
     sensor.hotwatertank_energy:
         friendly_name: Varmtvannstank
         icon: mdi:flash
+        homebridge_visible: true
     sensor.vaskemaskin_energy:
         friendly_name: Vaskemaskin
         icon: mdi:flash
+        homebridge_visible: true
     sensor.fibaro_plug_gl_heatpump_energy:
         friendly_name: GL Varmepumpe
         icon: mdi:flash
+        homebridge_visible: true
     sensor.vaskerom_bod_lys_energy:
-        friendly_name: Vaskerom
+        friendly_name: Lys Vaskerom
         icon: mdi:flash
+        homebridge_visible: true
     sensor.vaskerom_bod_lys_energy_2:
-        friendly_name: Vaskerom Bod
+        friendly_name: Lys Vaskerom Bod
         icon: mdi:flash
+        homebridge_visible: true
     sensor.fibaro_plug_hallway_heat_energy:
         friendly_name: Gang Panelovn
         icon: mdi:flash
-        
+        homebridge_visible: true
+    sensor.fibaro_plug_04_energy:
+        friendly_name: TV / Media
+        icon: mdi:flash
+        homebridge_visible: true
+    sensor.fibaro_plug_data_energy:
+        friendly_name: Data
+        icon: mdi:flash
+        homebridge_visible: true
         
 # Sensors: Power
     sensor.hotwatertank_power:
         friendly_name: Varmtvannstank
         icon: mdi:flash
+        homebridge_visible: true
 #    sensor.aeotec_dim_sofa_power:
 #        friendly_name: Lys Sofa - Strømforbruk
 #        icon: mdi:flash
@@ -163,18 +209,27 @@
     sensor.vaskemaskin_power:
         friendly_name: Vaskemaskin
         icon: mdi:flash
+        homebridge_visible: true
     sensor.vaskerom_bod_lys_power:
         friendly_name: Lys Vaskerom
         icon: mdi:flash
-    sensor.vaskerom_bod_lys_power_2:
-        friendly_name: Lys Vaskerom Bod
-        icon: mdi:flash
+        homebridge_visible: true
     sensor.fibaro_plug_gl_heatpump_power:
         friendly_name: GL Varmepumpe
         icon: mdi:flash
+        homebridge_visible: true
     sensor.fibaro_plug_hallway_heat_power:
         friendly_name: Gang Panelovn
         icon: mdi:flash
+        homebridge_visible: true
+    sensor.fibaro_plug_04_power:
+        friendly_name: TV / Media
+        icon: mdi:flash
+        homebridge_visible: true
+    sensor.fibaro_plug_data_power:
+        friendly_name: Data
+        icon: mdi:flash
+        homebridge_visible: true
 
 # Sensors: Battery
     sensor.stue:
@@ -215,21 +270,21 @@
         
         
 # Netatmo
-    sensor.netatmo_stue_humidity_3:
+    sensor.netatmo_stue_humidity_2:
         friendly_name: Stue
         icon: mdi:water
 
-    sensor.netatmo_stue_temperature_3:
+    sensor.netatmo_stue_temperature_2:
         friendly_name: Stue
         icon: mdi:thermometer
         homebridge_visible: true
         
-    sensor.netatmo_kroken_ute_temperature_3:
+    sensor.netatmo_kroken_ute_temperature_2:
         friendly_name: Ute
         icon: mdi:thermometer
         homebridge_visible: true
         
-    sensor.netatmo_stue_co2_3:
+    sensor.netatmo_stue_co2_2:
         friendly_name: CO2 Stue
         icon: mdi:periodic-table-co2
         homebridge_visible: true

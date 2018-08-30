@@ -86,6 +86,39 @@ home_full_lights:
       entity_id: switch.lys_pc_robert
       
       
+home_night_lights:
+  alias: Stue full belysning
+  sequence:
+  - service: light.turn_off
+    entity_id: light.stue_sofa
+  - service: light.turn_off
+    entity_id: light.stue_spisebord
+  - service: light.turn_off
+    entity_id: light.gulvlampe_nederst
+  - service: light.turn_off
+    entity_id: light.gulvlampe_verst
+  - service: light.turn_off
+    entity_id: light.gang_bulp_1
+  - service: light.turn_off
+    entity_id: light.gang_bulp_2
+  - service: light.turn_off
+    entity_id: light.gang_bulp_3
+  - service: light.turn_off
+    entity_id: light.gang_bulp_4
+  - service: light.turn_off
+    entity_id: light.vaskerom_trapp
+  - service: switch.turn_off
+    entity_id: switch.kjkken_vindu
+  - service: switch.turn_off
+    entity_id: switch.robert_pc
+  - service: switch.turn_off
+    entity_id: switch.veronica_pc
+  - service: switch.turn_on
+    entity_id: switch.gang_lyst_kommode_switch
+  - service: light.turn_on
+    entity_id: light.utelys
+      
+      
       
 home_lights_off:
   alias: Alle lys av
@@ -191,6 +224,21 @@ script_test_sms:
     data:
         message: "SMS test"
 
+script_lock_entry_door:
+  alias: Lås ytterdør
+  sequence:
+  - service: lock.lock
+    data:
+        code: !secret VERISURE_CODE_DIGITS
+        entity_id: lock.ytterdr
+
+script_unlock_entry_door:
+  alias: Lås opp ytterdør
+  sequence:
+  - service: lock.unlock
+    data:
+        code: !secret VERISURE_CODE_DIGITS
+        entity_id: lock.ytterdr
         
 radio538:
   alias: Play Radio on Chromecast Audio

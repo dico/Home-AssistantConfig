@@ -1,0 +1,20 @@
+- alias: 'Ailo notification'
+  trigger:
+    platform: state
+    entity_id: switch.wallswitch1_1
+    to: 'on'
+  action:
+  - service: notify.ios_robertiphone7
+    data:
+        message: "Ailo vil ha besøk"
+        title: "Ailo"
+        
+        
+- alias: 'Ailo Hallway Lights'
+  trigger:
+    platform: state
+    entity_id: switch.wallswitch1_2
+    to: 'on'
+  action:
+  - service: light.turn_on
+    entity_id: group.gang_lights

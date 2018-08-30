@@ -1,0 +1,157 @@
+## Away alarm triggers
+- alias: 'Trigger alarm while armed away'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.fibaro_motion_1_sensor
+      to: 'on'
+    - platform: state
+      entity_id: sensor.motion_livingroom_alarm_level
+      to: '255'
+    - platform: state
+      entity_id: binary_sensor.motion_laundry
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.motion_soverom
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.nexa_magnet_01_sensor
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.nexa_magnet_sov_verandador_sensor
+      to: 'on'
+    - platform: state
+      entity_id: switch.ytterdr
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: armed_away
+  action:
+    service: alarm_control_panel.alarm_trigger
+    entity_id: alarm_control_panel.home_alarm
+
+    
+    
+## Night alarm triggers
+- alias: 'Trigger alarm while armed night'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_laundry
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.nexa_magnet_01_sensor
+      to: 'on'
+    - platform: state
+      entity_id: binary_sensor.nexa_magnet_sov_verandador_sensor
+      to: 'on'
+    - platform: state
+      entity_id: switch.ytterdr
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: armed_night
+  action:
+    service: alarm_control_panel.alarm_trigger
+    entity_id: alarm_control_panel.home_alarm
+
+
+## Notification if alarm is triggered
+- alias: 'Send notification when alarm triggered'
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.home_alarm
+      to: 'triggered'
+  action:
+    - service: notify.notify
+      data:
+        title: "Innbruddsalarm!"
+        message: "En sensor har blitt trigget"
+
+
+## Lock door and turn off lights on alarm ON
+- alias: 'Alarm turn on'
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.home_alarm
+      to: armed_away
+  action:
+  - service: notify.notify
+    data:
+        message: "Alarm påslått. Ytterdør låses."
+        title: "Alarm"
+  - service: homeassistant.turn_off
+    entity_id: group.lights
+  - service: lock.lock
+    data:
+      code: !secret VERISURE_CODE_DIGITS
+      entity_id: lock.ytterdr
+  - service: script.turn_on
+    data:
+      entity_id: script.home_night_lights
+  - condition: and
+    conditions:
+        - condition: numeric_state
+          entity_id: 'sensor.netatmo_kroken_ute_temperature_2'
+          below: '10'
+  - service: climate.set_operation_mode
+    data:
+        entity_id: climate.stue
+        operation_mode: 'Heat'
+  - service: climate.set_temperature
+    data:
+        entity_id: climate.stue
+        temperature: 18
+  - condition: or
+    conditions:
+        - condition: numeric_state
+          entity_id: 'sensor.netatmo_kroken_ute_temperature_2'
+          above: '10'
+  - service: climate.set_operation_mode
+    data:
+        entity_id: climate.stue
+        operation_mode: 'Off'
+        
+        
+## Lock door and turn off lights on alarm night
+- alias: 'Alarm arm night on'
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.home_alarm
+      to: armed_night
+  action:
+  - service: notify.notify
+    data:
+        message: "Alarm påslått. Ytterdør låses. God natt!"
+        title: "Alarm"
+  - service: homeassistant.turn_off
+    entity_id: group.lights
+  - service: lock.lock
+    data:
+      code: !secret VERISURE_CODE_DIGITS
+      entity_id: lock.ytterdr
+  - service: script.turn_on
+    data:
+      entity_id: script.home_night_lights
+  - condition: and
+    conditions:
+        - condition: numeric_state
+          entity_id: 'sensor.netatmo_kroken_ute_temperature_2'
+          below: '10'
+  - service: climate.set_operation_mode
+    data:
+        entity_id: climate.stue
+        operation_mode: 'Heat'
+  - service: climate.set_temperature
+    data:
+        entity_id: climate.stue
+        temperature: 18
+  - condition: or
+    conditions:
+        - condition: numeric_state
+          entity_id: 'sensor.netatmo_kroken_ute_temperature_2'
+          above: '10'
+  - service: climate.set_operation_mode
+    data:
+        entity_id: climate.stue
+        operation_mode: 'Off'

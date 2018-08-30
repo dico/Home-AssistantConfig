@@ -2,7 +2,7 @@
 # Turn on ceiling lights when motion in laundry-room
 - alias: 'Bevegelse Lys Vaskerom På'
   trigger:
-    entity_id: switch.bevegelse_gang
+    entity_id: binary_sensor.motion_laundry
     from: 'off'
     platform: state
     to: 'on'
@@ -11,19 +11,28 @@
     entity_id: switch.vaskerom_bod_lys_switch
   - service: switch.turn_on
     entity_id: switch.vaskerom_bod_lys_switch_2
+  - service: light.turn_on
+    entity_id: light.vaskerom_trapp
+    data:
+        brightness: 255
+        color_temp: 457
+    
 
 # Turn off ceiling lights when motion in laundry-room stops
 - alias: 'Bevegelse Lys Vaskerom Av'
   trigger:
-    entity_id: switch.bevegelse_gang
-    from: 'on'
     platform: state
+    entity_id: binary_sensor.motion_laundry
     to: 'off'
+    for:
+      minutes: 3
   action:
   - service: switch.turn_off
     entity_id: switch.vaskerom_bod_lys_switch
   - service: switch.turn_off
     entity_id: switch.vaskerom_bod_lys_switch_2
+  - service: light.turn_off
+    entity_id: light.vaskerom_trapp
     
     
     
@@ -32,7 +41,7 @@
 # Turn on ceiling lights when motion in laundry-room
 - alias: 'Dør Vaskerom Lys Vaskerom På'
   trigger:
-    entity_id: switch.magnet_dr_vaskerom
+    entity_id: binary_sensor.nexa_magnet_01_sensor
     from: 'off'
     platform: state
     to: 'on'
@@ -40,8 +49,12 @@
   - service: switch.turn_on
     entity_id: switch.vaskerom_bod_lys_switch
   - service: switch.turn_on
-  
     entity_id: switch.vaskerom_bod_lys_switch_2
+  - service: light.turn_on
+    entity_id: light.vaskerom_trapp
+    data:
+        brightness: 255
+        color_temp: 457
     
     
 # Magnet Lights hallway
@@ -75,3 +88,50 @@
   action:
     service: light.turn_off
     entity_id: light.utelys
+
+    
+    
+    
+    
+    
+# Motion Lights bedroom
+# Only turn on if they are off. If turned on by motion, set boolean.
+- alias: 'Bevegelse Soverom På'
+  trigger:
+    entity_id: binary_sensor.motion_soverom
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition:
+    condition: state
+    entity_id: light.soverom_tak
+    state: 'off'
+  action:
+  - service: light.turn_on
+    entity_id: light.soverom_tak
+    data:
+        brightness: 60
+        rgb_color: [255, 100, 100]
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.automation_bedroom_light
+    
+
+# Turn off ceiling lights when motion in bedroom stops
+# Only turn off if turned on by motion (boolean true)
+- alias: 'Bevegelse Soverom Av'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_soverom
+    to: 'off'
+    for:
+      seconds: 30
+  condition:
+    condition: state
+    entity_id: input_boolean.automation_bedroom_light
+    state: 'on'
+  action:
+  - service: light.turn_off
+    entity_id: light.soverom_tak
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.automation_bedroom_light
+    

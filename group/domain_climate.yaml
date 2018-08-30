@@ -1,15 +1,14 @@
 home_main_climate_sensors:
   name: Klima og sensorer
   entities:
-  - sensor.netatmo_kroken_ute_temperature_3
-  - sensor.netatmo_stue_temperature_3
-  - sensor.netatmo_stue_co2_3
+  - sensor.netatmo_kroken_ute_temperature_2
+  - sensor.netatmo_stue_temperature_2
+  - sensor.netatmo_stue_co2_2
   - sensor.gang_temperature
   - sensor.bad_temperature
   - sensor.soverom_temperature
   - sensor.soverom__ailo_temperature
   - sensor.garage_temperature
-  - sensor.netatmo_stue_co2
   view: false
   
 home_climate_control:
@@ -17,6 +16,7 @@ home_climate_control:
   entities:
   - climate.stue
   - climate.bad_termostat_heating
+  - vacuum.xiaomi_vacuum_cleaner
   view: false
   
 yr_no:

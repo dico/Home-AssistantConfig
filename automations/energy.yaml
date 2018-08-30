@@ -1,0 +1,18 @@
+#sensor.fibaro_plug_04_energy
+#
+# 2018-02-16 22:52:10 INFO (MainThread) [homeassistant.components.automation] Executing Reset energy meters
+# 2018-02-16 22:52:10 INFO (Thread-3) [homeassistant.components.zwave] Node 32 on instance 1 does not have resettable meters.
+
+- alias: 'Reset energy meters'
+  trigger:
+    platform: state
+    entity_id: input_boolean.automation_test_switch
+    to: 'on'
+  action:
+  - service: zwave.reset_node_meters
+    data:
+        node_id: 32
+  - service: notify.ios_robertiphone7
+    data:
+        message: "Resetting enery meters"
+        title: "Reset"

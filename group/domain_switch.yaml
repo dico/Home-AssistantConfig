@@ -10,5 +10,8 @@ on_off_appliances:
   entities:
   - switch.hotwatertank_switch
   - switch.vaskemaskin_switch
+  - switch.fibaro_plug_04_switch
+  - switch.fibaro_plug_gl_heatpump_switch
+  - switch.fibaro_plug_hallway_heat_switch
   view: false
   control : hidden

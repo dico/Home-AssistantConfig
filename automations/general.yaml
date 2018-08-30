@@ -16,7 +16,11 @@
     event: start
   action:
   - service: input_boolean.turn_on
-    entity_id: input_boolean.home
+    entity_id: input_boolean.automation_away_auto
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.automation_good_morning_auto
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.automation_intruder_alert
     
     
 - alias: 'Notification on restart'
@@ -25,7 +29,7 @@
     platform: homeassistant
     event: start
   action:
-  - service: notify.ios_robertiphone7
+  - service: notify.ios_robert
     data:
         message: "Home Assistant has been restarted"
         title: "Restart"

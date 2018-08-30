@@ -14,5 +14,11 @@
   - platform: template
     sensors:
       motion_vaskerom:
-        value_template: '{% if is_state("switch.bevegelse_vaskerom", "off") %}Ingen{% else %}Bevegelse{% endif %}'
+        value_template: '{% if is_state("binary_sensor.motion_laundry", "off") %}Ingen{% else %}Bevegelse{% endif %}'
         friendly_name: 'Bevegelse vaskerom'
+        
+  - platform: template
+    sensors:
+      motion_bedroom:
+        value_template: '{% if is_state("binary_sensor.motion_soverom", "off") %}Ingen{% else %}Bevegelse{% endif %}'
+        friendly_name: 'Bevegelse soverom'

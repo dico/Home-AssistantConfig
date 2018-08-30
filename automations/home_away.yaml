@@ -1,10 +1,33 @@
+# Presence detection
+- alias: 'Presence Away'
+  trigger:
+    platform: state
+    entity_id: device_tracker.enrlpqkj_a79742eeb61c491e944d60140077490d, device_tracker.enrlpqkj_3f275dfc115a4b4aade1fc48bff378ad, device_tracker.enrlpqkj_8012db7abc664e7ba9b761d4f3c2c19b
+    # Optional
+    from: 'home'
+  action:
+  - data:
+      entity_id: alarm_control_panel.alarm_arm_away
+  
+# Presence detection
+- alias: 'Presence Home'
+  trigger:
+    platform: state
+    entity_id: device_tracker.enrlpqkj_a79742eeb61c491e944d60140077490d, device_tracker.enrlpqkj_3f275dfc115a4b4aade1fc48bff378ad, device_tracker.enrlpqkj_8012db7abc664e7ba9b761d4f3c2c19b
+    # Optional
+    to: 'home'
+  action:
+  - data:
+      entity_id: alarm_control_panel.alarm_disarm
+
+
 #Away
 - alias: 'Borte'
   trigger:
-    entity_id: input_boolean.away
-    from: 'off'
+    entity_id: input_boolean.home
+    from: 'on'
     platform: state
-    to: 'on'
+    to: 'off'
   action:
   - service: notify.notify
     data:
@@ -41,23 +64,17 @@
     data:
         entity_id: climate.stue
         operation_mode: 'Off'
-  - service: input_boolean.turn_off
-    entity_id: input_boolean.home
-  - service: input_boolean.turn_off
-    entity_id: input_boolean.vacation
-  - service: input_boolean.turn_off
-    entity_id: input_boolean.go_to_sleep
     
     
 # Away auto
-- alias: 'Away Auto'
-  trigger:
-    entity_id: device_tracker.robertiphone7, device_tracker.veronica
-    platform: state
-    to: 'away'
-  action:
-  - service: input_boolean.turn_off
-    entity_id: input_boolean.away
+#- alias: 'Away Auto'
+#  trigger:
+#    entity_id: device_tracker.robertiphone7, device_tracker.veronica
+#    platform: state
+#    to: 'away'
+#  action:
+#  - service: input_boolean.turn_off
+#    entity_id: input_boolean.away
     
 
 #Home
@@ -68,8 +85,6 @@
     platform: state
     to: 'on'
   action:
-  - service: input_boolean.turn_off
-    entity_id: input_boolean.away
   - service: input_boolean.turn_off
     entity_id: input_boolean.vacation
   - service: input_boolean.turn_off
@@ -91,19 +106,19 @@
 
 
 # Home Auto
-- alias: 'Hjemme Auto'
-  trigger:
-  - platform: state
-    entity_id: device_tracker.robertiphone7
-    from: 'away'
-    to: 'home'
-  - platform: state
-    entity_id: device_tracker.veronica
-    from: 'away'
-    to: 'home'
-  action:
-  - service: input_boolean.turn_on
-    entity_id: input_boolean.home
+#- alias: 'Hjemme Auto'
+#  trigger:
+#  - platform: state
+#    entity_id: device_tracker.robertiphone7
+#    from: 'away'
+#    to: 'home'
+#  - platform: state
+#    entity_id: device_tracker.veronica
+#    from: 'away'
+#    to: 'home'
+#  action:
+#  - service: input_boolean.turn_on
+#    entity_id: input_boolean.home
 
 
     
@@ -130,12 +145,13 @@
     entity_id: input_boolean.home
   - service: input_boolean.turn_off
     entity_id: input_boolean.vacation
-  - service: input_boolean.turn_off
-    entity_id: input_boolean.away
   - service: switch.turn_on
     entity_id: switch.kjkken_lys_vindu
   - service: switch.turn_on
     entity_id: switch.gang_lyst_kommode_switch
+  - service: light.turn_on
+    entity_id: light.utelys
+
 #  - service: climate.set_temperature
 #    data:
 #        entity_id: climate.stue
@@ -146,13 +162,16 @@
 #Good morning auto
 - alias: 'Good morning auto'
   trigger:
-    entity_id: switch.bevegelse_stue
-    from: 'off'
+    entity_id: sensor.motion_livingroom_alarm_level
+    from: '0'
     platform: state
-    to: 'on'
+    to: '255'
   condition:
   - condition: and
     conditions:
+    - condition: state
+      entity_id: 'input_boolean.automation_good_morning_auto'
+      state: 'on'
     - condition: state
       entity_id: 'input_boolean.go_to_sleep'
       state: 'on'
