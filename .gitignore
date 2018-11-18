@@ -32,6 +32,7 @@ __pycache__
 .cloud
 .storage
 ..homekit.state
+camera.yaml
 home-assistant.env
 home-assistant.*
 secrets.yaml
@@ -39,8 +40,13 @@ gitupdate.sh
 known_devices.yaml
 zone.yaml
 google_calendars.yaml
-camera.yaml
 components
 deps
+ssl
+privkey.pem
+certificate.pem
+fullchain.pem
+http_cors_allowed_origins.yaml
+http_trusted_networks.yaml
 !/.gitignore
 !/.travis.yml

@@ -38,15 +38,15 @@ cloud:
 config:
 
 http:
-  api_password: !secret HTTP_PASSWORD
+  #api_password: !secret HTTP_PASSWORD
   base_url: !secret HTTP_BASE_URL
+  ssl_certificate: /config/fullchain.pem
+  ssl_key: /config/privkey.pem
   server_port: !secret HTTP_SERVER_PORT
   ip_ban_enabled: True
+  cors_allowed_origins: !include http_cors_allowed_origins.yaml
   login_attempts_threshold: 10
-  trusted_networks:
-    - 127.0.0.1
-    - ::1
-    - 192.168.1.0/24
+  trusted_networks: !include http_trusted_networks.yaml
 
 updater:
 discovery:
@@ -71,6 +71,7 @@ history: !include history.yaml
      
 zwave:
   usb_path: /dev/ttyACM0
+  #usb_path: /dev/serial/by-id/usb-0658_0200-if00
   network_key: !secret ZWAVE_NETWORK_KEY
 
 climate:
@@ -88,7 +89,7 @@ input_select: !include input_select.yaml
 script: !include scripts.yaml
 camera: !include camera.yaml
 notify: !include notify.yaml
-alert: !include alerts.yaml
+#alert: !include alerts.yaml
 zone: !include zone.yaml
 #cover: !include cover.yaml
 
@@ -113,9 +114,11 @@ alarm_control_panel:
 
 vacuum:
   - platform: xiaomi_miio
-    host: 192.168.1.177
+    host: 192.168.1.222
     token: !secret XIAOMI_TOKEN
 
+apple_tv:
+    
 verisure:
   username: !secret VERISURE_USERNAME
   password: !secret VERISURE_PASSWORD
@@ -158,6 +161,13 @@ mqtt:
     
 weather:
   - platform: yweather
+  
+switch:
+  - platform: wake_on_lan
+    name: Robert Stasjonær
+    host: 192.168.1.240
+    mac_address: "3C-18-A0-05-07-74"
+  
     
 #homekit:
 #  pincode: !secret HOMEKIT_PIN

@@ -18,3 +18,25 @@
   trigger:
   - at: '23:00'
     platform: time
+- id: '1535682522668'
+  alias: New Automation
+  trigger:
+  - at: 07:00
+    platform: time
+  condition: []
+  action:
+  - data:
+      brightness: '255'
+      entity_id: light.soverom_tak
+    service: light.turn_on
+- id: '1535682641380'
+  alias: New Automation
+  trigger:
+  - at: 07:00
+    platform: time
+  condition: []
+  action:
+  - data:
+      brightness: '255'
+      entity_id: light.soverom_tak
+    service: light.turn_on

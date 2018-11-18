@@ -87,8 +87,9 @@ home_full_lights:
       
       
 home_night_lights:
-  alias: Stue full belysning
+  alias: Natta lys
   sequence:
+  # Turn off
   - service: light.turn_off
     entity_id: light.stue_sofa
   - service: light.turn_off
@@ -105,16 +106,23 @@ home_night_lights:
     entity_id: light.gang_bulp_3
   - service: light.turn_off
     entity_id: light.gang_bulp_4
+  - service: switch.turn_off
+    entity_id: switch.kjkken_vindu
   - service: light.turn_off
     entity_id: light.vaskerom_trapp
   - service: switch.turn_off
-    entity_id: switch.kjkken_vindu
+    entity_id: switch.vaskerom_bod_lys_switch
+  - service: switch.turn_off
+    entity_id: switch.vaskerom_bod_lys_switch_2
   - service: switch.turn_off
     entity_id: switch.robert_pc
   - service: switch.turn_off
     entity_id: switch.veronica_pc
+  # Turn on
   - service: switch.turn_on
     entity_id: switch.gang_lyst_kommode_switch
+  - service: switch.turn_on
+    entity_id: switch.telldus_soverom_veronica_switch
   - service: light.turn_on
     entity_id: light.utelys
       

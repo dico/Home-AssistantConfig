@@ -1,10 +1,14 @@
 resources:
-  - url: /local/custom_ui/weather-card.js
+#  - url: /local/custom_ui/weather-card.js
+#    type: js
+#  - url: /local/custom_ui/gauge-card.js
+#    type: js
+#  - url: /local/custom_ui/alarm_control_panel-card.js
+#    type: js
+  - url: /local/custom_ui/slider-entity-row.js
     type: js
-  - url: /local/custom_ui/gauge-card.js
-    type: js
-  - url: /local/custom_ui/alarm_control_panel-card.js?v=2
-    type: js
+  - url: /local/custom_ui/button-card.js
+    type: module
 
 title: Kroken
 # Optional background for all views. Check https://developer.mozilla.org/en-US/docs/Web/CSS/background for more examples.
@@ -15,276 +19,564 @@ excluded_entities:
 views:
 
     # Specify a tab icon if you want the view tab to be an icon.
-  - icon: mdi:home-assistant
+  - id: 0  # Automatically created id
+    icon: mdi:home-assistant
     # Title of the view. Will be used as the tooltip for tab icon
     title: First view
     cards:
-    - type: vertical-stack
-      cards:
-        - type: entities
-          title: Lys
-          background: radial-gradient(crimson, skyblue)
-          theme: dark-mode
-          entities:
-           - light.stue_sofa
-           - light.stue_spisebord
-           - light.gulvlampe_verst
-           - light.gulvlampe_nederst
-           - switch.gang_lyst_kommode_switch
-           - switch.kjkken_vindu
-           - switch.robert_pc
-           - switch.veronica_pc
-           - switch.vaskerom_bod_lys_switch
-           - switch.vaskerom_bod_lys_switch_2
-           - group.gang_lights
-           - light.soverom_tak
-           - light.nattlampe_robert
-           - light.nattlampe_veronica
-           - light.vaskerom_trapp
-           - light.utelys
-
-    - type: vertical-stack
-      cards:
-        - type: "custom:weather-card"
-          entity_weather: weather.yweather
-          entity_sun: sun.sun
+      
+      - id: 02827a4d241b48f1a01659814262db44  # Automatically created id
+        type: vertical-stack
+        cards:
+          #- type: entities
+          #  title: Lys
+          #  background: radial-gradient(crimson, skyblue)
+          #  theme: dark-mode
+          #  entities:
+          #    - light.stue_sofa
+          #    - light.stue_spisebord
+          #    - light.gulvlampe_verst
+          #    - light.gulvlampe_nederst
+          #    - switch.kjkken_vindu
+          #    - switch.robert_pc
+          #    - switch.veronica_pc
+          #    - switch.vaskerom_bod_lys_switch
+          #    - switch.vaskerom_bod_lys_switch_2
+          #    - group.gang_lights
+          #    - light.soverom_tak
+          #    - light.vaskerom_trapp
           
-        - type: "custom:alarm_control_panel-card"
-          entity: alarm_control_panel.home_alarm
-          hide_keypad: true
-          title: Alarm
-          style: '--alarm-color-disarmed: var(--label-badge-blue);'
-          states:
-            - arm_away
-            - arm_night
+          # Stue
+          - type: horizontal-stack
+            cards:
+              - type: "custom:button-card"
+                name: Lys sofa
+                entity: light.stue_sofa
+                icon: mdi:track-light
+                color: auto
+                color_type: icon
+                default_color: rgb(234, 160, 11)
+                action: toggle
+                
+              - type: "custom:button-card"
+                name: Lys spisebord
+                entity: light.stue_spisebord
+                icon: mdi:track-light
+                color: auto
+                color_type: icon
+                default_color: rgb(234, 160, 11)
+                action: toggle
           
-        - type: entities
-          title: Klima
-          show_header_toggle: false
-          entities:
-           - climate.stue
-           - climate.bad_termostat_heating
-           
-        - type: glance
-          title: Klima inne
-          entities:
-           - sensor.netatmo_stue_temperature_2
-           - sensor.netatmo_stue_co2_2
-           - sensor.gang_temperature
-           - sensor.bad_temperature
-           - sensor.soverom_temperature
-           - sensor.soverom__ailo_temperature
-           - sensor.netatmo_kroken_ute_temperature_2
-           - sensor.garage_temperature
-        
+          # Stue gulvlampe
+          - type: horizontal-stack
+            cards:
+              - type: "custom:button-card"
+                name: Gulvlampe Øverst
+                entity: light.gulvlampe_verst
+                icon: mdi:floor-lamp
+                color: auto
+                color_type: icon
+                default_color: rgb(234, 160, 11)
+                action: toggle
+              - type: "custom:button-card"
+                name: Gulvlampe Nederst
+                entity: light.gulvlampe_nederst
+                icon: mdi:floor-lamp
+                color: auto
+                color_type: icon
+                default_color: rgb(234, 160, 11)
+                action: toggle
+          
+          # Lys PC
+          - type: horizontal-stack
+            cards:
+              - type: "custom:button-card"
+                name: Robert PC
+                entity: switch.robert_pc
+                icon: mdi:desk-lamp
+                color: auto
+                color_type: icon
+                default_color: rgb(234, 160, 11)
+                action: toggle
+              - type: "custom:button-card"
+                name: Veronica PC
+                entity: switch.veronica_pc
+                icon: mdi:desk-lamp
+                color: auto
+                color_type: icon
+                default_color: rgb(234, 160, 11)
+                action: toggle
+                
+          # Diverse
+          - type: horizontal-stack
+            cards:
+              - type: "custom:button-card"
+                name: Taklys gang
+                entity: group.gang_lights
+                icon: mdi:ceiling-light
+                color: auto
+                color_type: icon
+                default_color: rgb(234, 160, 11)
+                action: toggle
+              - type: "custom:button-card"
+                name: Kjøkken vindu
+                entity: switch.kjkken_vindu
+                icon: mdi:ceiling-light
+                color: auto
+                color_type: icon
+                default_color: rgb(234, 160, 11)
+                action: toggle
+              - type: "custom:button-card"
+                name: Soverom seng
+                entity: switch.telldus_soverom_veronica_switch
+                icon: mdi:bed-empty
+                color: auto
+                color_type: icon
+                default_color: rgb(234, 160, 11)
+                action: toggle
+          
+          # Vaskerom
+          - type: horizontal-stack
+            cards:
+              - type: "custom:button-card"
+                name: Vaskerom
+                entity: switch.vaskerom_bod_lys_switch
+                icon: mdi:ceiling-light
+                color: auto
+                color_type: icon
+                default_color: rgb(234, 160, 11)
+                action: toggle
+              - type: "custom:button-card"
+                name: Bod
+                entity: switch.vaskerom_bod_lys_switch_2
+                icon: mdi:ceiling-light
+                color: auto
+                color_type: icon
+                default_color: rgb(234, 160, 11)
+                action: toggle
+              - type: "custom:button-card"
+                name: Trapp
+                entity: light.vaskerom_trapp
+                icon: mdi:ceiling-light
+                color: auto
+                color_type: icon
+                default_color: rgb(234, 160, 11)
+                action: toggle
+                
+          # Soverom
+          - type: horizontal-stack
+            cards:
+              - type: "custom:button-card"
+                name: Soverom tak
+                entity: light.soverom_tak
+                icon: mdi:ceiling-light
+                color: auto
+                color_type: icon
+                default_color: rgb(234, 160, 11)
+                action: toggle
+              - type: "custom:button-card"
+                name: Nattlampe Robert
+                entity: light.nattlampe_robert
+                icon: mdi:lamp
+                color: auto
+                color_type: icon
+                default_color: rgb(234, 160, 11)
+                action: toggle
+              - type: "custom:button-card"
+                name: Nattlampe Veronica
+                entity: light.nattlampe_veronica
+                icon: mdi:lamp
+                color: auto
+                color_type: icon
+                default_color: rgb(234, 160, 11)
+                action: toggle
+                
+          # Scripts
+          - type: horizontal-stack
+            cards:
+              - type: "custom:button-card"
+                name: Stemning
+                entity: script.livingroom_mood_lights
+                icon: mdi:heart
+                color: rgb(242, 242, 242)
+                color_off: rgb(242, 242, 242)
+                color_type: card
+                action: toggle
+              - type: "custom:button-card"
+                name: Stue På
+                entity: script.livingroom_full_lights
+                icon: mdi:lightbulb-on-outline
+                color: rgb(242, 242, 242)
+                color_off: rgb(242, 242, 242)
+                color_type: card
+                action: toggle
+              - type: "custom:button-card"
+                name: Hus På
+                entity: script.home_full_lights
+                icon: mdi:lightbulb-on-outline
+                color: rgb(242, 242, 242)
+                color_off: rgb(242, 242, 242)
+                color_type: card
+                action: toggle
+              - type: "custom:button-card"
+                name: Natta
+                entity: script.home_night_lights
+                icon: mdi:weather-night
+                color: rgb(242, 242, 242)
+                color_off: rgb(242, 242, 242)
+                color_type: card
+                action: toggle
 
-    - type: vertical-stack
-      cards:
-        - type: map
-          aspect_ratio: 100%
-          entities:
-            - device_tracker.enrlpqkj_a79742eeb61c491e944d60140077490d
-            - device_tracker.enrlpqkj_3f275dfc115a4b4aade1fc48bff378ad
-            - device_tracker.enrlpqkj_8012db7abc664e7ba9b761d4f3c2c19b
-            - zone.home
-            - zone.work
-            - zone.school
-
-        - type: entities
-          title: Garasje
-          show_header_toggle: false
-          entities:
-           - script.script_garage_door_1
-           - script.script_garage_door_2
-           - sensor.garagedoor1_status
-           
-        - type: entities
-          title: Scener
-          entities:
-           - script.livingroom_mood_lights
-           - script.livingroom_full_lights
-           - script.home_full_lights
-
-        - type: entities
-          title: Status
-          show_header_toggle: false
-          entities:
-           - input_boolean.washmachine_status
-             
+          #- type: entities
+          #  title: Scener
+          #  entities:
+          #    - script.livingroom_mood_lights
+          #    - script.livingroom_full_lights
+          #    - script.home_full_lights
+              
 
 
-             
-             
+      - id: 5833cd3b08d44e8b8e9a7bd1aad35a60  # Automatically created id
+        type: vertical-stack
+        cards:
+          - type: weather-forecast
+            entity: weather.yweather
+
+          - type: entities
+            title: Klima
+            show_header_toggle: false
+            entities:
+              - climate.stue
+              - climate.bad_termostat_heating
+
+          - type: glance
+            title: Klima inne
+            entities:
+              - sensor.netatmo_stue_temperature_2
+              - sensor.netatmo_stue_co2_2
+              - sensor.gang_temperature
+              - sensor.bad_temperature
+              - sensor.soverom_temperature
+              - sensor.ailo_temperature
+              - sensor.netatmo_kroken_ute_temperature_2
+              - sensor.garasje_temperature
+
+
+      - id: 97836b107ce8448aa2696b3bddf8b871  # Automatically created id
+        type: vertical-stack
+        cards:
+          - type: map
+            aspect_ratio: 100%
+            entities:
+              - device_tracker.enrlpqkj_a79742eeb61c491e944d60140077490d
+              - device_tracker.enrlpqkj_3f275dfc115a4b4aade1fc48bff378ad
+              - device_tracker.enrlpqkj_8012db7abc664e7ba9b761d4f3c2c19b
+              - zone.home
+              - zone.work
+              - zone.school
+
+          - type: entities
+            title: Garasje
+            show_header_toggle: false
+            entities:
+              - script.script_garage_door_1
+              - script.script_garage_door_2
+              - sensor.garagedoor1_status
+
+          - type: entities
+            title: Status
+            show_header_toggle: false
+            entities:
+              - input_boolean.washmachine_status
+
+
+
   ## PAGE: Lights
   ## ------------------------------------------
-  - icon: mdi:lightbulb-outline
+  - id: 1  # Automatically created id
+    icon: mdi:lightbulb-outline
     title: Lys
     cards:
-      - type: entities
+      - id: 654002938c804e2eaa828a3df80e5121  # Automatically created id
+        type: entities
         title: Stue
         entities:
-          - light.stue_sofa
-          - light.stue_spisebord
-          - light.gulvlampe_verst
-          - light.gulvlampe_nederst
+          - entity: light.stue_sofa
+            name: Stue Sofa
+            type: custom:slider-entity-row
+          - entity: light.stue_spisebord
+            name: Stue Spisebord
+            type: custom:slider-entity-row
+          - entity: light.gulvlampe_verst
+            name: Gulvlampe (øverst)
+            type: custom:slider-entity-row
+          - entity: light.gulvlampe_nederst
+            name: Gulvlampe (nederst)
+            type: custom:slider-entity-row
+          #- light.stue_sofa
+          #- light.stue_spisebord
+          #- light.gulvlampe_verst
+          #- light.gulvlampe_nederst
           - switch.robert_pc
           - switch.veronica_pc
-      - type: entities
+      - id: f30889a5f76d4c99aae0e96f8b79f033  # Automatically created id
+        type: entities
         title: Kjøkken
         entities:
           - switch.kjkken_vindu
-      - type: entities
+      - id: f8609f79f8034a319aa807b19ac0a8af  # Automatically created id
+        type: entities
         title: Gang / Kjeller
         entities:
           - switch.vaskerom_bod_lys_switch
           - switch.vaskerom_bod_lys_switch_2
+          - switch.gang_lyst_kommode_switch
           - group.gang_lights
           - light.vaskerom_trapp
-      - type: entities
+      - id: 12720e733c6f4702a4367105c49c46a7  # Automatically created id
+        type: entities
         title: Soverom
         entities:
           - light.soverom_tak
           - light.nattlampe_robert
           - light.nattlampe_veronica
-      - type: entities
+      - id: 22f0729de75a4e78a77f6c3ca5f8901a  # Automatically created id
+        type: entities
         title: Ute
         entities:
           - light.utelys
+          - switch.utendrs
 
-          
-          
+
+
   ## PAGE: Climate
   ## ------------------------------------------
-  - icon: mdi:radiator
+  - id: 2  # Automatically created id
+    icon: mdi:radiator
     title: Klima
     cards:
-      - type: entities
+      - id: 3a4745aefbee4dddbca39f9f4386be07  # Automatically created id
+        type: thermostat
+        title: Varmepumpe
+        entity: climate.stue
+
+      - id: f04a0d7aadd84cf6bd18e6a2c227415f  # Automatically created id
+        type: thermostat
+        title: Bad
+        entity: climate.bad_termostat_heating
+
+      - id: 41ebb75d33aa4dbe956eb5eabdd0cdd2  # Automatically created id
+        type: entities
         title: Klima
         show_header_toggle: false
         entities:
-         - climate.stue
-         - climate.bad_termostat_heating
-         
-      - type: entities
+          - climate.stue
+          - climate.bad_termostat_heating
+
+
+      - id: de353723d83341949bbde59b8ffb57f5  # Automatically created id
+        type: entities
         title: Klima inne
         entities:
-         - sensor.netatmo_stue_temperature_2
-         - sensor.netatmo_stue_co2_2
-         - sensor.gang_temperature
-         - sensor.bad_temperature
-         - sensor.soverom_temperature
-         - sensor.ailo_temperature
-         - sensor.garasje_temperature
-         - sensor.kjellerbod_temperature
-         - sensor.mrkeloft_temperature
-         
-      - type: entities
+          - sensor.netatmo_stue_temperature_2
+          - sensor.netatmo_stue_co2_2
+          - sensor.gang_temperature
+          - sensor.bad_temperature
+          - sensor.soverom_temperature
+          - sensor.ailo_temperature
+          - sensor.garasje_temperature
+          - sensor.kjellerbod_temperature
+          - sensor.mrkeloft_temperature
+
+      - id: c5c0081532eb44f68272806ab75d56d4  # Automatically created id
+        type: entities
         title: Luftfuktighet
         entities:
-         - sensor.soverom_humidity
-         - sensor.bad_humidity
-         - sensor.kjellerbod_humidity
-         - sensor.netatmo_kroken_ute_humidity_2
-         - sensor.netatmo_stue_humidity_2
-         
-      - type: history-graph
-        title: 'Ute temperatur'
+          - sensor.soverom_humidity
+          - sensor.bad_humidity
+          - sensor.kjellerbod_humidity
+          - sensor.netatmo_kroken_ute_humidity_2
+          - sensor.netatmo_stue_humidity_2
+
+      - id: 544c465098744204a9f8f89b833b9818  # Automatically created id
+        type: history-graph
+        title: Ute temperatur
         entities:
-         - sensor.netatmo_kroken_ute_temperature_2
-         
-      - type: history-graph
-        title: 'CO2 Stue'
+          - sensor.netatmo_kroken_ute_temperature_2
+
+      - id: fa56be1adf1d46c993c64c92d6568086  # Automatically created id
+        type: history-graph
+        title: CO2 Stue
         entities:
-         - sensor.netatmo_stue_co2_2
-         
+          - sensor.netatmo_stue_co2_2
+
 
 
   ## PAGE: Home appliances
   ## ------------------------------------------
-  - icon: mdi:washing-machine
+  - id: 3  # Automatically created id
+    icon: mdi:washing-machine
     title: Hus
     cards:
-      - type: entities
+      - id: 2c267f6eca3c4a8696ca31033270497a  # Automatically created id
+        type: entities
         title: Støvsuger
         show_header_toggle: false
         entities:
-         - vacuum.xiaomi_vacuum_cleaner
-         
-      - type: entities
+          - vacuum.xiaomi_vacuum_cleaner
+
+      - id: 10c76c78244a425b8260fb84a7b0bffd  # Automatically created id
+        type: entities
         title: Hvitevarer
         show_header_toggle: false
         entities:
-         - switch.hotwatertank_switch
-         - switch.vaskemaskin_switch
-         - switch.fibaro_plug_04_switch
-         - switch.fibaro_plug_gl_heatpump_switch
-         - switch.fibaro_plug_hallway_heat_switch
-         
-      - type: entities
+          - switch.hotwatertank_switch
+          - switch.vaskemaskin_switch
+          - switch.fibaro_plug_04_switch
+          - switch.fibaro_plug_gl_heatpump_switch
+          - switch.fibaro_plug_hallway_heat_switch
+
+      - id: 9934194f8b204b72b32de4cec2211b27  # Automatically created id
+        type: entities
         title: Soverom
         show_header_toggle: false
         entities:
-         - switch.telldus_soverom_veronica_switch
+          - switch.telldus_soverom_veronica_switch
 
-      - type: entities
+      - id: 24e793803d544223a6a36d076d696b88  # Automatically created id
+        type: entities
         title: Status
         show_header_toggle: false
         entities:
-         - input_boolean.washmachine_status
-         
-         
-    
-    
+          - input_boolean.washmachine_status
+
+      - id: d31183713de54e7fac18a0644d4e5cfe  # Automatically created id
+        type: entities
+        title: Wake-On-LAN
+        show_header_toggle: false
+        entities:
+          - switch.robert_stasjonr
+
+
+
+
+
+
+  ## PAGE: Media Devices
+  ## ------------------------------------------
+  - id: 4  # Automatically created id
+    icon: mdi:television
+    title: Media
+    cards:
+      - id: 040ac65c20f246d597efb5843c936385  # Automatically created id
+        type: media-control
+        entity: media_player.bad
+      - id: 1bb0becd08b54d4098b5a1623e836ed7  # Automatically created id
+        type: media-control
+        entity: media_player.living_room_ue65ju6000
+      - id: 0edf9a6b7f304d6ab9353f4c2fd17aad  # Automatically created id
+        type: media-control
+        entity: media_player.tv_stue
+
+
+  ## PAGE: Stable
+  ## ------------------------------------------
+  - id: 5  # Automatically created id
+    icon: mdi:horseshoe
+    title: Stall
+    cards:
+      - type: sensor
+        entity: sensor.stall_co2
+        name: Stall CO2
+        height: 75
+        line_color: "#3498db"
+        
+      - type: sensor
+        entity: sensor.stall_luftfuktighet
+        name: Stall Luftfuktighet
+        height: 75
+        line_color: "#3498db"
+        
+      - type: sensor
+        entity: sensor.stall_temp
+        name: Stall Temperatur
+        height: 75
+        line_color: "#3498db"
+        
+      - type: sensor
+        entity: sensor.netatmo_kroken_ute_temperature_3
+        name: Ute Temperatur
+        height: 75
+        line_color: "#cf8111"
+        
+      - type: sensor
+        entity: sensor.netatmo_kroken_ute_humidity_3
+        name: Ute Luftfuktighet
+        height: 75
+        line_color: "#cf8111"
+
+
   ## PAGE: Camera
   ## ------------------------------------------
-  - icon: mdi:cctv
+  - id: 6  # Automatically created id
+    icon: mdi:cctv
     title: Kamera
     cards:
-      - type: picture-entity
+      - id: 6f3a1f3473cf4f5fbaeab98fab06bdc1  # Automatically created id
+        type: picture-entity
         entity: camera.garasje
-      - type: picture-entity
+      - id: 5360db4ba4e346b8bc72ec653a170345  # Automatically created id
+        type: picture-entity
         entity: camera.gardsplass
-      - type: picture-entity
+      - id: ca31221cd0c648d49b3e6a49a282a3b0  # Automatically created id
+        type: picture-entity
         entity: camera.carport
-      - type: picture-entity
+      - id: 823ad8b624fd4a87ad22f680257fdd97  # Automatically created id
+        type: picture-entity
         entity: camera.stall
-      - type: picture-entity
+      - id: 6acef49e897a455895ecf741ff5e8f53  # Automatically created id
+        type: picture-entity
         entity: camera.beite
-      - type: picture-entity
+      - id: 066a8d74e5974d1e90fb1f7f479728aa  # Automatically created id
+        type: picture-entity
         entity: camera.trondheimsfjorden_2
 
-        
+
   ## PAGE: Security
   ## ------------------------------------------
-  - icon: mdi:security-home
+  - id: 7  # Automatically created id
+    icon: mdi:security-home
     title: Sikkerhet
     cards:
-      - type: "custom:alarm_control_panel-card"
+      - id: b34b43ba21f547d78ca686d243792aed  # Automatically created id
+        type: alarm-panel
         entity: alarm_control_panel.home_alarm
         hide_keypad: true
         title: Alarm
-        style: '--alarm-color-disarmed: var(--label-badge-blue);'
+        #style: '--alarm-color-disarmed: var(--label-badge-blue);'
         states:
-          - arm_home
           - arm_away
           - arm_night
-    
-      - type: entities
+
+      - id: 2cb4fd1b109b477494c0d37cd6f7c29c  # Automatically created id
+        type: entities
         title: Dørlås
         entities:
           - lock.ytterdr
           - script.script_lock_entry_door
           - script.script_unlock_entry_door
-          
-      - type: entities
+
+      - id: 18dc5750fafd4afca7c41b2f0d49d70b  # Automatically created id
+        type: entities
         title: Bevegelse
         entities:
           - sensor.motion_entry
           - sensor.motion_livingroom
           - sensor.motion_vaskerom
           - sensor.motion_bedroom
-          
-      - type: entities
+
+      - id: 563ce423dee240419e2f2e5b81eec08f  # Automatically created id
+        type: entities
         title: Røykvarslere
         background: radial-gradient(crimson, skyblue)
         theme: dark-mode
@@ -293,29 +585,33 @@ views:
           - sensor.smokealarm_hallway
           - sensor.smokealarm_gl_bedroom
           - sensor.smokealarm_gl_livingroom
-          
-      - type: entities
+
+      - id: 399c7e978e3c413bba91244b260b03f2  # Automatically created id
+        type: entities
         title: Dør / Vindu
         entities:
           - sensor.magnet_dor_ytterdor
           - sensor.magnet_vaskeromdor
           - sensor.magnet_sov_verandador
 
-      - type: entities
+      - id: 98d3f93be52f4ffd8f2b64ab049238a2  # Automatically created id
+        type: entities
         title: Garasje
         entities:
           - script.script_garage_door_1
           - script.script_garage_door_2
           - sensor.garagedoor1_status
-          
-          
-          
+
+
+
   ## PAGE: Power usage
   ## ------------------------------------------
-  - icon: mdi:flash
+  - id: 8  # Automatically created id
+    icon: mdi:flash
     title: Strøm
     cards:
-      - type: custom:gauge-card
+      - id: c8db5f0cf7b3408ead0d1bfebba17211  # Automatically created id
+        type: gauge
         title: Data
         entity: sensor.fibaro_plug_data_power
         min: 0
@@ -323,8 +619,9 @@ views:
         severity:
           red: 500
           green: 0
-          amber: 250
-      - type: custom:gauge-card
+          yellow: 250
+      - id: 6a66aefdce1e41e0817c3a8b00a7a071  # Automatically created id
+        type: gauge
         title: GL Varmepumpe
         entity: sensor.fibaro_plug_gl_heatpump_power
         min: 0
@@ -332,8 +629,9 @@ views:
         severity:
           red: 500
           green: 0
-          amber: 250
-      - type: custom:gauge-card
+          yellow: 250
+      - id: 7a827ad7c6cd4d6ba00c6118e2139df2  # Automatically created id
+        type: gauge
         title: TV / Media
         entity: sensor.fibaro_plug_04_power
         min: 0
@@ -341,8 +639,9 @@ views:
         severity:
           red: 250
           green: 0
-          amber: 100
-      - type: custom:gauge-card
+          yellow: 100
+      - id: 7efa5cf2ff5d47fcbc08f6bceb2c86a4  # Automatically created id
+        type: gauge
         title: Gang Panelovn
         entity: sensor.fibaro_plug_hallway_heat_power
         min: 0
@@ -350,8 +649,9 @@ views:
         severity:
           red: 500
           green: 0
-          amber: 250
-      - type: custom:gauge-card
+          yellow: 250
+      - id: 57fb13d7d28a4dcfa023c379576c16ed  # Automatically created id
+        type: gauge
         title: Varmtvannstank
         entity: sensor.hotwatertank_power
         min: 0
@@ -359,8 +659,9 @@ views:
         severity:
           red: 1800
           green: 0
-          amber: 1000
-      - type: custom:gauge-card
+          yellow: 1000
+      - id: 3e579ca1791a46b787affccb02786999  # Automatically created id
+        type: gauge
         title: Vaskemaskin
         entity: sensor.vaskemaskin_power
         min: 0
@@ -368,13 +669,14 @@ views:
         severity:
           red: 500
           green: 0
-          amber: 250
-          
-      - type: entities
+          yellow: 250
+
+      - id: 04c5aaec8281437f8da0e5c5461c7f48  # Automatically created id
+        type: entities
         title: Energi forbrukt
         entities:
-          - sensor.north_power_main_energy
-          - sensor.nortq_power_gl_energy
+          #- sensor.north_power_main_energy
+          #- sensor.nortq_power_gl_energy
           - sensor.fibaro_plug_gl_heatpump_energy
           - sensor.hotwatertank_energy
           - sensor.vaskemaskin_energy
@@ -383,7 +685,8 @@ views:
           - sensor.fibaro_plug_hallway_heat_energy
           - sensor.fibaro_plug_04_energy
           - sensor.fibaro_plug_data_energy
-      - type: entities
+      - id: 9dec5bf86d8d487fa4681b4d3246929d  # Automatically created id
+        type: entities
         title: Strømforbruk nå
         entities:
           - sensor.hotwatertank_power
@@ -393,27 +696,30 @@ views:
           - sensor.fibaro_plug_hallway_heat_power
           - sensor.fibaro_plug_04_power
           - sensor.fibaro_plug_data_power
-          
-          
+
+
   ## PAGE: Settings
   ## ------------------------------------------
-  - icon: mdi:star
+  - id: 9  # Automatically created id
+    icon: mdi:star
     title: Diverse
     cards:
-      - type: entities
+      - id: 3bc66313444749cdbfaa6985731b97b7  # Automatically created id
+        type: entities
         title: Steam
         show_header_toggle: false
-        entities:      
+        entities:
           - sensor.steam_76561197961355518
           - sensor.steam_76561198125421167
           - sensor.steam_76561198142897485
           - sensor.steam_76561198453950322
           - sensor.steam_76561198105070411
           - sensor.steam_76561197967336072
-      - type: entities
+      - id: aadb6711cbe14330936394e102af9300  # Automatically created id
+        type: entities
         title: Nissan Leaf
         show_header_toggle: false
-        entities:      
+        entities:
           - sensor.leaf_battery
           - sensor.leaf_battery_connected
           - sensor.leaf_battery_charg_status
@@ -423,15 +729,17 @@ views:
           - script.script_carwings_fetch
           - script.script_carwings_climate_on
           - script.script_carwings_climate_off
-          
-          
-      
+
+
+
   ## PAGE: Settings
   ## ------------------------------------------
-  - icon: mdi:settings
+  - id: 10  # Automatically created id
+    icon: mdi:settings
     title: Automasjon
     cards:
-      - type: entities
+      - id: d4526bd302274f09989479b8701b6726  # Automatically created id
+        type: entities
         title: Automasjon
         show_header_toggle: false
         entities:

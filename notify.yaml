@@ -1,3 +1,8 @@
+- name: HTML5
+  platform: html5
+  gcm_api_key: 'AAAAl8fydzU:APA91bFRZUZc6PdlZ96ZJ67-BoIxciY3R04US2H6crLtEXiOPRNXyopLD4kG7skhhOU_efMeTwUOyHLDXQMwX_3DyQGnD7YogYuId1zB0OSFFPU0RBbGYFbIQc6vkT9fUedImYHQgEIA'
+  gcm_sender_id: '651894617909'
+
 #-------------------------------------------
 #  Default Notifier (all things use this)
 #-------------------------------------------

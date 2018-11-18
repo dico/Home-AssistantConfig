@@ -5,9 +5,17 @@
     entity_id: device_tracker.enrlpqkj_a79742eeb61c491e944d60140077490d, device_tracker.enrlpqkj_3f275dfc115a4b4aade1fc48bff378ad, device_tracker.enrlpqkj_8012db7abc664e7ba9b761d4f3c2c19b
     # Optional
     from: 'home'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: 'input_boolean.automation_away_auto'
+      state: 'on'
   action:
   - data:
-      entity_id: alarm_control_panel.alarm_arm_away
+      entity_id: input_boolean.home
+    service: input_boolean.turn_off
+  - delay: 00:00:10
   
 # Presence detection
 - alias: 'Presence Home'
@@ -16,10 +24,17 @@
     entity_id: device_tracker.enrlpqkj_a79742eeb61c491e944d60140077490d, device_tracker.enrlpqkj_3f275dfc115a4b4aade1fc48bff378ad, device_tracker.enrlpqkj_8012db7abc664e7ba9b761d4f3c2c19b
     # Optional
     to: 'home'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: 'input_boolean.automation_away_auto'
+      state: 'on'
   action:
   - data:
-      entity_id: alarm_control_panel.alarm_disarm
-
+      entity_id: input_boolean.home
+    service: input_boolean.turn_on
+  - delay: 00:00:10
 
 #Away
 - alias: 'Borte'

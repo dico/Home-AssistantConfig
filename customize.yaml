@@ -78,6 +78,9 @@
         assumed_state: false
         icon: mdi:ceiling-light
         homebridge_visible: true
+    switch.utendrs:
+        assumed_state: false
+        icon: mdi:power
         
 # Switches
     switch.hotwatertank_switch:
