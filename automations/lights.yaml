@@ -107,13 +107,13 @@
     entity_id: light.soverom_tak
     state: 'off'
   action:
-  - service: light.turn_on
-    entity_id: light.soverom_tak
-    data:
-        brightness: 60
-        rgb_color: [255, 100, 100]
-  - service: input_boolean.turn_on
-    entity_id: input_boolean.automation_bedroom_light
+#  - service: light.turn_on
+#    entity_id: light.soverom_tak
+#    data:
+#        brightness: 60
+#        rgb_color: [255, 100, 100]
+#  - service: input_boolean.turn_on
+#    entity_id: input_boolean.automation_bedroom_light
   - service: switch.turn_on
     entity_id: switch.telldus_soverom_veronica_switch
     
@@ -134,10 +134,10 @@
     entity_id: input_boolean.automation_bedroom_light
     state: 'on'
   action:
-  - service: light.turn_off
-    entity_id: light.soverom_tak
-  - service: input_boolean.turn_off
-    entity_id: input_boolean.automation_bedroom_light
+#  - service: light.turn_off
+#    entity_id: light.soverom_tak
+#  - service: input_boolean.turn_off
+#    entity_id: input_boolean.automation_bedroom_light
   - service: switch.turn_off
     entity_id: switch.telldus_soverom_veronica_switch
     

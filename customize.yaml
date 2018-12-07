@@ -86,11 +86,6 @@
     switch.hotwatertank_switch:
         friendly_name: Varmtvannstank
         icon: mdi:water
-    switch.telldus_soverom_veronica_switch:
-        friendly_name: Soverom Veronica
-        assumed_state: false
-        icon: mdi:power
-        homebridge_visible: true
     switch.vaskemaskin_switch:
         friendly_name: Vaskemaskin
         assumed_state: false
@@ -270,6 +265,15 @@
         friendly_name: Soverom Ailo
         icon: mdi:thermometer
         homebridge_visible: true
+    sensor.fibaro_smoke_gl_livingroom_temperature:
+        friendly_name: Røykvarsler Temp. GL Stue
+        icon: mdi:thermometer
+    sensor.fibaro_smoke_hallway_temperature:
+        friendly_name: Røykvarsler Temp. Gang
+        icon: mdi:thermometer
+    sensor.fibaro_smoke_livingroom_temperature:
+        friendly_name: Røykvarsler Temp. Stue
+        icon: mdi:thermometer
         
         
 # Netatmo

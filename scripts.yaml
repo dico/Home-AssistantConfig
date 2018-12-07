@@ -18,8 +18,6 @@ livingroom_mood_lights:
   - service: switch.turn_off
     data:
       entity_id: switch.lys_pc_robert
-      
-      
 livingroom_full_lights:
   alias: Stue full belysning
   sequence:
@@ -42,7 +40,6 @@ livingroom_full_lights:
   - service: switch.turn_on
     data:
       entity_id: switch.lys_pc_robert
-      
 home_full_lights:
   alias: Stue full belysning
   sequence:
@@ -84,12 +81,9 @@ home_full_lights:
   - service: switch.turn_on
     data:
       entity_id: switch.lys_pc_robert
-      
-      
 home_night_lights:
   alias: Natta lys
   sequence:
-  # Turn off
   - service: light.turn_off
     entity_id: light.stue_sofa
   - service: light.turn_off
@@ -118,16 +112,12 @@ home_night_lights:
     entity_id: switch.robert_pc
   - service: switch.turn_off
     entity_id: switch.veronica_pc
-  # Turn on
   - service: switch.turn_on
     entity_id: switch.gang_lyst_kommode_switch
   - service: switch.turn_on
     entity_id: switch.telldus_soverom_veronica_switch
   - service: light.turn_on
     entity_id: light.utelys
-      
-      
-      
 home_lights_off:
   alias: Alle lys av
   sequence:
@@ -155,9 +145,6 @@ home_lights_off:
   - service: switch.turn_off
     data:
       entity_id: switch.lys_pc_robert
-      
-
-      
 '1513567109976':
   alias: Julelys PÅ
   sequence:
@@ -170,8 +157,6 @@ home_lights_off:
   - data:
       entity_id: switch.juletre
     service: switch.turn_on
-    
-    
 '1513567140805':
   alias: Julelys AV
   sequence:
@@ -184,103 +169,101 @@ home_lights_off:
   - data:
       entity_id: switch.juletre
     service: switch.turn_off
-    
 script_garage_door_1:
   alias: Garasjeport 1
   sequence:
   - data:
       entity_id: switch.x_dummy_garagedoor_1
     service: switch.turn_on
-    
 script_garage_door_2:
   alias: Garasjeport 2
   sequence:
   - data:
       entity_id: switch.x_dummy_garagedoor_2
     service: switch.turn_on
-    
-
 script_carwings_fetch:
   alias: Fetch Carwings data
   sequence:
   - service: mqtt.publish
     data:
-        topic: "leaf/control/update"
-        payload: "1" 
-    
+      topic: leaf/control/update
+      payload: '1'
 script_carwings_climate_on:
   alias: Carwings Climate On
   sequence:
   - service: mqtt.publish
     data:
-        topic: "leaf/control/climate"
-        payload: "1"
-        
+      topic: leaf/control/climate
+      payload: '1'
 script_carwings_climate_off:
   alias: Carwings Climate On
   sequence:
   - service: mqtt.publish
     data:
-        topic: "leaf/control/climate"
-        payload: "0"
-    
-    
+      topic: leaf/control/climate
+      payload: '0'
 script_test_sms:
   alias: Test SMS
   sequence:
   - service: notify.sms_robert
     data:
-        message: "SMS test"
-
+      message: SMS test
 script_lock_entry_door:
   alias: Lås ytterdør
   sequence:
   - service: lock.lock
     data:
-        code: !secret VERISURE_CODE_DIGITS
-        entity_id: lock.ytterdr
-
+      code: 115599
+      entity_id: lock.ytterdr
 script_unlock_entry_door:
   alias: Lås opp ytterdør
   sequence:
   - service: lock.unlock
     data:
-        code: !secret VERISURE_CODE_DIGITS
-        entity_id: lock.ytterdr
-        
+      code: 115599
+      entity_id: lock.ytterdr
 radio538:
   alias: Play Radio on Chromecast Audio
   sequence:
-    - service: media_player.volume_set
-      data:
-        entity_id: media_player.tv_stue
-        volume_level: '0.35'
-    -  service: media_player.volume_set
-       data:
-         entity_id: media_player.chromecast_soverom
-         volume_level: '0.20'
-    -  service: media_player.play_media
-       data_template:
-         entity_id: >
-          {% if is_state("input_select.chromecast_radio", "Livingroom") %} media_player.tv_stue
-          {% elif is_state("input_select.chromecast_radio", "Bedroom") %} media_player.chromecast_soverom
-          {% endif %}
-         media_content_id: >
-          {% if is_state("input_select.radio_station", "NRK P3") %} http://lyd.nrk.no/nrk_radio_p3_mp3_h
-          {% elif is_state("input_select.radio_station", "Q-Music") %} http://icecast-qmusic.cdp.triple-it.nl/Qmusic_nl_live_96.mp3
-          {% elif is_state("input_select.radio_station", "3FM") %} http://icecast.omroep.nl/3fm-bb-mp3
-          {% elif is_state("input_select.radio_station", "100% NL") %} http://stream.100p.nl/100pctnl.mp3
-          {% elif is_state("input_select.radio_station", "Veronica") %} http://8543.live.streamtheworld.com/VERONICACMP3
-          {% elif is_state("input_select.radio_station", "Sky Radio") %} http://8623.live.streamtheworld.com:80/SKYRADIOAAC_SC
-          {% elif is_state("input_select.radio_station", "Arrow Classic Rock") %} http://91.221.151.155/listen.mp3
-          {% elif is_state("input_select.radio_station", "Classic FM") %} http://19143.live.streamtheworld.com/CLASSICFM_SC
-          {% elif is_state("input_select.radio_station", "BNR Nieuwsradio") %} http://icecast-bnr.cdp.triple-it.nl/bnr_mp3_96_03
-          {% elif is_state("input_select.radio_station", "SLAM! Hardstyle") %} http://vip-icecast.538.lw.triple-it.nl/WEB17_MP3
-          {% elif is_state("input_select.radio_station", "Sleep Radio") %} http://37.59.28.208:8722/stream
-          {% elif is_state("input_select.radio_station", "Ambient Sleeping Pill") %} http://perseus.shoutca.st:8447/h
-          {% elif is_state("input_select.radio_station", "Radio Art - Sleep") %} http://live.radioart.com/fSleep.mp3
-          {% elif is_state("input_select.radio_station", "Ambi Nature Radio") %} http://94.23.252.14:8067/stream
-          {% elif is_state("input_select.radio_station", "Calm Radio - Sleep") %} http://streams.calmradio.com/api/39/128/stream
-          {% elif is_state("input_select.radio_station", "Dinamo.FM Sleep") %} http://channels.dinamo.fm/sleep-aac
-          {% endif %}
-         media_content_type: 'audio/mp4' 
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.tv_stue
+      volume_level: '0.35'
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.chromecast_soverom
+      volume_level: '0.20'
+  - service: media_player.play_media
+    data_template:
+      entity_id: '{% if is_state("input_select.chromecast_radio", "Livingroom") %}
+        media_player.tv_stue {% elif is_state("input_select.chromecast_radio", "Bedroom")
+        %} media_player.chromecast_soverom {% endif %}
+
+        '
+      media_content_id: '{% if is_state("input_select.radio_station", "NRK P3") %}
+        http://lyd.nrk.no/nrk_radio_p3_mp3_h {% elif is_state("input_select.radio_station",
+        "Q-Music") %} http://icecast-qmusic.cdp.triple-it.nl/Qmusic_nl_live_96.mp3
+        {% elif is_state("input_select.radio_station", "3FM") %} http://icecast.omroep.nl/3fm-bb-mp3
+        {% elif is_state("input_select.radio_station", "100% NL") %} http://stream.100p.nl/100pctnl.mp3
+        {% elif is_state("input_select.radio_station", "Veronica") %} http://8543.live.streamtheworld.com/VERONICACMP3
+        {% elif is_state("input_select.radio_station", "Sky Radio") %} http://8623.live.streamtheworld.com:80/SKYRADIOAAC_SC
+        {% elif is_state("input_select.radio_station", "Arrow Classic Rock") %} http://91.221.151.155/listen.mp3
+        {% elif is_state("input_select.radio_station", "Classic FM") %} http://19143.live.streamtheworld.com/CLASSICFM_SC
+        {% elif is_state("input_select.radio_station", "BNR Nieuwsradio") %} http://icecast-bnr.cdp.triple-it.nl/bnr_mp3_96_03
+        {% elif is_state("input_select.radio_station", "SLAM! Hardstyle") %} http://vip-icecast.538.lw.triple-it.nl/WEB17_MP3
+        {% elif is_state("input_select.radio_station", "Sleep Radio") %} http://37.59.28.208:8722/stream
+        {% elif is_state("input_select.radio_station", "Ambient Sleeping Pill") %}
+        http://perseus.shoutca.st:8447/h {% elif is_state("input_select.radio_station",
+        "Radio Art - Sleep") %} http://live.radioart.com/fSleep.mp3 {% elif is_state("input_select.radio_station",
+        "Ambi Nature Radio") %} http://94.23.252.14:8067/stream {% elif is_state("input_select.radio_station",
+        "Calm Radio - Sleep") %} http://streams.calmradio.com/api/39/128/stream {%
+        elif is_state("input_select.radio_station", "Dinamo.FM Sleep") %} http://channels.dinamo.fm/sleep-aac
+        {% endif %}
+
+        '
+      media_content_type: audio/mp4
+'1543188053124':
+  alias: RGB test
+  sequence:
+  - event: ''
+    event_data: {}

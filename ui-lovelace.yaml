@@ -346,6 +346,11 @@ views:
         entities:
           - light.utelys
           - switch.utendrs
+      - id: lightDiv
+        type: entities
+        title: Diverse
+        entities:
+          - light.fibaro_system_fgrgbwm441_rgbw_controller_level_6
 
 
 
@@ -456,6 +461,30 @@ views:
         show_header_toggle: false
         entities:
           - switch.robert_stasjonr
+          
+      - id: home_battery
+        type: entities
+        title: Batteri
+        show_header_toggle: false
+        entities:
+          - sensor.batt_motion_fibaro_hallway
+          - sensor.batt_motion_livingroom
+          - sensor.batt_smoke_gl_bedroom
+          - sensor.batt_smoke_gl_livingroom
+          - sensor.batt_smoke_hallway
+          - sensor.batt_smoke_livingroom
+          - sensor.batt_temp_bedroom
+          - sensor.batt_vacuum_klara
+          - sensor.batt_wallmote_livingroom
+          
+      - id: smoke_sensor_temperature
+        type: entities
+        title: Røykvarslere Temp
+        show_header_toggle: false
+        entities:
+          - sensor.fibaro_smoke_gl_livingroom_temperature
+          - sensor.fibaro_smoke_hallway_temperature
+          - sensor.fibaro_smoke_livingroom_temperature
 
 
 
@@ -504,13 +533,13 @@ views:
         line_color: "#3498db"
         
       - type: sensor
-        entity: sensor.netatmo_kroken_ute_temperature_3
+        entity: sensor.netatmo_kroken_ute_temperature_2
         name: Ute Temperatur
         height: 75
         line_color: "#cf8111"
         
       - type: sensor
-        entity: sensor.netatmo_kroken_ute_humidity_3
+        entity: sensor.netatmo_kroken_ute_humidity_2
         name: Ute Luftfuktighet
         height: 75
         line_color: "#cf8111"
@@ -522,9 +551,9 @@ views:
     icon: mdi:cctv
     title: Kamera
     cards:
-      - id: 6f3a1f3473cf4f5fbaeab98fab06bdc1  # Automatically created id
-        type: picture-entity
-        entity: camera.garasje
+      #- id: 6f3a1f3473cf4f5fbaeab98fab06bdc1  # Automatically created id
+      #  type: picture-entity
+      #  entity: camera.garasje
       - id: 5360db4ba4e346b8bc72ec653a170345  # Automatically created id
         type: picture-entity
         entity: camera.gardsplass
@@ -698,7 +727,7 @@ views:
           - sensor.fibaro_plug_data_power
 
 
-  ## PAGE: Settings
+  ## PAGE: Div
   ## ------------------------------------------
   - id: 9  # Automatically created id
     icon: mdi:star
@@ -731,8 +760,7 @@ views:
           - script.script_carwings_climate_off
 
 
-
-  ## PAGE: Settings
+  ## PAGE: Automation
   ## ------------------------------------------
   - id: 10  # Automatically created id
     icon: mdi:settings

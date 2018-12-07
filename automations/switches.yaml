@@ -3,7 +3,7 @@
     platform: event
     event_type: zwave.scene_activated
     event_data:
-      entity_id: zwave.aeotec_wallmote_01
+      entity_id: zwave.aeotec_zw130_wallmote_quad
       scene_id: 1
       scene_data: 0
   action:
@@ -15,7 +15,7 @@
     platform: event
     event_type: zwave.scene_activated
     event_data:
-      entity_id: zwave.aeotec_wallmote_01
+      entity_id: zwave.aeotec_zw130_wallmote_quad
       scene_id: 1
       scene_data: 2
   action:
@@ -29,7 +29,7 @@
     platform: event
     event_type: zwave.scene_activated
     event_data:
-      entity_id: zwave.aeotec_wallmote_01
+      entity_id: zwave.aeotec_zw130_wallmote_quad
       scene_id: 3
       scene_data: 2
   action:
@@ -43,7 +43,7 @@
     platform: event
     event_type: zwave.scene_activated
     event_data:
-      entity_id: zwave.aeotec_wallmote_01
+      entity_id: zwave.aeotec_zw130_wallmote_quad
       scene_id: 3
       scene_data: 0
   action:
@@ -57,7 +57,7 @@
     platform: event
     event_type: zwave.scene_activated
     event_data:
-      entity_id: zwave.aeotec_wallmote_01
+      entity_id: zwave.aeotec_zw130_wallmote_quad
       scene_id: 2
       scene_data: 0
   action:
@@ -69,7 +69,7 @@
     platform: event
     event_type: zwave.scene_activated
     event_data:
-      entity_id: zwave.aeotec_wallmote_01
+      entity_id: zwave.aeotec_zw130_wallmote_quad
       scene_id: 2
       scene_data: 2
   action:
@@ -83,7 +83,7 @@
     platform: event
     event_type: zwave.scene_activated
     event_data:
-      entity_id: zwave.aeotec_wallmote_01
+      entity_id: zwave.aeotec_zw130_wallmote_quad
       scene_id: 4
       scene_data: 2
   action:
@@ -97,7 +97,7 @@
     platform: event
     event_type: zwave.scene_activated
     event_data:
-      entity_id: zwave.aeotec_wallmote_01
+      entity_id: zwave.aeotec_zw130_wallmote_quad
       scene_id: 4
       scene_data: 0
   action:

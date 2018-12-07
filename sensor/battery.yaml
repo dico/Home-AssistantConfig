@@ -1,11 +1,15 @@
-# Battery
+######### Battery #########
+
+## Bathroom
   - platform: template
     sensors:
       batt_temp_bathroom:
         friendly_name: 'Temperatursensor bad'
         value_template: '{{ states.sensor.bad_humidity.attributes.battery_level }}'
         unit_of_measurement: '%'
-        
+  
+
+## Bedroom  
   - platform: template
     sensors:
       batt_temp_bedroom:
@@ -13,6 +17,42 @@
         value_template: '{{ states.sensor.soverom_temperature.attributes.battery_level }}'
         unit_of_measurement: '%'
         
+
+## Hallway
+  - platform: template
+    sensors:
+      batt_motion_fibaro_hallway:
+        friendly_name: 'Bevegelsessensor gang'
+        value_template: '{{ states.zwave.fibaro_motion_1.attributes.battery_level }}'
+        unit_of_measurement: '%'
+       
+
+
+## Livingroom
+  - platform: template
+    sensors:
+      batt_vacuum_klara:
+        friendly_name: 'Klara'
+        value_template: '{{ states.vacuum.xiaomi_vacuum_cleaner.attributes.battery_level }}'
+        unit_of_measurement: '%'
+        
+  - platform: template
+    sensors:
+      batt_wallmote_livingroom:
+        friendly_name: 'Stue Veggbryter'
+        value_template: '{{ states.zwave.aeotec_zw130_wallmote_quad.attributes.battery_level }}'
+        unit_of_measurement: '%'
+        
+  - platform: template
+    sensors:
+      batt_motion_livingroom:
+        friendly_name: 'Bevegelsessensor Stue'
+        value_template: '{{ states.zwave.vision_zp3102_pir_motion_sensor.attributes.battery_level }}'
+        unit_of_measurement: '%'
+        
+
+
+## Smokesensors
   - platform: template
     sensors:
       batt_smoke_gl_bedroom:
@@ -24,33 +64,19 @@
     sensors:
       batt_smoke_gl_livingroom:
         friendly_name: 'Røykvarsler GL Livingroom'
-        value_template: '{{ states.zwave.fibaro_smoke_gl_livingroom.attributes.battery_level }}'
+        value_template: '{{ states.zwave.fibaro_system_fgsd002_smoke_sensor.attributes.battery_level }}'
         unit_of_measurement: '%'
         
   - platform: template
     sensors:
       batt_smoke_livingroom:
         friendly_name: 'Røykvarsler stue'
-        value_template: '{{ states.zwave.fibaro_smoke_livingroom.attributes.battery_level }}'
+        value_template: '{{ states.zwave.fibaro_system_fgsd002_smoke_sensor_3.attributes.battery_level }}'
         unit_of_measurement: '%'
 
   - platform: template
     sensors:
       batt_smoke_hallway:
         friendly_name: 'Røykvarsler gang'
-        value_template: '{{ states.zwave.fibaro_smoke_hallway.attributes.battery_level }}'
-        unit_of_measurement: '%'
-        
-  - platform: template
-    sensors:
-      batt_motion_fibaro_hallway:
-        friendly_name: 'Bevegelsessensor gang'
-        value_template: '{{ states.zwave.fibaro_motion_1.attributes.battery_level }}'
-        unit_of_measurement: '%'
-        
-  - platform: template
-    sensors:
-      batt_motion_livingroom:
-        friendly_name: 'Bevegelsessensor stue'
-        value_template: '{{ states.zwave.motion_livingroom.attributes.battery_level }}'
+        value_template: '{{ states.zwave.fibaro_system_fgsd002_smoke_sensor_2.attributes.battery_level }}'
         unit_of_measurement: '%'

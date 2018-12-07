@@ -1,0 +1,15 @@
+  - platform: template
+    switches:
+      switch_frontdoor_lock:
+        friendly_name: 'Ytterdør'
+        value_template: "{{ is_state('lock.ytterdr', 'locked') }}"
+        turn_on:
+          service: lock.lock
+          data:
+            entity_id: lock.ytterdr
+            code: !secret VERISURE_CODE_DIGITS
+        turn_off:
+          service: lock.unlock
+          data:
+            entity_id: lock.ytterdr
+            code: !secret VERISURE_CODE_DIGITS

@@ -46,6 +46,7 @@ ssl
 privkey.pem
 certificate.pem
 fullchain.pem
+.homekit.state
 http_cors_allowed_origins.yaml
 http_trusted_networks.yaml
 !/.gitignore
