@@ -67,3 +67,8 @@
     name: Innbruddsvarsling
     initial: off
     icon: mdi:settings
+    
+  automation_track_home_notification:
+    name: Kommet hjem varsel
+    initial: off
+    icon: mdi:settings

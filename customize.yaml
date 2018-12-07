@@ -39,7 +39,7 @@
         assumed_state: false
         icon: mdi:ceiling-light
         homebridge_visible: true
-    switch.jul_stuevindu:
+    switch.stuevindu_julelys:
         assumed_state: false
         icon: mdi:spotlight-beam
         homebridge_visible: true

@@ -24,7 +24,6 @@ views:
     # Title of the view. Will be used as the tooltip for tab icon
     title: First view
     cards:
-      
       - id: 02827a4d241b48f1a01659814262db44  # Automatically created id
         type: vertical-stack
         cards:
@@ -45,7 +44,6 @@ views:
           #    - group.gang_lights
           #    - light.soverom_tak
           #    - light.vaskerom_trapp
-          
           # Stue
           - type: horizontal-stack
             cards:
@@ -57,7 +55,7 @@ views:
                 color_type: icon
                 default_color: rgb(234, 160, 11)
                 action: toggle
-                
+
               - type: "custom:button-card"
                 name: Lys spisebord
                 entity: light.stue_spisebord
@@ -66,7 +64,7 @@ views:
                 color_type: icon
                 default_color: rgb(234, 160, 11)
                 action: toggle
-          
+
           # Stue gulvlampe
           - type: horizontal-stack
             cards:
@@ -86,7 +84,7 @@ views:
                 color_type: icon
                 default_color: rgb(234, 160, 11)
                 action: toggle
-          
+
           # Lys PC
           - type: horizontal-stack
             cards:
@@ -106,7 +104,7 @@ views:
                 color_type: icon
                 default_color: rgb(234, 160, 11)
                 action: toggle
-                
+
           # Diverse
           - type: horizontal-stack
             cards:
@@ -134,7 +132,7 @@ views:
                 color_type: icon
                 default_color: rgb(234, 160, 11)
                 action: toggle
-          
+
           # Vaskerom
           - type: horizontal-stack
             cards:
@@ -162,7 +160,7 @@ views:
                 color_type: icon
                 default_color: rgb(234, 160, 11)
                 action: toggle
-                
+
           # Soverom
           - type: horizontal-stack
             cards:
@@ -190,7 +188,7 @@ views:
                 color_type: icon
                 default_color: rgb(234, 160, 11)
                 action: toggle
-                
+
           # Scripts
           - type: horizontal-stack
             cards:
@@ -233,33 +231,47 @@ views:
           #    - script.livingroom_mood_lights
           #    - script.livingroom_full_lights
           #    - script.home_full_lights
-              
 
 
       - id: 5833cd3b08d44e8b8e9a7bd1aad35a60  # Automatically created id
         type: vertical-stack
-        cards:              
+        cards:
           - type: weather-forecast
             entity: weather.yweather
+
+          #- type: entities
+          #  title: Klima
+          #  show_header_toggle: false
+          #  entities:
+          #    - climate.stue
+          #    - climate.bad_termostat_heating
 
           - type: entities
             title: Klima
             show_header_toggle: false
             entities:
-              - climate.stue
-              - climate.bad_termostat_heating
-
-          - type: glance
-            title: Klima inne
-            entities:
-              - sensor.netatmo_stue_temperature_2
-              - sensor.netatmo_stue_co2_2
-              - sensor.gang_temperature
-              - sensor.bad_temperature
-              - sensor.soverom_temperature
-              - sensor.ailo_temperature
-              - sensor.netatmo_kroken_ute_temperature_2
-              - sensor.garasje_temperature
+              - entity: sensor.netatmo_kroken_ute_temperature_2
+                icon: mdi:thermometer
+              - entity: sensor.netatmo_stue_temperature_2
+                icon: mdi:thermometer
+              - entity: sensor.netatmo_stue_co2_2
+                icon: mdi:thermometer
+              - entity: sensor.gang_temperature
+                icon: mdi:thermometer
+              - entity: sensor.bad_temperature
+                icon: mdi:thermometer
+              - entity: sensor.ailo_temperature
+                name: Ailo
+                icon: mdi:thermometer
+              - entity: sensor.garasje_temperature
+                name: Garasje
+                icon: mdi:thermometer
+              - entity: sensor.stall_temp
+                icon: mdi:thermometer
+              - entity: sensor.stall_luftfuktighet
+                icon: mdi:thermometer
+              - entity: sensor.stall_co2
+                icon: mdi:periodic-table-co2
 
 
       - id: 97836b107ce8448aa2696b3bddf8b871  # Automatically created id
@@ -268,14 +280,16 @@ views:
           - type: map
             aspect_ratio: 100%
             entities:
-              - device_tracker.enrlpqkj_a79742eeb61c491e944d60140077490d
-              - device_tracker.enrlpqkj_3f275dfc115a4b4aade1fc48bff378ad
-              - device_tracker.enrlpqkj_8012db7abc664e7ba9b761d4f3c2c19b
-              - device_tracker.robert_iphone7
+              #- device_tracker.enrlpqkj_a79742eeb61c491e944d60140077490d
+              #- device_tracker.enrlpqkj_3f275dfc115a4b4aade1fc48bff378ad
+              #- device_tracker.enrlpqkj_8012db7abc664e7ba9b761d4f3c2c19b
+              - device_tracker.robert_iphone7plus
+              - device_tracker.ailo_evander_sin_iphone
+              - device_tracker.veronica_sin_iphone
               - zone.home
               - zone.work
               - zone.school
-              
+
           - type: entities
             title: Dør og vindu
             show_header_toggle: false
@@ -364,6 +378,12 @@ views:
         title: Diverse
         entities:
           - light.fibaro_system_fgrgbwm441_rgbw_controller_level_6
+      - id: xmas_lights
+        type: entities
+        title: Julelys
+        entities:
+          - entity: switch.stuevindu_julelys
+            name: Blinkende lys stuevindu
 
 
 
@@ -474,7 +494,7 @@ views:
         show_header_toggle: false
         entities:
           - switch.robert_stasjonr
-          
+
       - id: home_battery
         type: entities
         title: Batteri
@@ -489,7 +509,7 @@ views:
           - sensor.batt_temp_bedroom
           - sensor.batt_vacuum_klara
           - sensor.batt_wallmote_livingroom
-          
+
       - id: smoke_sensor_temperature
         type: entities
         title: Røykvarslere Temp
@@ -532,25 +552,21 @@ views:
         name: Stall CO2
         height: 75
         line_color: "#3498db"
-        
       - type: sensor
         entity: sensor.stall_luftfuktighet
         name: Stall Luftfuktighet
         height: 75
         line_color: "#3498db"
-        
       - type: sensor
         entity: sensor.stall_temp
         name: Stall Temperatur
         height: 75
         line_color: "#3498db"
-        
       - type: sensor
         entity: sensor.netatmo_kroken_ute_temperature_2
         name: Ute Temperatur
         height: 75
         line_color: "#cf8111"
-        
       - type: sensor
         entity: sensor.netatmo_kroken_ute_humidity_2
         name: Ute Luftfuktighet
@@ -790,3 +806,4 @@ views:
           - input_boolean.automation_good_morning_auto
           - input_boolean.automation_away_auto
           - input_boolean.automation_intruder_alert
+          - input_boolean.automation_track_home_notification

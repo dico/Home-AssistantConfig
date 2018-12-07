@@ -11,5 +11,5 @@
   action:
   - service: notify.ios_veronica
     data:
-        message: "Hilde er online på steam"
+        message: "Hamster-Hilde er online på steam"
         title: "Steam"

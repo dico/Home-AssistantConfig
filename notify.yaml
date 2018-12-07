@@ -37,27 +37,38 @@
   recipient: !secret VERONICA_MOBIL_NUM
 
 #-------------------------------------------
-#  iOS Push (just Robert)
+#  iOS Push (single user)
 #-------------------------------------------
 - name: ios_robert
   platform: group
   services:
-    - service: ios_robert_iphone7
-#    - service: ios_robertiphone7
+    - service: ios_robert_iphone7plus
     
 - name: ios_veronica
   platform: group
   services:
-#    - service: ios_veronica
-    - service: ios_veronicaiphone6s
+    - service: ios_veronica_sin_iphone
+    
+- name: ios_ailo
+  platform: group
+  services:
+    - service: ios_ailo_evander_sin_iphone
 
 #-------------------------------------------
-#  iOS Push (both)
+#  iOS All
 #-------------------------------------------
 - name: ios_both
   platform: group
   services:
-    - service: ios_robert_iphone7
-#    - service: ios_robertiphone7
-#    - service: ios_veronica
-    - service: ios_veronicaiphone6s
+    - service: ios_robert_iphone7plus
+    - service: ios_veronica_sin_iphone
+    - service: ios_ailo_evander_sin_iphone
+    
+#-------------------------------------------
+#  iOS Parents
+#-------------------------------------------
+- name: ios_parents
+  platform: group
+  services:
+    - service: ios_robert_iphone7plus
+    - service: ios_veronica_sin_iphone

@@ -115,7 +115,7 @@
 #  - service: input_boolean.turn_on
 #    entity_id: input_boolean.automation_bedroom_light
   - service: switch.turn_on
-    entity_id: switch.telldus_soverom_veronica_switch
+    entity_id: switch.bedroom_nightstand
     
     
     
@@ -139,5 +139,5 @@
 #  - service: input_boolean.turn_off
 #    entity_id: input_boolean.automation_bedroom_light
   - service: switch.turn_off
-    entity_id: switch.telldus_soverom_veronica_switch
+    entity_id: switch.bedroom_nightstand
     

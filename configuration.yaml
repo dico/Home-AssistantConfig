@@ -165,6 +165,7 @@ device_tracker:
     password: !secret UNIFI_PASSWORD
     verify_ssl: false
     consider_home: 180
+#    track_new_devices: false
 #  - platform: owntracks
 #    max_gps_accuracy: 200
 #    waypoints: True

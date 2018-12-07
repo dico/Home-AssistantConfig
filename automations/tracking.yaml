@@ -1,0 +1,53 @@
+- alias: Ailo home
+  trigger:
+    platform: state
+    entity_id: device_tracker.ailo_evander_sin_iphone
+    # Optional
+    from: 'not_home'
+    # Optional
+    to: 'home'
+  condition:
+    condition: state
+    entity_id: input_boolean.automation_track_home_notification
+    state: 'on'
+  action:
+  - service: notify.ios_parents
+    data:
+      message: "Ailo er hjemme"
+      title: "Tracking"
+      
+- alias: Robert hjemme
+  trigger:
+    platform: state
+    entity_id: device_tracker.robert_iphone7plus
+    # Optional
+    from: 'not_home'
+    # Optional
+    to: 'home'
+  condition:
+    condition: state
+    entity_id: input_boolean.automation_track_home_notification
+    state: 'on'
+  action:
+  - service: notify.ios_veronica
+    data:
+      message: "Robert er hjemme"
+      title: "Tracking"
+      
+- alias: Veronica hjemme
+  trigger:
+    platform: state
+    entity_id: device_tracker.veronica_sin_iphone
+    # Optional
+    from: 'not_home'
+    # Optional
+    to: 'home'
+  condition:
+    condition: state
+    entity_id: input_boolean.automation_track_home_notification
+    state: 'on'
+  action:
+  - service: notify.ios_robert
+    data:
+      message: "Veronica er hjemme"
+      title: "Tracking"
