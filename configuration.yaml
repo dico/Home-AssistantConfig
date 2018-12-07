@@ -97,6 +97,7 @@ switch: !include_dir_merge_list switch
 media_player: !include media_player.yaml
 input_boolean: !include input_boolean.yaml
 input_select: !include input_select.yaml
+binary_sensor: !include binary_sensor.yaml
 script: !include scripts.yaml
 camera: !include camera.yaml
 notify: !include notify.yaml

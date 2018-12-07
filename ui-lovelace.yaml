@@ -12,7 +12,7 @@ resources:
 
 title: Kroken
 # Optional background for all views. Check https://developer.mozilla.org/en-US/docs/Web/CSS/background for more examples.
-background: center / cover no-repeat url("/background.png") fixed
+#background: center / cover no-repeat url("/background.png") fixed
 # Exclude entities from "Unused entities" view
 excluded_entities:
   - weblink.router
@@ -238,7 +238,7 @@ views:
 
       - id: 5833cd3b08d44e8b8e9a7bd1aad35a60  # Automatically created id
         type: vertical-stack
-        cards:
+        cards:              
           - type: weather-forecast
             entity: weather.yweather
 
@@ -271,23 +271,35 @@ views:
               - device_tracker.enrlpqkj_a79742eeb61c491e944d60140077490d
               - device_tracker.enrlpqkj_3f275dfc115a4b4aade1fc48bff378ad
               - device_tracker.enrlpqkj_8012db7abc664e7ba9b761d4f3c2c19b
+              - device_tracker.robert_iphone7
               - zone.home
               - zone.work
               - zone.school
-
+              
           - type: entities
-            title: Garasje
+            title: Dør og vindu
             show_header_toggle: false
             entities:
-              - script.script_garage_door_1
-              - script.script_garage_door_2
-              - sensor.garagedoor1_status
+              - entity: switch.switch_frontdoor_lock
+                icon: mdi:home-lock
+              - sensor.magnet_dor_ytterdor
+              - sensor.magnet_vaskeromdor
+              - sensor.magnet_sov_verandador
+
+          #- type: entities
+          #  title: Garasje
+          #  show_header_toggle: false
+          #  entities:
+          #    - script.script_garage_door_1
+          #    - script.script_garage_door_2
+          #    - sensor.garagedoor1_status
 
           - type: entities
             title: Status
             show_header_toggle: false
             entities:
-              - input_boolean.washmachine_status
+              - entity: sensor.washmachine_status
+                icon: mdi:washing-machine
 
 
 
@@ -340,6 +352,7 @@ views:
           - light.soverom_tak
           - light.nattlampe_robert
           - light.nattlampe_veronica
+          - switch.bedroom_nightstand
       - id: 22f0729de75a4e78a77f6c3ca5f8901a  # Automatically created id
         type: entities
         title: Ute
@@ -591,9 +604,8 @@ views:
         type: entities
         title: Dørlås
         entities:
-          - lock.ytterdr
-          - script.script_lock_entry_door
-          - script.script_unlock_entry_door
+          - entity: switch.switch_frontdoor_lock
+            icon: mdi:home-lock
 
       - id: 18dc5750fafd4afca7c41b2f0d49d70b  # Automatically created id
         type: entities

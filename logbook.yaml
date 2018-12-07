@@ -1,6 +1,23 @@
   include:
-    domains:
-      - sensor
-      - switch
-      - lock
-      - light
+    entities:
+      - light.stue_sofa
+      - light.stue_spisebord
+      - light.gulvlampe_verst
+      - light.gulvlampe_nederst
+      - switch.kjkken_vindu
+      - light.soverom_tak
+      - light.nattlampe_robert
+      - light.nattlampe_veronica
+      - sensor.motion_livingroom
+      - sensor.motion_entry
+      - sensor.motion_bedroom
+      - sensor.magnet_vaskeromdor
+      - sensor.magnet_sov_verandador
+      - sensor.magnet_dor_ytterdor
+      - lock.ytterdr
+      - media_player.bad
+      - sensor.steam_76561197961355518
+      - sensor.steam_76561198142897485
+      - sensor.steam_76561198105070411
+      - sensor.steam_76561198125421167
+      - sensor.steam_76561198453950322
