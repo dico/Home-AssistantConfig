@@ -21,6 +21,7 @@
       - sensor.steam_76561198105070411
       - sensor.steam_76561198125421167
       - sensor.steam_76561198453950322
+      - sensor.steam_76561198292280082
       - device_tracker.veronica_sin_iphone
       - device_tracker.robert_iphone7plus
       - device_tracker.ailo_evander_sin_iphone

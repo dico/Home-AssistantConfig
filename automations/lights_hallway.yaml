@@ -8,6 +8,10 @@
   action:
   - service: switch.turn_on
     entity_id: switch.gang_lyst_kommode_switch
+  - service: logbook.log
+    data_template:
+      name: Bevegelse gang
+      message: Lys på
         
     
 # Turn off lamp when motion stops in hallway
@@ -21,6 +25,10 @@
   action:
   - service: switch.turn_off
     entity_id: switch.gang_lyst_kommode_switch
+  - service: logbook.log
+    data_template:
+      name: Bevegelse gang
+      message: Lys automatisk av etter 3 minutter
 
     
 - alias: 'Bevegelse Takys Gang På'

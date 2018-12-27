@@ -1,0 +1,24 @@
+- id: '1545743497172'
+  alias: Ny automatisering
+  trigger:
+  - entity_id: binary_sensor.fibaro_motion_1_sensor
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data:
+      entity_id: gang_lyst_kommode_switch
+    service: switch.turn_on
+- id: '1545743679846'
+  alias: Ny automatisering
+  trigger:
+  - entity_id: binary_sensor.fibaro_motion_1_sensor
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data:
+      entity_id: switch.gang_lyst_kommode_switch
+    service: switch.turn_on

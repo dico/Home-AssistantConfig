@@ -13,3 +13,18 @@
     data:
         message: "Hamster-Hilde er online på steam"
         title: "Steam"
+        
+- alias: 'Steam HildeTeaParty Online'
+  trigger:
+  - platform: state
+    entity_id: sensor.steam_76561198292280082
+    to: 'online'
+  condition:
+    condition: state
+    entity_id: input_boolean.automation_steam_notifications
+    state: 'on'
+  action:
+  - service: notify.ios_veronica
+    data:
+        message: "Hamster-Teaparty er online på steam"
+        title: "Steam"

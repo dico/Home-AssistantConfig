@@ -6,8 +6,12 @@
     from: 'True'
     to: 'False'
   action:
-    service: input_boolean.turn_on
+  - service: input_boolean.turn_on
     entity_id: input_boolean.washmachine_status
+  - service: logbook.log
+    data_template:
+      name: Vaskemaskin
+      message: Vaskemaskin startet
 
 # automation fertig
 - alias: 'Washmachine ferdig'
@@ -29,3 +33,7 @@
         title: "Vaskemaskin"
   - service: input_boolean.turn_off
     entity_id: input_boolean.washmachine_status
+  - service: logbook.log
+    data_template:
+      name: Vaskemaskin
+      message: Vaskemaskin ferdig

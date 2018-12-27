@@ -49,6 +49,10 @@ http:
   cors_allowed_origins: !include http_cors_allowed_origins.yaml
   login_attempts_threshold: 10
   trusted_networks: !include http_trusted_networks.yaml
+  ssl_profile: intermediate
+  api_password: dGOiZwSrpCgcEedjg8Yp
+  
+api:
 
 updater:
 discovery:
@@ -60,6 +64,10 @@ ffmpeg:
 
 logger:
   default: warn
+  logs:
+    homeassistant.components.nissan_leaf: debug
+    homeassistant.components.sensor.nissan_leaf: debug
+    homeassistant.components.switch.nissan_leaf: debug
 #  logs:
 #    homeassistant.components.camera: debug
 #    custom_components.camera.onvif: debug
@@ -103,6 +111,8 @@ camera: !include camera.yaml
 notify: !include notify.yaml
 zone: !include zone.yaml
 homekit: !include homekit.yaml
+panel_iframe: !include panel_iframe.yaml
+light: !include light.yaml
 
 
 
@@ -177,8 +187,21 @@ mqtt:
     username: !secret CLOUD_MQTT_USERNAME
     password: !secret CLOUD_MQTT_PASSWORD
     
+nissan_leaf:
+      username: !secret CARWINGS_USERNAME
+      password: !secret CARWINGS_PASSWORD
+      nissan_connect: false
+      region: 'NE'
+      update_interval: 30
+      update_interval_charging: 15
+      update_interval_climate: 5
+      force_miles: false
+    
 weather:
   - platform: yweather
+  
+
+
     
 # Text to speech
 tts:

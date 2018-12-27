@@ -1,0 +1,41 @@
+  - platform: entur_public_transport
+    name: Transport
+    expand_platforms: true
+    show_on_map: false
+    stop_ids:
+      - 'NSR:StopPlace:58661'   # Flakk
+      - 'NSR:StopPlace:58664'   # Rørvik
+      - 'NSR:Quay:71720'        # Rørvik-Flakk platform
+      
+  - platform: template
+    sensors:
+      route_rorvik:
+        friendly_name: "Rute"
+        value_template: "{{ state_attr('sensor.transport_rrvik_ferjekai', 'route')}}"
+        
+  - platform: template
+    sensors:
+      route_rorvik_next:
+        friendly_name: "Neste Rute"
+        value_template: "{{ state_attr('sensor.transport_rrvik_ferjekai', 'next_route') }}"
+        
+  - platform: template
+    sensors:
+      route_rorvik_departure_time:
+        friendly_name: "Avreise"
+        unit_of_measurement: ''
+        value_template: "{{ state_attr('sensor.transport_rrvik_ferjekai', 'due_at').split('+')[0].split('T')[1] }}"
+        
+  - platform: template
+    sensors:
+      route_rorvik_departure_time_next:
+        friendly_name: "Neste Avreise tid"
+        unit_of_measurement: ''
+        value_template: "{{ state_attr('sensor.transport_rrvik_ferjekai', 'next_due_at').split('+')[0].split('T')[1] }}"
+        
+  - platform: template
+    sensors:
+      route_rorvik_departure_min_next:
+        friendly_name: "Neste Avreise min."
+        unit_of_measurement: 'min'
+        value_template: "{{ state_attr('sensor.transport_rrvik_ferjekai', 'next_due_in') }}"

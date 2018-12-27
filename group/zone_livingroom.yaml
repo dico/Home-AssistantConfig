@@ -5,6 +5,13 @@ zone_livingroom:
   - group.zone_livingroom_sensors
   view: false
   
+zone_livingroom_ceiling:
+  name: Lys stue
+  entities:
+  - light.stue_sofa
+  - light.stue_spisebord
+  view: false
+  
 zone_livingroom_lights:
   name: Lys stue
   entities:
@@ -22,3 +29,15 @@ zone_livingroom_sensors:
   - sensor.netatmo_stue_temperature_3
   - sensor.netatmo_stue_co2_3
   view: false
+  
+zone_livingroom_floorlamp:
+  name: Gulvlampe
+  entities:
+  - light.gulvlampe_verst
+  - light.gulvlampe_nederst
+  
+zone_livingroom_pc_lights:
+  name: PC Lys
+  entities:
+  - switch.robert_pc
+  - switch.veronica_pc

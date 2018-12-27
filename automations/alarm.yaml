@@ -27,8 +27,12 @@
       entity_id: alarm_control_panel.home_alarm
       state: armed_away
   action:
-    service: alarm_control_panel.alarm_trigger
+  - service: alarm_control_panel.alarm_trigger
     entity_id: alarm_control_panel.home_alarm
+  - service: light.turn_on
+    entity_id: light.dc4f228a0c58_1921681232
+    data:
+        effect_list: red_strobe
 
     
     

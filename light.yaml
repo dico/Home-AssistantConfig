@@ -1,0 +1,2 @@
+  - platform: flux_led
+    automatic_add: True

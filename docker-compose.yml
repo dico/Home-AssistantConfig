@@ -1,12 +1,49 @@
-version: '3'
+version: '3.2'
 services:
   homeassistant:
     container_name: home-assistant
     image: homeassistant/home-assistant
+    depends_on:
+      - db
     volumes:
       - /home/robert/homeassistant:/config
       - /etc/localtime:/etc/localtime:ro
     devices:
       - /dev/ttyACM0:/dev/ttyACM0
     restart: always
+    network_mode: host
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_DATABASE=homeassistant
+      - MYSQL_USER=homeassistant
+      - MYSQL_PASSWORD=MyHomeAssitant123
+      - MYSQL_ROOT_PASSWORD=MyHomeAssitant123
+    volumes:
+      - /var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    links:
+      - db:mysql
+    ports:
+      - 8181:80
+    environment:
+      PMA_HOST: db
+      PMA_USER: homeassistant
+      PMA_PASSWORD: MyHomeAssitant123
+
+  nodered:
+    image: nodered/node-red-docker:v8
+    depends_on:
+      - homeassistant
+    ports:
+      - 1880:1880
+    volumes:
+      - /home/robert/node-red:/data
     network_mode: host

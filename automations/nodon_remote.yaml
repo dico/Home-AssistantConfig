@@ -1,0 +1,131 @@
+# Round button (whole)
+- alias: Soverom Switch button 1 pressed
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.nodon_remote_01
+      scene_id: 10
+  action:
+  - service: light.turn_on
+    entity_id: light.soverom_tak
+  - service: logbook.log
+    data_template:
+      name: Soverom Nodon Bryter
+      message: Runding trykket
+      
+# Round button (whole) - Long press
+- alias: Soverom Switch button 1 pressed
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.nodon_remote_01
+      scene_id: 11
+  action:
+  - service: light.turn_on
+    entity_id: light.soverom_tak
+    data:
+        brightness: 255
+        color_temp: 457
+  - service: logbook.log
+    data_template:
+      name: Soverom Nodon Bryter
+      message: Runding trykket (longpress)
+
+######################################################
+      
+# Round button (circle)
+- alias: Soverom Switch button 1 pressed
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.nodon_remote_01
+      scene_id: 30
+  action:
+  - service: light.turn_off
+    entity_id: light.soverom_tak
+  - service: logbook.log
+    data_template:
+      name: Soverom Nodon Bryter
+      message: Sirkel trykket
+
+# Round button (circle) - Long press
+- alias: Soverom Switch button 1 pressed
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.nodon_remote_01
+      scene_id: 32
+  action:
+  - service: light.turn_on
+    entity_id: light.soverom_tak
+    data:
+        brightness: 120
+        color_temp: 457
+  - service: logbook.log
+    data_template:
+      name: Soverom Nodon Bryter
+      message: Runding trykket (longpress)
+      
+######################################################
+
+# Plus (+)
+- alias: Soverom Switch button 1 pressed
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.nodon_remote_01
+      scene_id: 20
+  action:
+  - service: light.toggle
+    entity_id: light.nattlampe_veronica
+  - service: logbook.log
+    data_template:
+      name: Soverom Nodon Bryter
+      message: Pluss trykket
+      
+      
+# Plus (+) - Long press
+- alias: Soverom Switch button 1 pressed
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.nodon_remote_01
+      scene_id: 21
+  action:
+  - service: light.turn_on
+    entity_id: light.stue_spisebord
+    data:
+        brightness: 255
+  - service: light.turn_on
+    entity_id: light.stue_sofa
+    data:
+        brightness: 255
+  - service: logbook.log
+    data_template:
+      name: Soverom Nodon Bryter
+      message: Pluss trykket (longpress)
+
+######################################################
+      
+      
+# Minus (-)
+- alias: Soverom Switch button 1 pressed
+  trigger:
+    platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.nodon_remote_01
+      scene_id: 40
+  action:
+  - service: light.toggle
+    entity_id: light.nattlampe_robert
+  - service: logbook.log
+    data_template:
+      name: Soverom Nodon Bryter
+      message: Minus trykket

@@ -149,25 +149,33 @@ home_lights_off:
   alias: Julelys PÅ
   sequence:
   - data:
-      entity_id: switch.julelys
+      entity_id: switch.adventsstake_kjkken
     service: switch.turn_on
   - data:
-      entity_id: switch.kjkken_lys_vindu
+      entity_id: switch.stuevindu_julelys
     service: switch.turn_on
   - data:
-      entity_id: switch.juletre
+      brightness: 120
+      effect: rg_cross_fade
+      entity_id: light.dc4f228a0c58_1921681232
+    service: light.turn_on
+  - data:
+      entity_id: switch.plug02
     service: switch.turn_on
 '1513567140805':
   alias: Julelys AV
   sequence:
   - data:
-      entity_id: switch.kjkken_lys_vindu
+      entity_id: switch.adventsstake_kjkken
     service: switch.turn_off
   - data:
-      entity_id: switch.julelys
+      entity_id: switch.stuevindu_julelys
     service: switch.turn_off
   - data:
-      entity_id: switch.juletre
+      entity_id: light.dc4f228a0c58_1921681232
+    service: light.turn_off
+  - data:
+      entity_id: switch.plug02
     service: switch.turn_off
 script_garage_door_1:
   alias: Garasjeport 1
@@ -267,3 +275,18 @@ radio538:
   sequence:
   - event: ''
     event_data: {}
+'1545000793685':
+  alias: LED alarm
+  sequence:
+  - alias: ''
+    data:
+      brightness: 120
+      effect: red_strobe
+      entity_id: light.dc4f228a0c58_1921681232
+      flash: short
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      transition: 0.1
+    service: light.turn_on

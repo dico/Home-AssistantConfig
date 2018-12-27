@@ -104,8 +104,8 @@
     to: 'on'
   condition:
     condition: state
-    entity_id: light.soverom_tak
-    state: 'off'
+    entity_id: input_boolean.automation_bedroom_light
+    state: 'on'
   action:
 #  - service: light.turn_on
 #    entity_id: light.soverom_tak
@@ -128,7 +128,7 @@
     entity_id: binary_sensor.motion_soverom
     to: 'off'
     for:
-      seconds: 30
+      seconds: 15
   condition:
     condition: state
     entity_id: input_boolean.automation_bedroom_light

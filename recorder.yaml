@@ -1,4 +1,5 @@
   purge_interval: 2
+  db_url: mysql://homeassistant:MyHomeAssitant123@172.20.0.2/homeassistant?charset=utf8
   purge_keep_days: 365
   exclude:
     domains:

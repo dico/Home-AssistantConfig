@@ -345,6 +345,14 @@ views:
           #- light.gulvlampe_nederst
           - switch.robert_pc
           - switch.veronica_pc
+          - entity: switch.plug02
+            name: TV LED-lys (IKEA)
+          - entity: light.dc4f2289bcd9_1921681217
+            name: TV LED-strip
+            icon: mdi:television
+          - entity: light.dc4f228a0c58_1921681232
+            name: Verandadør LED-strip
+            icon: mdi:led-outline
       - id: f30889a5f76d4c99aae0e96f8b79f033  # Automatically created id
         type: entities
         title: Kjøkken
@@ -384,6 +392,13 @@ views:
         entities:
           - entity: switch.stuevindu_julelys
             name: Blinkende lys stuevindu
+      - id: stable_lights
+        type: entities
+        title: Stall
+        entities:
+          - entity: switch.inwall_01
+            name: Lyskaster
+            icon: mdi:track-light
 
 
 
@@ -473,6 +488,8 @@ views:
           - switch.fibaro_plug_04_switch
           - switch.fibaro_plug_gl_heatpump_switch
           - switch.fibaro_plug_hallway_heat_switch
+          - entity: switch.plug01
+            name: Infoskjerm Chromebit
 
       - id: 9934194f8b204b72b32de4cec2211b27  # Automatically created id
         type: entities
@@ -572,6 +589,15 @@ views:
         name: Ute Luftfuktighet
         height: 75
         line_color: "#cf8111"
+      - id: stable_stable_lights
+        type: entities
+        title: Lys
+        entities:
+          - entity: switch.inwall_01
+            name: Lyskaster
+            icon: mdi:track-light
+      - type: picture-entity
+        entity: camera.stall
 
 
   ## PAGE: Camera
@@ -772,20 +798,44 @@ views:
           - sensor.steam_76561198453950322
           - sensor.steam_76561198105070411
           - sensor.steam_76561197967336072
-      - id: aadb6711cbe14330936394e102af9300  # Automatically created id
+#      - id: aadb6711cbe14330936394e102af9300  # Automatically created id
+#        type: entities
+#        title: Nissan Leaf
+#        show_header_toggle: false
+#        entities:
+#          - sensor.leaf_battery
+#          - sensor.leaf_battery_connected
+#          - sensor.leaf_battery_charg_status
+#          - sensor.leaf_status
+#          - sensor.leaf_range_ac_off
+#          - sensor.leaf_range_ac_on
+#          - script.script_carwings_fetch
+#          - script.script_carwings_climate_on
+#          - script.script_carwings_climate_off
+          
+      - id: nissan_leaf
         type: entities
         title: Nissan Leaf
         show_header_toggle: false
         entities:
-          - sensor.leaf_battery
-          - sensor.leaf_battery_connected
-          - sensor.leaf_battery_charg_status
-          - sensor.leaf_status
-          - sensor.leaf_range_ac_off
-          - sensor.leaf_range_ac_on
-          - script.script_carwings_fetch
-          - script.script_carwings_climate_on
-          - script.script_carwings_climate_off
+          - entity: binary_sensor.robandre_plug_status
+            name: Lader
+          - entity: sensor.robandre_charge
+            name: Batteri
+          - entity: sensor.robandre_range
+            name: Rekkevidde
+          - entity: sensor.robandre_range_ac
+            name: Rekkevidde (AC)
+          - entity: switch.robandre_charging_status
+            name: Lade
+          - entity: switch.robandre_climate_control
+            name: Klimaanlegg
+          #- entity: binary_sensor.robandre_plug_status
+          #  icon: mdi:thermometer
+          
+          
+          
+          
 
 
   ## PAGE: Automation

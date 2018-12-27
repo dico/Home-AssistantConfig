@@ -39,6 +39,12 @@
         assumed_state: false
         icon: mdi:ceiling-light
         homebridge_visible: true
+    light.dc4f2289bcd9_1921681217:
+        friendly_name: TV LED-strip
+        icon: mdi:television
+    light.dc4f228a0c58_1921681232:
+        friendly_name: Stue Verandadør LED-strip
+        icon: mdi:led-outline
     switch.stuevindu_julelys:
         assumed_state: false
         icon: mdi:spotlight-beam
@@ -101,6 +107,13 @@
     switch.fibaro_plug_gl_heatpump_switch:
         friendly_name: Garasjeleilighet varmepumpe
         icon: mdi:fan
+    switch.plug01:
+        assumed_state: false
+    switch.plug02:
+        assumed_state: false
+    switch.adventsstake_kjkken:
+        assumed_state: false
+
         
 # Motion and magnet
     switch.bevegelse_gang:
@@ -236,7 +249,19 @@
     sensor.gangen_tak:
         friendly_name: IKEA fjernkontroll Gang
         icon: mdi:battery-charging-wireless-outline
-        
+ 
+# Stall
+    switch.inwall_01:
+        friendly_name: Stall lyskaster
+        icon: mdi:track-light
+        assumed_state: false
+    sensor.stall_co2:
+        friendly_name: Stall CO2
+        icon: mdi:periodic-table-co2
+    sensor.stall_luftfuktighet:
+        friendly_name: Stall Luftfuktighet
+        icon: mdi:water
+ 
         
 # Climate
     climate.bad_termostat_heating:
