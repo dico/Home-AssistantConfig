@@ -3,7 +3,7 @@
 
 Some of the things I test is posted on my [blog](https://robert.stadsbygd.net/category/internetofthings/).
 
-![alt text](https://github.com/dico/Home-AssistantConfig/blob/master/screenshots/12-2018_ha_home.jpg)
+![alt text](https://github.com/dico/Home-AssistantConfig/blob/master/screenshots/01_main_12_2018.jpg)
 
 ## Components and controllers (GW)
 - [Aeotec Z-stick Gen 5](https://home-assistant.io/components/zwave/)
