@@ -49,8 +49,6 @@ http:
   cors_allowed_origins: !include http_cors_allowed_origins.yaml
   login_attempts_threshold: 10
   trusted_networks: !include http_trusted_networks.yaml
-  ssl_profile: intermediate
-  api_password: dGOiZwSrpCgcEedjg8Yp
   
 api:
 
