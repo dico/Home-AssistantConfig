@@ -1,0 +1,32 @@
+- alias: 'Ailo knapp'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: deconz_event
+    event_data:
+      id: smart_switch
+      event: 1002
+  condition:
+    condition: state
+    entity_id: input_boolean.automation_ailo_knapp
+    state: 'on'
+  action:
+  - service: notify.notify
+    data:
+      message: "Ailo trykket på knapp"
+      title: "Knapp trykket"
+  - service: light.turn_on
+    entity_id: light.nattlampe_robert
+    data:
+        brightness: 255
+        color_temp: 457
+  - service: light.turn_on
+    entity_id: light.nattlampe_veronica
+    data:
+        brightness: 255
+        color_temp: 457
+  - service: light.turn_on
+    entity_id: light.soverom_tak
+    data:
+        brightness: 255
+        color_temp: 457

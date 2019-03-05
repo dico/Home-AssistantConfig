@@ -1,0 +1,35 @@
+  - name: Robert
+    id: robert
+    user_id: d600a313a32748f194b2912ef5ea5294
+    device_trackers:
+      - device_tracker.robert
+      - device_tracker.robert_iphone7plus
+  - name: Veronica
+    id: veronica
+    user_id: 7f2939dc74fd4a2f92a6a9f3906403e8
+    device_trackers:
+      - device_tracker.veronica_sin_iphone
+      - device_tracker.veroniciniphone
+  - name: Ailo
+    id: ailo
+    user_id: 97edcb6f50a84a79b4e58d731348b061
+    device_trackers:
+      - device_tracker.ailo_evander_sin_iphone
+      - device_tracker.ailo_iphone_se
+  - name: Anne Lisbeth
+    id: annel
+    device_trackers:
+      - device_tracker.annelisethsipad
+  - name: Arne
+    id: arne
+    device_trackers:
+      - device_tracker.arnegeiiniphone
+      - device_tracker.arnegeirsinipa
+  - name: Harald
+    id: harald
+    device_trackers:
+      - device_tracker.haraldsiniphone
+  - name: Grazyna
+    id: grazyna
+    device_trackers:
+      - device_tracker.grazynaiphone

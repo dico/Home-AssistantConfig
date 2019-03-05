@@ -1,0 +1,7 @@
+- alias: 'tv_morning_on'
+  trigger:
+    platform: time
+    at: '06:30:00'
+  action:
+  - service: switch.turn_on
+    entity_id: switch.fibaro_plug_04_switch

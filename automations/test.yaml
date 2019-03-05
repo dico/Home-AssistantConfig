@@ -1,0 +1,11 @@
+  - alias: 'Sonos Say'
+    trigger:
+      - platform: state
+        entity_id: input_boolean.automation_test_switch
+    action:
+      - service: script.sonos_say
+        data:
+          sonos_entity: media_player.bad
+          volume: 0.5
+          message: 'Hei på deg!'
+          delay: '00:00:05'

@@ -3,62 +3,102 @@ livingroom_mood_lights:
   sequence:
   - service: light.turn_on
     data:
-      entity_id: light.stue_spisebord
-      brightness: 120
+      entity_id: light.stue_sofa_1
+      brightness: 41
+  - service: light.turn_off
+    data:
+      entity_id: light.stue_sofa_2
   - service: light.turn_on
     data:
-      entity_id: light.stue_sofa
-      brightness: 120
+      entity_id: light.stue_sofa_3
+      brightness: 41
   - service: light.turn_off
     data:
-      entity_id: light.gulvlampe_verst
+      entity_id: light.stue_sofa_4
+  - service: light.turn_on
+    data:
+      entity_id: light.stue_spisebord_1
+      brightness: 41
   - service: light.turn_off
     data:
-      entity_id: light.gulvlampe_nederst
+      entity_id: light.stue_spisebord_2
+  - service: light.turn_on
+    data:
+      entity_id: light.stue_spisebord_3
+      brightness: 41
+  - service: light.turn_off
+    data:
+      entity_id: light.stue_spisebord_4
+  - service: light.turn_off
+    data:
+      entity_id: light.lys_pc
+  - service: light.turn_off
+    data:
+      entity_id: light.gulvlampe_overst
+  - service: light.turn_off
+    data:
+      entity_id: light.gulvlampe_nederst_2_2
   - service: switch.turn_off
     data:
       entity_id: switch.lys_pc_robert
+  - service: switch.turn_off
+    data:
+      entity_id: switch.veronica_pc
+  - service: light.turn_on
+    data:
+      entity_id: light.dc4f2289bcd9_192_168_1_217
+      brightness: 30
+      rgb_color: [255, 0, 0]
+  - service: light.turn_on
+    data:
+      entity_id: light.dc4f228a0c58_192_168_1_232
+      brightness: 60
+      rgb_color: [255, 0, 0]
 livingroom_full_lights:
   alias: Stue full belysning
   sequence:
   - service: light.turn_on
     data:
-      entity_id: light.stue_sofa
+      entity_id: light.lys_sofa
       brightness: 255
   - service: light.turn_on
     data:
-      entity_id: light.stue_spisebord
+      entity_id: light.lys_spisebord
       brightness: 255
   - service: light.turn_on
     data:
-      entity_id: light.gulvlampe_nederst
+      entity_id: light.lys_pc
       brightness: 255
   - service: light.turn_on
     data:
-      entity_id: light.gulvlampe_verst
+      entity_id: light.gulvlampe_nederst_2
+      brightness: 255
+  - service: light.turn_on
+    data:
+      entity_id: light.gulvlampe_overst
       brightness: 255
   - service: switch.turn_on
     data:
       entity_id: switch.lys_pc_robert
+  - service: switch.turn_on
+    data:
+      entity_id: switch.veronica_pc
+  - service: light.turn_on
+    data:
+      entity_id: light.dc4f2289bcd9_192_168_1_217
+      brightness: 30
+      rgb_color: [255, 0, 0]
+  - service: light.turn_on
+    data:
+      entity_id: light.dc4f228a0c58_192_168_1_232
+      brightness: 60
+      rgb_color: [255, 0, 0]
 home_full_lights:
-  alias: Stue full belysning
+  alias: Hjem full belysning
   sequence:
-  - service: light.turn_on
+  - service: script.turn_on
     data:
-      entity_id: light.stue_sofa
-      brightness: 255
-  - service: light.turn_on
-    data:
-      entity_id: light.stue_spisebord
-      brightness: 255
-  - service: light.turn_on
-    data:
-      entity_id: light.gulvlampe_nederst
-      brightness: 255
-  - service: light.turn_on
-    data:
-      entity_id: light.gulvlampe_verst
-      brightness: 255
+      entity_id: script.livingroom_full_lights
   - service: light.turn_on
     data:
       entity_id: light.gang_bulp_1
@@ -85,13 +125,19 @@ home_night_lights:
   alias: Natta lys
   sequence:
   - service: light.turn_off
-    entity_id: light.stue_sofa
+    entity_id: light.lys_sofa
   - service: light.turn_off
-    entity_id: light.stue_spisebord
+    entity_id: light.lys_spisebord
   - service: light.turn_off
-    entity_id: light.gulvlampe_nederst
+    entity_id: light.lys_pc
   - service: light.turn_off
-    entity_id: light.gulvlampe_verst
+    entity_id: light.gulvlampe_nederst_2
+  - service: light.turn_off
+    entity_id: light.gulvlampe_overst
+  - service: light.turn_off
+    entity_id: light.dc4f2289bcd9_192_168_1_217
+  - service: light.turn_off
+    entity_id: light.dc4f228a0c58_192_168_1_232
   - service: light.turn_off
     entity_id: light.gang_bulp_1
   - service: light.turn_off
@@ -122,17 +168,25 @@ home_lights_off:
   alias: Alle lys av
   sequence:
   - service: light.turn_off
-    data:
-      entity_id: light.stue_spisebord
+    entity_id: light.lys_sofa
+  - service: light.turn_off
+    entity_id: light.lys_spisebord
+  - service: light.turn_off
+    entity_id: light.lys_pc
+  - service: light.turn_off
+    entity_id: light.gulvlampe_nederst_2
+  - service: light.turn_off
+    entity_id: light.gulvlampe_overst
+  - service: light.turn_off
+    entity_id: light.dc4f2289bcd9_192_168_1_217
+  - service: light.turn_off
+    entity_id: light.dc4f228a0c58_192_168_1_232
   - service: light.turn_off
     data:
-      entity_id: light.stue_sofa
+      entity_id: light.gulvlampe_overst
   - service: light.turn_off
     data:
-      entity_id: light.gulvlampe_verst
-  - service: light.turn_off
-    data:
-      entity_id: light.gulvlampe_nederst
+      entity_id: light.gulvlampe_nederst_2
   - service: light.turn_off
     data:
       entity_id: switch.kjkken_lys_vindu
@@ -221,14 +275,14 @@ script_lock_entry_door:
   sequence:
   - service: lock.lock
     data:
-      code: 115599
+      code: !secret VERISURE_CODE_DIGITS
       entity_id: lock.ytterdr
 script_unlock_entry_door:
   alias: Lås opp ytterdør
   sequence:
   - service: lock.unlock
     data:
-      code: 115599
+      code: !secret VERISURE_CODE_DIGITS
       entity_id: lock.ytterdr
 radio538:
   alias: Play Radio on Chromecast Audio
@@ -282,7 +336,7 @@ radio538:
     data:
       brightness: 120
       effect: red_strobe
-      entity_id: light.dc4f228a0c58_1921681232
+      entity_id: light.dc4f228a0c58_192_168_1_232
       flash: short
       rgb_color:
       - 255
@@ -290,3 +344,24 @@ radio538:
       - 255
       transition: 0.1
     service: light.turn_on
+sonos_say:
+  alias: "Sonos TTS script"
+  sequence:
+   - service: media_player.sonos_snapshot
+     data_template:
+       entity_id: "{{ sonos_entity }}"
+   - service: media_player.sonos_unjoin
+     data_template:
+       entity_id: "{{ sonos_entity }}"
+   - service: media_player.volume_set
+     data_template:
+       entity_id: "{{ sonos_entity }}"
+       volume_level: "{{ volume }}"
+   - service: tts.google_say
+     data_template:
+       entity_id: "{{ sonos_entity }}"
+       message: "{{ message }}"
+   - delay: "{{ delay }}"
+   - service: media_player.sonos_restore
+     data_template:
+       entity_id: "{{ sonos_entity }}"

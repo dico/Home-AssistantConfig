@@ -1,25 +1,25 @@
-# automation start
-- alias: 'Washmachine Start'
+- alias: 'Vaskemaskin start'
   trigger:
-  - platform: state
+    platform: state
     entity_id: sensor.washer_pwrdn
-    from: 'True'
-    to: 'False'
+    to: 'True'
   action:
   - service: input_boolean.turn_on
     entity_id: input_boolean.washmachine_status
+  - service: notify.notify
+    data:
+      message: "Startet"
+      title: "Vaskemaskin"
   - service: logbook.log
     data_template:
       name: Vaskemaskin
       message: Vaskemaskin startet
 
-# automation fertig
-- alias: 'Washmachine ferdig'
+- alias: 'Vaskemaskin done'
   trigger:
     platform: state
     entity_id: sensor.washer_pwrdn
-    from: 'False'
-    to: 'True'
+    to: 'False'
     for:
       minutes: 4
   condition:
@@ -29,8 +29,8 @@
   action:
   - service: notify.notify
     data:
-        message: "Ferdig"
-        title: "Vaskemaskin"
+      message: "Ferdig"
+      title: "Vaskemaskin"
   - service: input_boolean.turn_off
     entity_id: input_boolean.washmachine_status
   - service: logbook.log

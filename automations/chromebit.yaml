@@ -1,0 +1,23 @@
+- alias: 'Chromebit on'
+  trigger:
+  - platform: time
+    at: '01:35:00'
+  action:
+  - service: switch.turn_on
+    entity_id: switch.plug01
+  - service: logbook.log
+    data_template:
+      name: Chromebit
+      message: Turned on
+
+- alias: 'Chromebit off'
+  trigger:
+  - platform: time
+    at: '01:40:00'
+  action:
+  - service: switch.turn_off
+    entity_id: switch.plug01
+  - service: logbook.log
+    data_template:
+      name: Chromebit
+      message: Turned off

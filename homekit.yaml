@@ -3,22 +3,23 @@
       - alarm_control_panel
       - media_player
     include_entities:
-      - lock.ytterdr
-      - sensor.netatmo_stue_temperature_2
-      - sensor.netatmo_stue_co2_2
+      - lock.ytterdor
+      - sensor.netatmo_stue_temperature
+      - sensor.netatmo_stue_co2
       - sensor.gang_temperature
-      - sensor.bad_temperature
+      - sensor.bad_temperature_2
       - sensor.soverom_temperature
-      - sensor.ailo_temperature
+      - sensor.ailo_temperature_2
       - sensor.garasje_temperature
       - sensor.stall_co2
       - sensor.stall_luftfuktighet
       - sensor.stall_temp
-      - light.stue_sofa
-      - light.stue_spisebord
+      - light.lys_stue
+      - light.lys_spisebord
+      - light.lys_sofa
+      - light.lys_pc
       - light.gulvlampe_verst
       - light.gulvlampe_nederst
-      - light.fibaro_system_fgrgbwm441_rgbw_controller_level_6
       - light.utelys
       - switch.robert_pc
       - switch.veronica_pc
@@ -28,14 +29,14 @@
       - climate.stue
       - climate.bad_termostat_heating
       - sensor.soverom_humidity
-      - sensor.bad_humidity
+      - sensor.bad_humidity_2
       - sensor.kjellerbod_humidity
-      - sensor.netatmo_kroken_ute_humidity_2
-      - sensor.netatmo_stue_humidity_2
+      - sensor.netatmo_kroken_ute_temperature
+      - sensor.netatmo_stue_humidity
   entity_config:
     alarm_control_panel.home:
       code: !secret HOME_ALARM_CODE
     light.kitchen_table:
       name: Kitchen Table Light
-    lock.ytterdr:
+    lock.ytterdor:
       code: !secret VERISURE_CODE_DIGITS

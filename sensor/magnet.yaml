@@ -3,13 +3,19 @@
     sensors:
       magnet_vaskeromdor:
         value_template: '{% if is_state("binary_sensor.nexa_magnet_01_sensor", "off") %}Lukket{% else %}Åpen{% endif %}'
-        friendly_name: 'Dør vaskerom'
+        friendly_name: 'Dør Vaskerom'
         
   - platform: template
     sensors:
       magnet_sov_verandador:
         value_template: '{% if is_state("binary_sensor.nexa_magnet_sov_verandador_sensor", "off") %}Lukket{% else %}Åpen{% endif %}'
-        friendly_name: 'Dør soverom veranda'
+        friendly_name: 'Dør Soverom Veranda'
+
+  - platform: template
+    sensors:
+      magnet_stue_verandador:
+        value_template: '{% if is_state("binary_sensor.verandador_stue_magnet", "off") %}Lukket{% else %}Åpen{% endif %}'
+        friendly_name: 'Dør Stue Veranda'
         
   - platform: template
     sensors:

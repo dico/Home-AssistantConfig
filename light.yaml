@@ -1,2 +1,42 @@
   - platform: flux_led
     automatic_add: True
+
+  - platform: group
+    name: Lys Sofa
+    entities:
+      - light.stue_sofa_1
+      - light.stue_sofa_2
+      - light.stue_sofa_3
+      - light.stue_sofa_4
+
+  - platform: group
+    name: Lys Spisebord
+    entities:
+      - light.stue_spisebord_1
+      - light.stue_spisebord_2
+      - light.stue_spisebord_3
+      - light.stue_spisebord_4
+
+  - platform: group
+    name: Lys PC
+    entities:
+      - light.stue_pc_1
+      - light.stue_pc_2
+      - light.stue_pc_3
+      - light.stue_pc_4
+
+  - platform: group
+    name: Lys Stue
+    entities:
+      - light.stue_sofa_1
+      - light.stue_sofa_2
+      - light.stue_sofa_3
+      - light.stue_sofa_4
+      - light.stue_spisebord_1
+      - light.stue_spisebord_2
+      - light.stue_spisebord_3
+      - light.stue_spisebord_4
+      - light.stue_pc_1
+      - light.stue_pc_2
+      - light.stue_pc_3
+      - light.stue_pc_4

@@ -7,4 +7,4 @@
   - platform: template
     sensors:
       washer_pwrdn:
-        value_template: "{{ states('sensor.vaskemaskin_power') | int < 3.4 }}"
+        value_template: "{{ states('sensor.vaskemaskin_power') | float > 3.4 }}"

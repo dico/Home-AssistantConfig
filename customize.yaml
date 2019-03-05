@@ -133,7 +133,10 @@
         friendly_name: Vaskerom ytterdør
         icon: mdi:login
     binary_sensor.nexa_magnet_sov_verandador_sensor:
-        friendly_name: Soverom værandadør
+        friendly_name: Soverom verandadør
+        icon: mdi:login
+    binary_sensor.verandador_stue_magnet:
+        friendly_name: Stue verandadør
         icon: mdi:login
     
 
@@ -164,6 +167,44 @@
         entity_picture: /local/icons/smoke_alarm_fibaro.png
     sensor.smokealarm_gl_livingroom:
         entity_picture: /local/icons/smoke_alarm_fibaro.png
+
+
+    person.robert:
+      entity_picture: /local/images/robert.jpg
+    person.veronica:
+      entity_picture: /local/images/veronica.jpg
+    person.ailo:
+      entity_picture: /local/images/ailo.jpg
+    person.anne_lisbeth:
+      entity_picture: /local/images/anne_lisbeth.jpg
+    person.arne:
+      entity_picture: /local/images/arne.jpg
+    person.grazyna:
+      entity_picture: /local/images/grazyna.jpg
+    person.harald:
+      entity_picture: /local/images/harald.jpg
+
+    sensor.person_robert:
+      friendly_name: Robert
+      entity_picture: /local/images/robert.jpg
+    sensor.person_veronica:
+      friendly_name: Veronica
+      entity_picture: /local/images/veronica.jpg
+    sensor.person_ailo:
+      friendly_name: Ailo
+      entity_picture: /local/images/ailo.jpg
+    sensor.person_anne_lisbeth:
+      friendly_name: Anne Lisbeth
+      entity_picture: /local/images/anne_lisbeth.jpg
+    sensor.person_arne:
+      friendly_name: Arne
+      entity_picture: /local/images/arne.jpg
+    sensor.person_grazyna:
+      friendly_name: Grazyna
+      entity_picture: /local/images/grazyna.jpg
+    sensor.person_harald:
+      friendly_name: Harald
+      entity_picture: /local/images/harald.jpg
 
         
 # Sensors: Energy
@@ -286,10 +327,10 @@
     sensor.gang_temperature:
         friendly_name: Gang
         homebridge_visible: true
-    sensor.soverom__ailo_temperature:
-        friendly_name: Soverom Ailo
-        icon: mdi:thermometer
-        homebridge_visible: true
+#    sensor.soverom__ailo_temperature:
+#        friendly_name: Soverom Ailo
+#        icon: mdi:thermometer
+#        homebridge_visible: true
     sensor.fibaro_smoke_gl_livingroom_temperature:
         friendly_name: Røykvarsler Temp. GL Stue
         icon: mdi:thermometer

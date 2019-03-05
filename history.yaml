@@ -34,6 +34,7 @@
      - binary_sensor.motion_soverom
      - binary_sensor.nexa_magnet_01_sensor
      - binary_sensor.nexa_magnet_sov_verandador_sensor
+     - binary_sensor.verandador_stue_magnet
      - binary_sensor.motion_livingroom_sensor
      - binary_sensor.motion_laundry
      - sensor.motion_entry
@@ -57,3 +58,10 @@
      - sensor.batt_smoke_hallway
      - sensor.batt_motion_fibaro_hallway
      - sensor.batt_motion_livingroom
+     - sensor.person_robert
+     - sensor.person_veronica
+     - sensor.person_ailo
+     - sensor.person_anne_lisbeth
+     - sensor.person_arne
+     - sensor.person_grazyna
+     - sensor.person_harald

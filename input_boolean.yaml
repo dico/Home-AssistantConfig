@@ -72,3 +72,8 @@
     name: Kommet hjem varsel
     initial: off
     icon: mdi:settings
+
+  automation_ailo_knapp:
+    name: Ailo Knapp
+    initial: off
+    icon: mdi:settings

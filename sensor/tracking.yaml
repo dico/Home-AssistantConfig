@@ -1,0 +1,34 @@
+  - platform: template
+    sensors:
+      person_robert:
+        value_template: "{{ 'Hjemme' if is_state('person.robert','home') else 'Borte' }}"
+
+  - platform: template
+    sensors:
+      person_veronica:
+        value_template: "{{ 'Hjemme' if is_state('person.veronica','home') else 'Borte' }}"
+
+  - platform: template
+    sensors:
+      person_ailo:
+        value_template: "{{ 'Hjemme' if is_state('person.ailo','home') else 'Borte' }}"
+
+  - platform: template
+    sensors:
+      person_anne_lisbeth:
+        value_template: "{{ 'Hjemme' if is_state('person.anne_lisbeth','home') else 'Borte' }}"
+
+  - platform: template
+    sensors:
+      person_arne:
+        value_template: "{{ 'Hjemme' if is_state('person.arne','home') else 'Borte' }}"
+
+  - platform: template
+    sensors:
+      person_harald:
+        value_template: "{{ 'Hjemme' if is_state('person.harald','home') else 'Borte' }}"
+
+  - platform: template
+    sensors:
+      person_grazyna:
+        value_template: "{{ 'Hjemme' if is_state('person.grazyna','home') else 'Borte' }}"

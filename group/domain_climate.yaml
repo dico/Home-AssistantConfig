@@ -7,7 +7,7 @@ home_main_climate_sensors:
   - sensor.gang_temperature
   - sensor.bad_temperature
   - sensor.soverom_temperature
-  - sensor.soverom__ailo_temperature
+#  - sensor.soverom__ailo_temperature
   - sensor.garage_temperature
   view: false
   
@@ -48,7 +48,7 @@ home_climate_temperature:
   - sensor.gang_temperature_2
   - sensor.bad_temperature
   - sensor.soverom_temperature
-  - sensor.soverom__ailo_temperature
+#  - sensor.soverom__ailo_temperature
   - sensor.kjeller_bod_temperature
   - sensor.mrkloft_temperature
   - sensor.garage_temperature

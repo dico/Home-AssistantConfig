@@ -32,6 +32,7 @@ __pycache__
 .cloud
 .storage
 ..homekit.state
+ip_bans.yaml
 camera.yaml
 home-assistant.env
 home-assistant.*
@@ -49,5 +50,12 @@ fullchain.pem
 .homekit.state
 http_cors_allowed_origins.yaml
 http_trusted_networks.yaml
+www/images/robert.jpg
+www/images/veronica.jpg
+www/images/ailo.jpg
+www/images/anne_lisbeth.jpg
+www/images/arne.jpg
+www/images/harald.jpg
+www/images/grazyna.jpg
 !/.gitignore
 !/.travis.yml

@@ -3,8 +3,8 @@ lights:
   entities:
   - light.stue_sofa
   - light.stue_spisebord
-  - light.gulvlampe_verst
-  - light.gulvlampe_nederst
+  - light.gulvlampe_overst
+  - light.gulvlampe_nederst_2
   - switch.gang_lyst_kommode_switch
   - switch.jul_stuevindu
   - switch.kjkken_lys_vindu
@@ -31,6 +31,6 @@ gang_lights:
 stue_gulvlampe:
   name: Stue gulvlampe
   entities:
-  - light.gulvlampe_verst
-  - light.gulvlampe_nederst
+  - light.gulvlampe_overst
+  - light.gulvlampe_nederst_2
   view: false

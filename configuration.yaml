@@ -37,6 +37,14 @@ cloud:
         - lock
         - script
         - group
+  google_actions:
+    filter:
+      include_domains:
+        - light
+        - switch
+        - lock
+        - script
+        - group
 
 config:
 
@@ -66,6 +74,8 @@ logger:
     homeassistant.components.nissan_leaf: debug
     homeassistant.components.sensor.nissan_leaf: debug
     homeassistant.components.switch.nissan_leaf: debug
+    pydeconz: debug
+    homeassistant.components.deconz: debug
 #  logs:
 #    homeassistant.components.camera: debug
 #    custom_components.camera.onvif: debug
@@ -109,8 +119,9 @@ camera: !include camera.yaml
 notify: !include notify.yaml
 zone: !include zone.yaml
 homekit: !include homekit.yaml
-panel_iframe: !include panel_iframe.yaml
+#panel_iframe: !include panel_iframe.yaml
 light: !include light.yaml
+person: !include person.yaml
 
 
 
@@ -166,6 +177,10 @@ tellduslive:
   host: "192.168.1.32"
   update_interval: 5
 
+arlo:
+  username: !secret ARLO_USERNAME
+  password: !secret ARLO_PASSWORD
+
 device_tracker:
   - platform: unifi
     host: !secret UNIFI_HOST
@@ -180,23 +195,23 @@ device_tracker:
 #    mqtt_topic: "owntracks/#"
 
 mqtt:
-    broker: m21.cloudmqtt.com
-    port: !secret CLOUD_MQTT_PORT
-    username: !secret CLOUD_MQTT_USERNAME
-    password: !secret CLOUD_MQTT_PASSWORD
+  broker: m21.cloudmqtt.com
+  port: !secret CLOUD_MQTT_PORT
+  username: !secret CLOUD_MQTT_USERNAME
+  password: !secret CLOUD_MQTT_PASSWORD
     
 nissan_leaf:
-      username: !secret CARWINGS_USERNAME
-      password: !secret CARWINGS_PASSWORD
-      nissan_connect: false
-      region: 'NE'
-      update_interval: 30
-      update_interval_charging: 15
-      update_interval_climate: 5
-      force_miles: false
+  username: !secret CARWINGS_USERNAME
+  password: !secret CARWINGS_PASSWORD
+  nissan_connect: false
+  region: 'NE'
+  update_interval: 120
+  update_interval_charging: 15
+  update_interval_climate: 5
+  force_miles: false
     
 weather:
-  - platform: yweather
+  - platform: met
   
 
 

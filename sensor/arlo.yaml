@@ -1,0 +1,5 @@
+  - platform: arlo
+    monitored_conditions:
+      - temperature
+      - humidity
+      - air_quality

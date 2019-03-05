@@ -33,8 +33,8 @@ zone_livingroom_sensors:
 zone_livingroom_floorlamp:
   name: Gulvlampe
   entities:
-  - light.gulvlampe_verst
-  - light.gulvlampe_nederst
+  - light.gulvlampe_overst
+  - light.gulvlampe_nederst_2
   
 zone_livingroom_pc_lights:
   name: PC Lys
